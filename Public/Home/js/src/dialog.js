@@ -4,7 +4,6 @@
 define(function(require, exports, module) {
     
     var $ = require('jquery');
-    //var template = require('template');
     
     var win = $(window),
     	doc = $(document),
