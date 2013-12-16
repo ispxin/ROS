@@ -1,0 +1,11 @@
+{
+  "family": "build",
+  "name": "ros",
+  "version": "1.0.0",
+  "spm": {
+    "alias": {
+      "jquery": "jquery"
+    },
+    "output": ["run.js"]
+  }
+}

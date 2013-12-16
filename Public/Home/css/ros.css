@@ -1,0 +1,182 @@
+/*
+* @Describe: ROS
+* @Author Blog: http://www.wangyingran.com
+*/
+
+@charset "utf-8";
+
+/* reset
+-----------------------------------------------*/
+html { color:#333; background:#fff; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;}
+body{ overflow-y:hidden; overflow-y:hidden;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { margin:0; padding:0;}
+body,button,input,select,textarea { font:12px/1 "微软雅黑", "arial", "Hiragino Sans GB";}
+button,input,select,textarea { font-size:100%; outline:none;}
+table { border-collapse:collapse; border-spacing:0;}
+th { text-align:inherit;}
+button,fieldset,img { border:0;}
+iframe { display:block;}
+address,caption,cite,code,dfn,em,i,th,var { font-style:normal; font-weight:500;}
+ol,ul { list-style:none;}
+caption,th { text-align:left;}
+h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:500;}
+q:before,q:after { content:'';}
+ins,a { text-decoration:none;}
+a{ color:#333;}
+a:hover { color:#000;}
+
+/* common
+-----------------------------------------------*/
+.clearfix:after { visibility:hidden; display:block; font-size:0; content:" "; clear:both; height:0;}
+.clearfix { zoom:1;}
+.fl { float:left;}
+.fr { float:right;}
+
+.mask { position:fixed; left:0; top:0; bottom:0; right:0; z-index:9999; background:#000; opacity:0;}
+
+/* background-image
+-----------------------------------------------*/
+.navbar-wraper,
+.navbar .avatar,
+.navbar .indicator ul li span.indicator-num,
+.navbar .indicator ul li.active span.indicator-active,
+.dialog-handle span
+{ background-image:url(../images/desktop/sprite_main.png); background-repeat:no-repeat;}
+
+.contextmenu-a .icon-arrow,
+.contextmenu .icon
+{ background-image:url(../images/desktop/all-icons.png); background-repeat:no-repeat;}
+
+/* desktop
+-----------------------------------------------*/
+.desk{ position:absolute; z-index:1; width:100%; height:100%; overflow:hidden;}
+.desk-content{ position:relative; margin:80px 120px;}
+.app-content{ position:absolute; left:0; top:0; width:100%; height:100%; opacity:1; overflow:hidden;}
+.app-content .app-item{ position:absolute; left:0; top:0; width:88px; height:88px; cursor:pointer;}
+.app-content .app-item:hover{ background:url(../images/desktop/app-mouseover-bg.png) no-repeat;}
+.app-content .app-item .app-icon{ width:50px; height:50px; margin:0 auto; padding:6px 0;}
+.app-content .app-item .app-icon img{ display:block; width:50px; height:50px;}
+.app-content .app-item .app-name{ text-align:center; text-shadow:1px 1px 1px #666;}
+.app-content .app-item .app-name span{ display:inline-block; height:20px; margin-left:5px; background:url(../images/desktop/app-name-bg-right.png) right no-repeat; color:#fff;}
+.app-content .app-item .app-name i{ position:relative; right:10px; display:block; height:20px; line-height:20px; padding-left:10px; background:url(../images/desktop/app-name-bg-left.png) left no-repeat;}
+
+/* navbar
+-----------------------------------------------*/
+.navbar{ position:absolute; left:50%; top:15px; z-index:9998; margin-left:-120px;}
+.navbar-wraper{ width:240px; height:40px; background-position:-140px -44px;}
+.navbar .avatar{ position:absolute; left:6px; top:-8px; width:32px; height:32px; overflow:hidden; background-position:-418px -117px;}
+.navbar .avatar img{ display:block; width:24px; height:24px; margin:4px 0 0 4px; cursor:pointer;}
+.navbar .indicator{ padding-left:45px;}
+.navbar .indicator ul{ padding-top:3px; font-size:0;}
+.navbar .indicator ul li{ display:inline-block; width:20px; height:20px; margin:0 2px; text-indent:-9999em;}
+.navbar .indicator ul li.active{ position:relative;}
+.navbar .indicator ul li.active span.indicator-active{ display:block; position:absolute; left:-5px; top:-6px; z-index:1; width:26px; height:26px; background-position:-355px -112px;}
+.navbar .indicator ul li span.indicator-num{ display:inline-block; width:20px; height:20px; cursor:pointer;}
+.navbar .indicator ul li.active span.indicator-num{ position:relative; z-index:2;}
+.navbar .indicator ul li span.indicator-num.indicator-num-1{ background-position:-336px -90px;}
+.navbar .indicator ul li span.indicator-num.indicator-num-2{ background-position:-366px -90px;}
+.navbar .indicator ul li span.indicator-num.indicator-num-3{ background-position:-396px -90px;}
+.navbar .indicator ul li span.indicator-num.indicator-num-4{ background-position:-426px -90px;}
+.navbar .indicator ul li span.indicator-num.indicator-num-5{ background-position:-456px -90px;}
+.navbar .indicator ul li span.indicator-num.indicator-num-1:hover,
+.navbar .indicator ul li.active span.indicator-num.indicator-num-1{ background-position:-140px -90px;}
+.navbar .indicator ul li span.indicator-num.indicator-num-2:hover,
+.navbar .indicator ul li.active span.indicator-num.indicator-num-2{ background-position:-180px -90px;}
+.navbar .indicator ul li span.indicator-num.indicator-num-3:hover,
+.navbar .indicator ul li.active span.indicator-num.indicator-num-3{ background-position:-220px -90px;}
+.navbar .indicator ul li span.indicator-num.indicator-num-4:hover,
+.navbar .indicator ul li.active span.indicator-num.indicator-num-4{ background-position:-260px -90px;}
+.navbar .indicator ul li span.indicator-num.indicator-num-5:hover,
+.navbar .indicator ul li.active span.indicator-num.indicator-num-5{ background-position:-300px -90px;}
+
+/* wallpaper
+-----------------------------------------------*/
+.wallpaper{ position:absolute; left:0; top:0; z-index:-10; width:100%; height:100%; overflow:hidden;}
+.wallpaper img{ display:block; position:absolute; left:0; top:0; width:100%; height:100%;}
+
+/* dialog
+-----------------------------------------------*/
+.dialog{ position:fixed; left:0; top:0; overflow:hidden; background:#fff; background-clip:padding-box; border:1px #b8cbcb solid; border:1px rgba(0, 0, 0, 0.1) solid;
+-moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;
+-moz-box-shadow:3px 3px 10px rgba(0,0,0,0.3); -webkit-box-shadow:3px 3px 10px rgba(0,0,0,0.3); box-shadow:3px 3px 10px rgba(0,0,0,0.3);}
+.dialog-head{ position:relative; height:28px; border-bottom:1px #ddd solid; background-color:#f5f5f5;
+background:-webkit-gradient(linear,0% 0%, 0% 100%, from(#fff), to(#f0f0f0), color-stop(0.3,#fff));
+background:-moz-linear-gradient(0% 0% 270deg, #fff, #fff, #f0f0f0 100%);
+}
+.dialog-logo{ position:absolute; left:8px; top:4px;}
+.dialog-logo-icon{ display:block; width:20px; height:20px;}
+.dialog-title{ height:28px; line-height:28px; text-align:center; cursor:move;}
+.dialog-handle{ position:absolute; top:7px; right:8px; font-size:0;}
+.dialog-handle span{ display:inline-block; width:14px; height:14px; margin-left:8px; cursor:pointer;}
+.dialog-minimize{ background-position:-9px -60px;}
+.dialog-minimize:hover{ background-position:-9px -32px;}
+.dialog-maximize{ background-position:-38px -60px;}
+.dialog-maximize:hover{ background-position:-38px -31px;}
+.dialog-close{ background-position:-67px -60px;}
+.dialog-close:hover{ background-position:-67px -31px;}
+.dialog-restore{ background-position:-97px -61px;}
+.dialog-restore:hover{ background-position:-97px -32px;}
+.dialog-content{}
+.dialog-foot{}
+
+/* login
+-----------------------------------------------*/
+.login { position:fixed; left:50%; top:-300px; z-index:10000; width:330px; height:280px; margin:-140px 0 0 -150px; background:#fff; background-clip:padding-box; border:1px #b8cbcb solid; border:1px rgba(0, 0, 0, 0.1) solid;
+-moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px;
+-moz-box-shadow:3px 3px 10px rgba(0,0,0,0.3); -webkit-box-shadow:3px 3px 10px rgba(0,0,0,0.3); box-shadow:3px 3px 10px rgba(0,0,0,0.3);
+}
+.login .close { position:absolute; right:-10px; top:-10px; width:28px; height:28px; cursor:pointer; background:url(../images/icons/login-close.png);}
+.login .message { display:none; position:absolute; right:0; top:0; z-index:1; height:36px; padding:0 8px; line-height:36px; border:1px #F0DBB4 solid; background:#fffcee; color:#ce8f22;
+-moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;
+}
+.login .form-wraper{ position:absolute; left:0; top:0; width:290px; height:240px; margin:20px; overflow:hidden;}
+.login .item { margin-bottom:15px;}
+.login .item.error { position:relative;}
+.login .item.error .input{ border-color:#F0DBB4;}
+.login .item.error .message { display:block;}
+.login .item .input { display:block; width:272px; height:20px; line-height:20px; padding:8px; font-size:14px; border:1px #ccc solid;
+-moz-box-shadow:1px 2px 2px #f1f1f1 inset; -webkit-box-shadow:1px 2px 2px #f1f1f1 inset; box-shadow:1px 2px 2px #f1f1f1 inset;
+-moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;
+}
+.login .item .input:focus { border-color:#F0DBB4;}
+.login .item .register-text { color:#999;}
+.login .item .register-text a { color:#999;}
+.login .item .register-text a:hover { color:#6dbb4a; border-bottom:1px #6dbb4a dotted;}
+
+.login .item .button { width:290px; height:40px; line-height:40px; font-size:14px; color:#fff; cursor:pointer;
+-moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;
+}
+.login .item .button:active{ -moz-box-shadow:1px 1px 5px rgba(0,0,0,0.2) inset; -webkit-box-shadow:1px 1px 5px rgba(0,0,0,0.2) inset; box-shadow:1px 1px 5px rgba(0,0,0,0.2) inset;}
+#signin{ position:absolute; left:0; top:0;}
+#register{ position:absolute; left:330px; top:0; opacity:0;}
+#signin .header { height:38px; line-height:38px; margin-bottom:15px; text-align:center; font-size:30px; color:#999;}
+#signin .button { background:#78CD51;}
+#signin .button:hover { background:#6dbb4a;}
+#register .button { background:#58c9f3;}
+#register .button:hover { background:#53bee6;}
+
+/* contextmenu
+-----------------------------------------------*/
+.contextmenu{ display:none; position:absolute; z-index:10001; left:0; top:0;}
+.contextmenu-style{ width:138px; background:#fff; background-clip:padding-box; border:1px #b8cbcb solid; border:1px rgba(0, 0, 0, 0.1) solid;
+-moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;
+-moz-box-shadow:3px 3px 10px rgba(0,0,0,0.3); -webkit-box-shadow:3px 3px 10px rgba(0,0,0,0.3); box-shadow:3px 3px 10px rgba(0,0,0,0.3);}
+.contextmenu-a, .contextsubmenu-a{ display:block; position:relative; height:24px; padding:0 25px; line-height:24px; margin:1px; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}
+.contextmenu-a:hover, .contextsubmenu-a:hover{ background:#348ccc; color:#fff;}
+.contextmenu-a .icon-arrow{ display:block; position:absolute; right:10px; top:8px; width:4px; height:7px; background-position:-128px -462px;}
+.contextmenu-a:hover .icon-arrow{ background-position:-148px -462px;}
+.contextsubmenu{ position:relative;}
+.contextsubmenu-wrap{ display:none; position:absolute; left:138px; top:0;}
+.contextsubmenu-ul{ margin-left:3px;}
+.contextsubmenu:hover .contextsubmenu-wrap{ display:block;}
+.contextmenu-li .line{ display:block; margin:3px 1px; height:1px; overflow:hidden; background:#e2e3e4;}
+.contextsubmenu-a{ position:relative;}
+.contextsubmenu-a.on .icon-current{ display:block;}
+.contextmenu .icon{ display:block; position:absolute; left:4px; top:4px; width:16px; height:16px;}
+.contextmenu .icon-current{ display:none; background-position:-100px -460px;}
+.contextmenu .icon-folder{ background-position:-160px -80px;}
+.contextmenu .icon-app{ background-position:-140px -80px;}
+
+/* other
+-----------------------------------------------*/
+#media_floatingBar{ display:none;}

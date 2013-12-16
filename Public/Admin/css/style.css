@@ -1,0 +1,97 @@
+/*
+* @Describe: rBlog
+* @Author: www.wangyingran.com
+*/
+
+@charset "utf-8";
+
+/* common
+-----------------------------------------------*/
+body{ height:100%; font-family:'Microsoft YaHei'; overflow-x:hidden;}
+html.index, html.index body{ overflow:hidden;}
+
+::-webkit-scrollbar{
+	width:10px;
+	background:#949494;
+}
+::-webkit-scrollbar-button{
+	display:none;
+}
+::-webkit-scrollbar-track{
+	background:#E6E6E6;
+}
+::-webkit-scrollbar-thumb{
+	background:#808080;
+	border-radius:100px;
+	-webkit-border-radius:100px;
+}
+::-webkit-scrollbar-thumb:active{
+	background:#333;
+}
+
+.w100{ width:100px;}
+.w200{ width:200px;}
+.w300{ width:300px;}
+.w400{ width:400px;}
+.w500{ width:500px;}
+
+.mt10{ margin-top:10px;}
+.mt20{ margin-top:20px;}
+.mt30{ margin-top:30px;}
+.mr10{ margin-right:10px;}
+.mr20{ margin-right:20px;}
+.mr30{ margin-right:30px;}
+.mb10{ margin-bottom:10px;}
+.mb20{ margin-bottom:20px;}
+.mb30{ margin-bottom:30px;}
+.ml10{ margin-left:10px;}
+.ml20{ margin-left:20px;}
+.ml30{ margin-left:30px;}
+
+
+/* css3 animation
+-----------------------------------------------*/
+.r-subnav ul li a,
+.r-subnav h2
+{ -webkit-transition:all 0.2s ease-out; -moz-transition:all 0.2s ease-out; -ms-transition:all 0.2s ease-out; -o-transition:all 0.2s ease-out; transition:all 0.2s ease-out;}
+
+/* main
+-----------------------------------------------*/
+.navbar{ border-radius:0; border:none; margin:0;}
+.navbar-brand{ height:50px;}
+
+.r-nav{  height:100%; padding:10px 0 20px 0; background:#2a2a2a;}
+.r-subnav h2{ position:relative; height:45px; line-height:45px; margin:0; padding:0 15px; border-bottom:1px #333 solid; font-size:14px; color:#999; cursor:pointer;}
+.r-subnav h2:hover{ color:#ddd;}
+.r-subnav ul{ display:none; margin:0; padding:10px 0; background:#333;}
+.r-subnav ul li{ list-style:none; padding:1px 0;}
+.r-subnav ul li a{ display:block; height:34px; padding:0 32px; line-height:34px; font-size:14px; color:#ddd;}
+.r-subnav ul li a:hover, .r-subnav ul li.active{ background:#2a2a2a; color:#fff; text-decoration:none;}
+.r-subnav-icon{ float:right; font-size:10px;}
+
+.r-left{ position:fixed; left:0; top:50px; bottom:0; width:200px;}
+.r-right{ position:fixed; left:200px; top:50px; right:0; bottom:0;}
+.r-main{ height:100%;}
+.r-main iframe{ width:100%; height:100%;}
+
+.iframeBody{ padding:20px;}
+
+.r-shortcut{ margin-bottom:20px;}
+.r-shortcut a.btn{ margin-right:20px;}
+
+/* other
+-----------------------------------------------*/
+.r-footer { padding-top:40px; margin-top:30px; color:#666; text-align:left; border-top:1px solid #e5e5e5;}
+.r-copyright{ position:fixed; bottom:0; left:0; width:200px; padding:8px 0; background:#2a2a2a; border-top:1px #333 solid; text-align:center; color:#999; font-size:12px;}
+.r-copyright a{ color:#999;}
+.r-copyright a:hover{ color:#ddd; text-decoration:none;}
+
+.r-message { margin:100px 0 0 100px;}
+.r-message h1{ color:#666; font-size:30px;}
+.r-message p { margin-left:42px;}
+.r-message .glyphicon-remove { color:#DB4F33;}
+.r-message .glyphicon-ok {color:#80b600;}
+
+.page-header{ margin:0 0 20px 0; padding:0 0 5px 0; font-size:22px; color:#333;}
+.page-header a{ font-size:20px; color:#5cb85c;}
+.page-header a:hover{ text-decoration:none; color:#47a447;}
