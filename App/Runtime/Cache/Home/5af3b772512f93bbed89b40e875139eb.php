@@ -21,6 +21,7 @@
         // } else {
             // seajs.use("__JS__/build/ros/1.0.0/run");
         // }
+		
 		</script>
 	</head>
 
@@ -60,23 +61,7 @@
 			<div class="desk-content" id="desk-content">
 				
 				<ul class="app-content">
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客1</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客1</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
+					<li class="app-item" data-title="我的博客" data-icon="__IMG__/app/clover.png" data-type="app" data-url="http://www.wangyingran.com" data-width="800" data-height="500" data-ismix="true" data-ismax="true">
 						<div class="app-icon">
 							<img src="__IMG__/app/clover.png">
 						</div>
@@ -84,76 +69,12 @@
 							<span><i>我的博客</i></span>
 						</div>
 					</li>
-					<li class="app-item" title="我的博客" type="app">
+					<li class="app-item" data-title="我的博客" data-icon="__IMG__/app/weibo.png" data-type="app" data-url="http://weibo.com/wangyingran" data-width="1000" data-height="600" data-ismix="true" data-ismax="true">
 						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
+							<img src="__IMG__/app/weibo.png">
 						</div>
 						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
+							<span><i>新浪微博</i></span>
 						</div>
 					</li>
 				</ul>

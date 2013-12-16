@@ -5,6 +5,7 @@ define(function(require, exports, module) {
     
     var $ = require('jquery');
     var login = require('./login');
+    require('./dialog');
 
 	// 防反跳、延迟函数的执行在函数最后一次调用时刻的 wait 毫秒之后
 	function debounce(func, wait, immediate) {
@@ -178,6 +179,25 @@ define(function(require, exports, module) {
     		});
     		
     	},
+
+        // App打开
+        appOpen : function(obj) {
+            
+            var appData = obj.data();
+            
+            console.log(appData);
+            
+            $.dialog({
+                icon : appData.icon,
+                title : appData.title,
+                content : appData.url,
+                width : appData.width,
+                height : appData.height,
+                isMin : appData.ismin,
+                isMax : appData.ismax
+            });
+            
+        },
     	
     	// 事件
         bind : function() {
@@ -192,6 +212,11 @@ define(function(require, exports, module) {
             // Login模块
 			$('#navbar-avatar').on('click', function() {
                 login.open();
+            });
+            
+            // App打开
+            $('#desk').on('click', 'li', function() {
+               _this.appOpen($(this)); 
             });
             
         }

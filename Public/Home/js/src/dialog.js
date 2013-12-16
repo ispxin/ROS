@@ -4,9 +4,11 @@
 define(function(require, exports, module) {
     
     var $ = require('jquery');
+    //var template = require('template');
     
     var win = $(window),
-    	doc = $(document);
+    	doc = $(document),
+    	urlRe = /^[a-zA-z]+:\/\/[^\s]*$/;
     
     var defaults = {
     	icon : null,
@@ -14,9 +16,10 @@ define(function(require, exports, module) {
     	content : 'Hello world : )',
     	width : 300,
     	height : 200,
-    	isLock : false,
+    	zIndex : 9999,
     	isDrag : true,
-    	zIndex : 9999
+    	isMin : true,
+    	isMax : true
     }
     
     var rDialog = function(options) {
@@ -28,35 +31,42 @@ define(function(require, exports, module) {
     	
     	// 初始化
     	init : function() {
-    		this.create();
+    	    this.createIframe();
+    		this.createDialog();
     		this.bind();
     	},
     	
+    	// 如果传入网址转换为iframe
+    	createIframe : function() {
+    	  
+            var isUrl = urlRe.test(this.settings.content);
+            
+            if (isUrl) {
+                this.settings.content = '<iframe src="'+ this.settings.content +'" frameborder="0" allowtransparency="true" scrolling="auto"></iframe>';
+            }
+    	     
+    	},
+    	
     	// 创建
-    	create : function() {
-    		
-    		var tpl = '<div class="dialog-head">' +
-							'<div class="dialog-logo">' +
-								'<img src="__IMG__/app/clover.png" class="dialog-logo-icon" />' +
-							'</div>' +
-							'<div class="dialog-title">'+ this.settings.title +'</div>' +
+    	createDialog : function() {
+
+    		var tpl =  '<div class="dialog-head">' +
+							( this.settings.icon ? '<div class="dialog-logo"><img src="'+ this.settings.icon +'" class="dialog-logo-icon" /></div>' : '' ) +
+							( this.settings.title ? '<div class="dialog-title">'+ this.settings.title +'</div>' : '' ) +
 							'<div class="dialog-handle">' +
-								'<span class="dialog-minimize" title="最小化"></span>' +
-								'<span class="dialog-maxres dialog-maximize" title="最大化" data-status="maximize"></span>' +
-								//'<span class="dialog-restore" title="还原"></span>' +
+								( this.settings.isMin ? '<span class="dialog-minimize" title="最小化"></span>' : '' ) +
+								( this.settings.isMax ? '<span class="dialog-maxres dialog-maximize" title="最大化" data-status="maximize"></span>' : '' ) +
 								'<span class="dialog-close" title="关闭"></span>' +
 							'</div>' +
 						'</div>' +
 						'<div class="dialog-content">'+ this.settings.content +'</div>' +
 						'<div class="dialog-foot"></div>';
-						
+			
 			this.dialog = $('<div class="dialog"></div>').html(tpl);
 			
 			this.dialogContent = this.dialog.find('.dialog-content');
 			this.dialogMinimize = this.dialog.find('.dialog-minimize');
 			this.dialogMaxres = this.dialog.find('.dialog-maxres');
-			//this.dialogMaximize = this.dialog.find('.dialog-maximize');
-			//this.dialogRestore = this.dialog.find('.dialog-restore');
 			this.dialogClose = this.dialog.find('.dialog-close');
 			
 			this.dialogWidth = this.settings.width + 2;
@@ -114,6 +124,11 @@ define(function(require, exports, module) {
     			height : this.winHeight - 2
     		});
     		
+    		this.dialogContent.animate({
+    		   width : this.winWidth - 2,
+    		   height : this.winHeight - 31
+    		});
+    		
     	},
     	
     	// 还原
@@ -130,6 +145,11 @@ define(function(require, exports, module) {
     			width : this.settings.width,
     			height : this.dialogHeight
     		});
+    		
+    		this.dialogContent.animate({
+               width : this.settings.width,
+               height : this.settings.height
+            });
     		
     	},
     	
@@ -187,15 +207,6 @@ define(function(require, exports, module) {
     			
     		});
     		
-    		// this.dialogMaximize.on('click', function() {
-    			// _this.maximize($(this));
-    		// });
-    		
-    		// this.dialogRestore.on('click', function() {
-    			// alert(1)
-    			// _this.restore($(this));
-    		// });
-    		
     		this.dialogClose.on('click', function() {
     			_this.close();
     		});
@@ -210,20 +221,17 @@ define(function(require, exports, module) {
     }
     
     $.dialog = dialog;
+
     
     // 测试调用
-    $.dialog({
-    	title : '我的博客',
-    	content : '我就是内容哟~',
+    //$.dialog({
+        //icon : '/ros/Public/Home/images/app/clover.png',
+    	//title : '我的博客',
+    	//content : '我就是内容哟~',
+    	//isMin : false,
+    	//isMax : false
     	//width : 500,
     	//height : 300
-    });
-
-	// 开放接口
-    // module.exports = {
-    	// dialog : function(options) {
-    		// new rDialog(options);
-    	// }
-    // }
+    //});
 
 });
