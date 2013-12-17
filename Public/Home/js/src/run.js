@@ -1,5 +1,5 @@
 define(function(require) {
-
+	
 	// 加载App模块
 	require('./app').init();
 	

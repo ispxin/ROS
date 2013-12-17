@@ -3,6 +3,7 @@
  */
 define(function(require, exports, module) {
     
+    var config = require('./config');
     var $ = require('jquery');
     
     var tpl =   '<div class="close" title="关闭" id="login-close"></div>' +

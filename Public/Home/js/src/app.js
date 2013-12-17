@@ -3,9 +3,14 @@
  */
 define(function(require, exports, module) {
     
+    var config = require('./config');
     var $ = require('jquery');
     var login = require('./login');
-    require('./dialog');
+    	require('./dialog');
+    
+    var win = $(window);
+    
+    console.log(config)
 
 	// 防反跳、延迟函数的执行在函数最后一次调用时刻的 wait 毫秒之后
 	function debounce(func, wait, immediate) {
@@ -35,15 +40,16 @@ define(function(require, exports, module) {
     	    // y : 纵向排序
     	    this.sortType = 'y';
 			
-			this.win = $(window);
 			this.iNow = 0;
 			
     		this.oDesk = $('#desk');
     		this.oDeskContent = $('#desk-content');
     		this.aAppContent = this.oDeskContent.children();
+    		this.oNavbar = $('#navbar');
             this.oIndicator = $('#indicator');
             this.aIndicator = this.oIndicator.children();
     		
+    		this.setNavbar();
     		this.setDesk();
             this.setAppSort(this.sortType);
     		this.resizeDesk();
@@ -54,9 +60,9 @@ define(function(require, exports, module) {
     	// 设置桌面
     	setDesk : function() {
     	    
-    	    this.iWidth = this.win.width() - 240;
-            this.iHeight = this.win.height() - 160;
-            this.iLeft = this.win.width() - 120;
+    	    this.iWidth = win.width() - 240;
+            this.iHeight = win.height() - 160;
+            this.iLeft = win.width() - 120;
     		
     		this.oDeskContent.css({
     			width : this.iWidth,
@@ -71,6 +77,15 @@ define(function(require, exports, module) {
                 this.aAppContent.eq(i).css({ width : this.iWidth, height : this.iHeight, left : -this.iLeft }); 
             };
     		
+    	},
+    	
+    	// 设置Navbar位置
+    	setNavbar : function() {
+    		this.oNavbar.css({
+    			left : (win.width() - 240) / 2,
+    			top : 10,
+    			display : 'block'
+    		});
     	},
     	
     	// 指示器
@@ -169,7 +184,7 @@ define(function(require, exports, module) {
     		var setAppXDebounce = debounce(this.setAppX, 100);
     		var setAppYDebounce = debounce(this.setAppY, 100);
 
-    		this.win.on('resize', function() {
+    		win.on('resize', function() {
     			setDeskDebounce();
     			if (_this.sortType == 'x') {
                     setAppXDebounce();
@@ -182,12 +197,17 @@ define(function(require, exports, module) {
 
         // App打开
         appOpen : function(obj) {
+           
+            if (obj.data('state')) {
+            	return;
+            }
+            
+            obj.data('state', 1);
             
             var appData = obj.data();
             
-            console.log(appData);
-            
-            $.dialog({
+            $.ros.dialog({
+            	id : appData.id,
                 icon : appData.icon,
                 title : appData.title,
                 content : appData.url,
@@ -203,6 +223,9 @@ define(function(require, exports, module) {
         bind : function() {
             
             var _this = this;
+            
+            // Navbar拖拽
+            $.ros.drag(this.oNavbar);
             
             // 指示器切换
             this.aIndicator.on('click', function() {
