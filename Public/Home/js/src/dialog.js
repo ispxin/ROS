@@ -2,14 +2,12 @@
  * Dialog模块
  */
 define(function(require, exports, module) {
-    
-    var config = require('./config');
-    var $ = require('jquery');
+
     require('./drag');
+    require('./task');
     
     var win = $(window),
     	doc = $(document),
-    	zIndex = 9999,
     	urlRe = /^[a-zA-z]+:\/\/[^\s]*$/;
     
     var defaults = {
@@ -26,6 +24,7 @@ define(function(require, exports, module) {
     var Dialog = function(options) {
     	this.settings = $.extend({}, defaults, options);
     	this.isMaxed = false;
+    	this.isHide = false;
     	this.init();
     }
     
@@ -36,6 +35,7 @@ define(function(require, exports, module) {
     	    this.createIframe();
     		this.createDialog();
     		this.bind();
+    		this.openTask();
     	},
     	
     	// 如果传入网址转换为iframe
@@ -81,7 +81,7 @@ define(function(require, exports, module) {
 			});
 			
 			this.dialog.css({
-				zIndex : zIndex++,
+				zIndex : GLOBAL.zIndex++,
 				width : this.settings.width,
 				height : this.dialogHeight
 			});
@@ -118,9 +118,16 @@ define(function(require, exports, module) {
     		
     	},
     	
-    	// 最小化
-    	minimize : function() {
-    		
+    	// 显示
+        show : function() {
+            this.dialog.show();
+            this.isHide = false;
+        },
+    	
+    	// 隐藏
+    	hide : function() {
+    		this.dialog.hide();
+    		this.isHide = true;
     	},
 
     	// 最大化
@@ -193,7 +200,7 @@ define(function(require, exports, module) {
     			
     			_this.iframeMask = $('<div class="iframeMask"></div>').appendTo(_this.dialogContent);
     			
-    			_this.dialog.css('zIndex', zIndex++);
+    			_this.dialog.css('zIndex', GLOBAL.zIndex++);
     			
     			doc.on('mouseup', function() {
 	    			_this.iframeMask.remove();
@@ -218,10 +225,23 @@ define(function(require, exports, module) {
     		}, 500, function() {
     			$(appId).data('state', 0);
     			_this.dialog.remove();
+    			_this.task.close();
     		});
 
     	},
-    	
+
+        // 打开任务
+        openTask : function() {
+            
+            this.task = $.ros.task({
+               dialog : this,
+               id : this.settings.id,
+               icon : this.settings.icon,
+               title : this.settings.title 
+            });
+            
+        },
+  	
     	// 事件绑定
     	bind : function() {
     		
@@ -232,7 +252,7 @@ define(function(require, exports, module) {
     		});
     		
     		this.dialogMinimize.on('click', function() {
-    		
+    		    _this.hide();
     		});
     		
     		this.dialogMaxres.on('click', function() {
@@ -256,7 +276,7 @@ define(function(require, exports, module) {
     }
     
     var dialog = function(options) {
-    	new Dialog(options);
+    	return new Dialog(options);
     }
     
     if (!$.ros) {

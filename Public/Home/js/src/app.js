@@ -2,15 +2,12 @@
  * App模块
  */
 define(function(require, exports, module) {
-    
-    var config = require('./config');
-    var $ = require('jquery');
+
     var login = require('./login');
     	require('./dialog');
+    	require('./task');
     
     var win = $(window);
-    
-    console.log(config)
 
 	// 防反跳、延迟函数的执行在函数最后一次调用时刻的 wait 毫秒之后
 	function debounce(func, wait, immediate) {
@@ -34,11 +31,6 @@ define(function(require, exports, module) {
     	
     	// 初始化
     	init : function() {
-    	    
-    	    // 默认App排序方式变量
-    	    // x : 横向排序
-    	    // y : 纵向排序
-    	    this.sortType = 'y';
 			
 			this.iNow = 0;
 			
@@ -51,7 +43,7 @@ define(function(require, exports, module) {
     		
     		this.setNavbar();
     		this.setDesk();
-            this.setAppSort(this.sortType);
+            this.setAppSort(GLOBAL.sortType);
     		this.resizeDesk();
     		this.bind();
     		
@@ -167,7 +159,7 @@ define(function(require, exports, module) {
     	
     	// 设置App排序方式
     	setAppSort : function(type) {
-    	    this.sortType = type;
+    	    GLOBAL.sortType = type;
     	    if (type == 'x') {
                 this.setAppX();
             } else if (type == 'y') {
@@ -186,9 +178,9 @@ define(function(require, exports, module) {
 
     		win.on('resize', function() {
     			setDeskDebounce();
-    			if (_this.sortType == 'x') {
+    			if (GLOBAL.sortType == 'x') {
                     setAppXDebounce();
-                } else if (_this.sortType == 'y') {
+                } else if (GLOBAL.sortType == 'y') {
                     setAppYDebounce();
                 }
     		});
@@ -199,6 +191,11 @@ define(function(require, exports, module) {
         appOpen : function(obj) {
            
             if (obj.data('state')) {
+
+                if (this.dialog.isHide) {
+                    this.dialog.show();
+                }
+                
             	return;
             }
             
@@ -206,7 +203,8 @@ define(function(require, exports, module) {
             
             var appData = obj.data();
             
-            $.ros.dialog({
+            // 打开窗口
+            this.dialog = $.ros.dialog({
             	id : appData.id,
                 icon : appData.icon,
                 title : appData.title,

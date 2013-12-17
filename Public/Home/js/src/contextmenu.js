@@ -2,9 +2,7 @@
  * Contextmenu模块
  */
 define(function(require, exports, module) {
-    
-    var config = require('./config');
-    var $ = require('jquery');
+
     var app = require('./app');
     
     var contextmenu = {

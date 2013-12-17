@@ -60,6 +60,33 @@ a:hover { color:#000;}
 .app-content .app-item .app-name span{ display:inline-block; height:20px; margin-left:5px; background:url(../images/desktop/app-name-bg-right.png) right no-repeat; color:#fff;}
 .app-content .app-item .app-name i{ position:relative; right:10px; display:block; height:20px; line-height:20px; padding-left:10px; background:url(../images/desktop/app-name-bg-left.png) left no-repeat;}
 
+.task-bg{ position:absolute; bottom:0; width:100%; height:64px; background:url(../images/desktop/task-bg.png) bottom repeat-x;}
+.bottombar-bg{ position:absolute; bottom:0; width:100%; height:130px; background:url(../images/desktop/bottombar-bg.png) repeat-x;}
+
+/* task
+-----------------------------------------------*/
+.task{ position:absolute; bottom:0; left:0; z-index:2; width:100%;}
+.task-content{ float:right; height:64px; overflow:hidden;}
+.task-content ul{ float:right; height:100%;}
+.task-content ul li{ float:left; position:relative; width:112px; height:64px; margin-left:2px; overflow:hidden; background:url(../images/desktop/task-nor.png) no-repeat; cursor:pointer;}
+.task-content ul li.active{background:url(../images/desktop/task-cur.png) no-repeat;}
+.task-content ul li:hover{ background:url(../images/desktop/task-hover.png) no-repeat;}
+.task-app-icon{ position:absolute; left:5px; top:18px;}
+.task-app-icon img{ display:block; width:32px; height:32px;}
+.task-app-title{ width:60px; height:20px; line-height:20px; overflow:hidden; margin:30px 0 0 45px; color:#fff; text-shadow:1px 1px 1px #666;}
+
+.task-prev{ display:none; float:right; width:56px; height:64px; background:url(../images/desktop/task-page-l.png) no-repeat;}
+.task-next{ display:none; float:right; width:56px; height:64px; margin-left:2px; background:url(../images/desktop/task-page-r.png) no-repeat;}
+.task-prev span,
+.task-next span{ display:block; width:16px; height:26px; margin:20px 0 0 20px; background-image:url(../images/desktop/task_page.png); background-repeat:no-repeat; cursor:pointer;}
+.task-prev.disabled .task-btn-prev{ background-position:-19px -103px;}
+.task-next.disabled .task-btn-next{ background-position:-73px -103px;}
+.task-btn-prev{ background-position:-19px -56px;}
+.task-btn-next{ background-position:-73px -56px;}
+.task-btn-prev:hover{ background-position:-19px -8px;}
+.task-btn-next:hover{ background-position:-73px -8px;}
+
+
 /* navbar
 -----------------------------------------------*/
 .navbar{ display:none; position:absolute; left:0; top:0; z-index:9998; padding-top:8px;}

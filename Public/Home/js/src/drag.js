@@ -2,10 +2,7 @@
  * Drag模块
  */
 define(function(require, exports, module) {
-    
-    var config = require('./config');
-    var $ = require('jquery');
-    
+
     var doc = $(document);
     
     var Drag = function(dragObj, controlObj) {

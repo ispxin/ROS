@@ -39,6 +39,7 @@
 			</div>
 		</div>
 		
+		<!-- desk s -->
 		<div class="desk" id="desk">
 			<div class="desk-content" id="desk-content">
 				
@@ -427,7 +428,29 @@
 				
 			</div> 
 		</div>
+		<!-- desk e -->
 		
+		<!-- task s -->
+		<div class="task">
+			<div class="task-next disabled">
+				<span class="task-btn-next" id="task-btn-next"></span>
+			</div>
+			<div class="task-content" id="task-content">
+				<ul id="task-content-inner">
+
+				</ul>
+			</div>
+			<div class="task-prev">
+				<span class="task-btn-prev" id="task-btn-prev"></span>
+			</div>
+		</div>
+		<!-- task e -->
+		
+		<!-- bg s -->
+		<div class="task-bg"></div>
+		<div class="bottombar-bg"></div>
+		<!-- bg e -->
+
 		<!-- contextmenu s -->
 		<div class="contextmenu" id="contextmenu">
 			<div class="contextmenu-style">
