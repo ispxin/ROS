@@ -3,10 +3,8 @@
  */
 define(function(require, exports, module) {
     
-    var win = $(window),
-        taskContentInner = $('#task-content-inner');
-    
-    
+    var $window = $(window);
+
     var Task = function(options) {
         
         this.dialog = options.dialog;
@@ -14,47 +12,42 @@ define(function(require, exports, module) {
         this.title = options.title;
         this.icon = options.icon;
         
-        this.init();
+        this.__init();
 
     }
     
     Task.prototype = {
         
         // 初始化
-        init : function() {
-            this.createTask();
-            this.bind();
+        __init : function() {
+            
+            var _this = this;
+            
+            this.__createTask();
+            
+            this.__task.on('click', function() {
+                
+                _this.dialog.toggle();
+                
+            });
+            
         },
         
         // 创建任务
-        createTask : function() {
+        __createTask : function() {
             
             var tpl = '<div class="task-app-icon"><img src="'+ this.icon +'"></div><div class="task-app-title">'+ this.title +'</div>';
 
-            this.task = $('<li id="task-'+ this.id +'" data-id="'+ this.id +'"></li>').html(tpl).appendTo(taskContentInner);
+            this.__task = $('<li>')
+            //.addClass('active')
+            .html(tpl)
+            .appendTo($('#task-content-inner'));
         
         },
         
         // 关闭任务
         close : function() {
-            this.task.remove();
-        },
-        
-        // 事件
-        bind : function() {
-            
-            var _this = this;
-            
-            this.task.on('click', function() {
-                
-                if (_this.dialog.isHide) {
-                    _this.dialog.show();
-                } else {
-                    _this.dialog.hide();
-                }
-                
-            });
-            
+            this.__task.remove();
         }
 
         

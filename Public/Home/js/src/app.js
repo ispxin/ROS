@@ -6,7 +6,7 @@ define(function(require, exports, module) {
     var login = require('./login');
     	require('./dialog');
     	require('./task');
-    
+
     var win = $(window);
 
 	// 防反跳、延迟函数的执行在函数最后一次调用时刻的 wait 毫秒之后
@@ -190,17 +190,6 @@ define(function(require, exports, module) {
         // App打开
         appOpen : function(obj) {
         	
-        	// var dialog;
-//            
-            // if (obj.data('state')) {
-// 
-                // if (!dialog.opened) {
-                    // dialog.show();
-                // }
-//                 
-            	// return;
-            // }
-
             var appData = obj.data();
 
             var dialog = $.ros.dialog({
@@ -215,8 +204,6 @@ define(function(require, exports, module) {
             });
             
             obj.data('state', 1);
-            
-            console.log(dialog);
             
         },
     	

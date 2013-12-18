@@ -36,6 +36,11 @@ define(function(require, exports, module) {
     	var isCreate = this.__isCreate(this.o.id);
 		
 		if (isCreate) {
+		    var nowDialog = dialogList[this.o.id];
+		    if (!nowDialog.opened) {
+                nowDialog.show();
+		    }
+		    nowDialog.zIndexUp();
 			return;
 		}
 
@@ -71,7 +76,7 @@ define(function(require, exports, module) {
     	if (this.o.isDrag) {
     		$.ros.drag(this.__$('title'), this.__dialog);
     		this.__$('title').on('mousedown', function() {
-    			_this.zIndex();
+    			_this.zIndexUp();
     			var iframeMask = $('<div class="iframeMask"></div>').appendTo(_this.__$('content'));
     			$document.on('mouseup', function() {
     				iframeMask.remove();
@@ -80,6 +85,7 @@ define(function(require, exports, module) {
     	}
     	
     	this.show();
+    	this.__openTask();
     	
     }
     
@@ -90,33 +96,34 @@ define(function(require, exports, module) {
     	__init : function() {
 
 	    	this.__dialog = $('<div>')
-	    	.css({
-	    		display: 'none',
-		        position: 'absolute',
-		        left: 0,
-		        top: 0,
-		        bottom: 'auto',
-		        right: 'auto',
-		        margin: 0,
-		        padding: 0,
-		        outline: 0,
-		        border: '0 none',
-		        background: 'transparent'
-	    	})
+            .css({
+                display : 'none',
+                position : 'absolute',
+                left : 0,
+                top : 0,
+                bottom : 'auto',
+                right : 'auto',
+                zIndex : Dialog.zIndex,
+                margin : 0,
+                padding : 0,
+                outline : 0,
+                border : '0 none',
+                background : 'transparent'
+            })
 	    	.html(this.__createTmplate())
 	    	.appendTo($('#desk-dialog'));
 	    	
-	    	// 将dialog存入队列
-    		dialogList[this.o.id] = this.__dialog;
-    		
-    		console.log(dialogList);
-	    	
+	    	// 将dialog对象存入队列
+    		dialogList[this.o.id] = this;
+	
 	    },
 
     	// 显示
     	show : function() {
 
     		this.__dialog.show();
+    		
+    		this.zIndexUp();
     		
     		this.opened = true;
     		
@@ -130,6 +137,17 @@ define(function(require, exports, module) {
     		this.opened = false;
     		
     	},
+    	
+    	// 显示，隐藏切换
+        toggle : function() {
+            
+            if (this.opened) {
+                this.hide();
+            } else {
+                this.show();
+            }
+            
+        },
     	
     	// 最大化，还原
     	maxres : function(obj) {
@@ -156,6 +174,8 @@ define(function(require, exports, module) {
     		}, 500, function() {
     			// 删除队列标记
     			delete dialogList[_this.o.id];
+    			// 关闭任务
+    			_this.__task.close();
     			// 清除DOM
     			_this.__dialog.remove();
     		});
@@ -163,9 +183,9 @@ define(function(require, exports, module) {
     	},
     	
     	// 置顶浮层
-	    zIndex : function() {
-	    
-	        var index = Dialog.zIndex ++;
+	    zIndexUp : function() {
+	        
+	        var index = ++ Dialog.zIndex;
 	        
 	        this.__dialog.css('zIndex', index);
 
@@ -299,6 +319,20 @@ define(function(require, exports, module) {
 	    	
 	    	this.maxed = false;
 	    	
+	    },
+	    
+	    // 打开任务
+	    __openTask : function() {
+	        
+	        this.__task = $.ros.task({
+	            dialog : this,
+	            id : this.o.id,
+	            title : this.o.title,
+	            icon : this.o.icon
+	        });
+	        
+	        console.log(this.__task);
+	        
 	    }
     	
     }
@@ -310,7 +344,7 @@ define(function(require, exports, module) {
     var dialog = function(options) {
     	return new Dialog(options);
     }
-    
+
     if (!$.ros) {
     	$.ros = {}
     }
