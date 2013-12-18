@@ -6,8 +6,9 @@ define(function(require, exports, module) {
     require('./drag');
     require('./task');
     
-    var win = $(window),
-    	doc = $(document),
+    var $window = $(window),
+    	$document = $(document),
+    	dialogList = {},
     	urlRe = /^[a-zA-z]+:\/\/[^\s]*$/;
     
     var defaults = {
@@ -21,259 +22,290 @@ define(function(require, exports, module) {
     	isMax : true
     }
     
-    var Dialog = function(options) {
-    	this.settings = $.extend({}, defaults, options);
-    	this.isMaxed = false;
-    	this.isHide = false;
-    	this.init();
+    function Dialog(options) {
+    	
+    	var _this = this;
+    	
+    	// 判断是否显示
+    	this.opened = false;
+    	// 判断是否最大化
+    	this.maxed = false;
+    	
+    	this.o = $.extend({}, defaults, options);
+    	
+    	var isCreate = this.__isCreate(this.o.id);
+		
+		if (isCreate) {
+			return;
+		}
+
+    	this.__init();
+    	
+    	this.__center();
+    	
+    	// 绑定关闭事件
+    	this.__$('close').on('click', function() {
+    		_this.close();
+    	});
+    	
+    	// 绑定resize事件
+		$window.on('resize', function() {
+			_this.__resize();
+		});
+    	
+    	// 绑定最小化事件
+    	if (this.o.isMin) {
+    		this.__$('min').on('click', function() {
+	    		_this.hide();
+	    	});
+    	}
+    	
+    	// 绑定最大化，还原事件
+    	if (this.o.isMax) {
+    		this.__$('maxres').on('click', function() {
+    			_this.maxres($(this));
+    		});
+    	}
+
+    	// 绑定拖拽事件
+    	if (this.o.isDrag) {
+    		$.ros.drag(this.__$('title'), this.__dialog);
+    		this.__$('title').on('mousedown', function() {
+    			_this.zIndex();
+    			var iframeMask = $('<div class="iframeMask"></div>').appendTo(_this.__$('content'));
+    			$document.on('mouseup', function() {
+    				iframeMask.remove();
+    			});	
+    		});
+    	}
+    	
+    	this.show();
+    	
     }
+    
+    
     
     Dialog.prototype = {
     	
-    	// 初始化
-    	init : function() {
-    	    this.createIframe();
-    		this.createDialog();
-    		this.bind();
-    		this.openTask();
-    	},
-    	
-    	// 如果传入网址转换为iframe
-    	createIframe : function() {
-    	  
-            var isUrl = urlRe.test(this.settings.content);
-            
-            if (isUrl) {
-                this.settings.content = '<iframe src="'+ this.settings.content +'" frameborder="0" allowtransparency="true" scrolling="auto"></iframe>';
-            }
-    	     
-    	},
-    	
-    	// 创建
-    	createDialog : function() {
+    	__init : function() {
 
-    		var tpl =  '<div class="dialog-head">' +
-							( this.settings.icon ? '<div class="dialog-logo"><img src="'+ this.settings.icon +'" class="dialog-logo-icon" /></div>' : '' ) +
-							'<div class="dialog-title">'+ ( this.settings.title ? this.settings.title : '') +'</div>'+
-							'<div class="dialog-handle">' +
-								( this.settings.isMin ? '<span class="dialog-minimize" title="最小化"></span>' : '' ) +
-								( this.settings.isMax ? '<span class="dialog-maxres dialog-maximize" title="最大化" data-status="maximize"></span>' : '' ) +
-								'<span class="dialog-close" title="关闭"></span>' +
-							'</div>' +
-						'</div>' +
-						'<div class="dialog-content">'+ this.settings.content +'</div>' +
-						'<div class="dialog-foot"></div>';
-			
-			this.dialog = $('<div id="dialog-'+ this.settings.id +'" class="dialog"></div>').html(tpl);
-			
-			this.dialogTitle = this.dialog.find('.dialog-title');
-			this.dialogContent = this.dialog.find('.dialog-content');
-			this.dialogMinimize = this.dialog.find('.dialog-minimize');
-			this.dialogMaxres = this.dialog.find('.dialog-maxres');
-			this.dialogClose = this.dialog.find('.dialog-close');
-			
-			this.dialogWidth = this.settings.width + 2;
-			this.dialogHeight = this.settings.height + 29;
-			
-			this.dialogContent.css({
-				width : this.settings.width,
-				height : this.settings.height
-			});
-			
-			this.dialog.css({
-				zIndex : GLOBAL.zIndex++,
-				width : this.settings.width,
-				height : this.dialogHeight
-			});
-			
-			this.setPosition();
+	    	this.__dialog = $('<div>')
+	    	.css({
+	    		display: 'none',
+		        position: 'absolute',
+		        left: 0,
+		        top: 0,
+		        bottom: 'auto',
+		        right: 'auto',
+		        margin: 0,
+		        padding: 0,
+		        outline: 0,
+		        border: '0 none',
+		        background: 'transparent'
+	    	})
+	    	.html(this.__createTmplate())
+	    	.appendTo($('#desk-dialog'));
+	    	
+	    	// 将dialog存入队列
+    		dialogList[this.o.id] = this.__dialog;
+    		
+    		console.log(dialogList);
+	    	
+	    },
 
-			this.dialog.appendTo('body');
-    		
-    	},
-    	
-    	// 设置位置
-    	setPosition : function() {
-    		
-    		this.winWidth = win.width();
-    		this.winHeight = win.height();
-    		this.dialogLeft = (this.winWidth - this.dialogWidth) / 2;
-    		this.dialogTop = (this.winHeight - this.dialogHeight) / 2;
-
-    		if (this.isMaxed) {
-    			this.dialog.css({
-    				width : win.width() - 2,
-    				height : win.height() - 2
-    			});
-    			this.dialogContent.css({
-    				width : win.width() - 2,
-    				height : win.height() - 31
-    			});
-    		} else {
-    			this.dialog.css({
-	    			left : this.dialogLeft,
-	    			top : this.dialogTop
-	    		});
-    		}
-    		
-    	},
-    	
     	// 显示
-        show : function() {
-            this.dialog.show();
-            this.isHide = false;
-        },
+    	show : function() {
+
+    		this.__dialog.show();
+    		
+    		this.opened = true;
+    		
+    	},
     	
     	// 隐藏
     	hide : function() {
-    		this.dialog.hide();
-    		this.isHide = true;
-    	},
 
-    	// 最大化
-    	maximize : function() {
+    		this.__dialog.hide();
     		
-    		var _this = this;
-    		
-    		this.dialogMaxres.data('status', 'restore').removeClass().addClass('dialog-restore').attr('title', '还原');
-
-    		this.dialog.animate({
-    			left : 0,
-    			top : 0,
-    			width : this.winWidth - 2,
-    			height : this.winHeight - 2
-    		});
-    		
-    		this.dialogContent.animate({
-    		   width : this.winWidth - 2,
-    		   height : this.winHeight - 31
-    		});
+    		this.opened = false;
     		
     	},
     	
-    	// 还原
-    	restore : function(obj) {
+    	// 最大化，还原
+    	maxres : function(obj) {
     		
-    		var _this = this;
-    		
-    		this.dialogMaxres.data('status', 'maximize').removeClass().addClass('dialog-maximize').attr('title', '最大化');
-
-    		this.dialog.animate({
-    			left : this.dialogLeft,
-    			top : this.dialogTop,
-    			width : this.settings.width,
-    			height : this.dialogHeight
-    		});
-    		
-    		this.dialogContent.animate({
-               width : this.settings.width,
-               height : this.settings.height
-            });
-    		
-    	},
-    	
-    	// 最大化、还原
-    	maxres : function(status) {
-    		
-    		switch(status) {
-    			
-    			case 'maximize':
-    			this.maximize();
-    			this.isMaxed = true;
-    			break;
-    			
-    			case 'restore':
-    			this.restore();
-    			this.isMaxed = false;
-    			break;
-    			
+    		if (!this.maxed) {
+    			this.__maximize(obj);
+    		} else {
+    			this.__restore(obj);
     		}
-    		
-    	},
-    	
-    	// 创建iframe mask 解决拖拽bug 
-    	createIframeMask : function() {
-    		
-    		var _this = this;
-    		
-    		this.dialogTitle.on('mousedown', function() {
-    			
-    			_this.iframeMask = $('<div class="iframeMask"></div>').appendTo(_this.dialogContent);
-    			
-    			_this.dialog.css('zIndex', GLOBAL.zIndex++);
-    			
-    			doc.on('mouseup', function() {
-	    			_this.iframeMask.remove();
-	    		});
-    			
-    		});
 
     	},
     	
-    	// 关闭
+    	// 关闭（销毁）
     	close : function() {
     		
     		var _this = this;
-    		var appId = '#app-' + this.settings.id;
 
-    		this.dialog.animate({
-    			left : this.winWidth,
+    		this.__dialog.animate({
+    			left : $window.width(),
     			top : 0,
     			width : 0,
     			height : 0,
     			opacity : 0
     		}, 500, function() {
-    			$(appId).data('state', 0);
-    			_this.dialog.remove();
-    			_this.task.close();
+    			// 删除队列标记
+    			delete dialogList[_this.o.id];
+    			// 清除DOM
+    			_this.__dialog.remove();
     		});
+    		
+    	},
+    	
+    	// 置顶浮层
+	    zIndex : function() {
+	    
+	        var index = Dialog.zIndex ++;
+	        
+	        this.__dialog.css('zIndex', index);
+
+	    },
+	    
+	    // 判断是否创建过
+	    __isCreate : function(id) {
+
+	    	var result = false;
+	    	
+	    	$.each(dialogList, function(i) {
+	    		if (id == i) {
+	    			result = true;
+	    		}
+	    	});
+	    	
+	    	return result;
+	    	
+	    },
+
+    	// 处理内容
+    	__processContent : function() {
+    		
+    		var isUrl = urlRe.test(this.o.content);
+            
+            if (isUrl) {
+                return '<iframe i="iframe" src="'+ this.o.content +'" frameborder="0" allowtransparency="true" scrolling="auto" width="'+ this.o.width +'" height="'+ this.o.height +'"></iframe>';
+            } else {
+            	return this.o.content;
+            }
+    		
+    	},
+    	
+    	// 创建模板
+    	__createTmplate : function() {
+    		
+    		var tmplate = 
+    			'<div i="dialog" class="dialog">' +
+				    '<div i="head" class="dialog-head">' +
+						( this.o.icon ? '<div class="dialog-logo"><img src="'+ this.o.icon +'" class="dialog-logo-icon" /></div>' : '' ) +
+						'<div i="title" class="dialog-title">'+ ( this.o.title ? this.o.title : '') +'</div>'+
+						'<div class="dialog-handle">' +
+							( this.o.isMin ? '<span i="min" class="dialog-minimize" title="最小化"></span>' : '' ) +
+							( this.o.isMax ? '<span i="maxres" class="dialog-maxres dialog-maximize" title="最大化"></span>' : '' ) +
+							'<span i="close" class="dialog-close" title="关闭"></span>' +
+						'</div>' +
+					'</div>' +
+					'<div i="content" class="dialog-content">'+ this.__processContent() +'</div>' +
+				'</div>';
+    		
+    		return tmplate;
+    	
+    	},
+    	
+    	// 居中
+    	__center : function() {
+
+    		var dialog = this.__dialog,
+    			wWidth = $window.width(),
+    			wHeight = $window.height(),
+    			dWidth = dialog.width(),
+    			dHeight = dialog.height(),
+    			dLeft = (wWidth - dWidth) / 2,
+    			dTop = (wHeight - dHeight) / 2
+    		
+    		dialog.css({
+    			left : dLeft,
+    			top : dTop
+    		});
+    		
+    	},
+    	
+    	// 拖动
+    	__resize : function() {
+    		
+    		if (this.maxed) {
+    			this.__$('iframe').css({
+	    			width : $window.width() - 2,
+	    			height : $window.height() - 31
+	    		});
+    		}
 
     	},
 
-        // 打开任务
-        openTask : function() {
-            
-            this.task = $.ros.task({
-               dialog : this,
-               id : this.settings.id,
-               icon : this.settings.icon,
-               title : this.settings.title 
-            });
-            
-        },
-  	
-    	// 事件绑定
-    	bind : function() {
-    		
-    		var _this = this;
-    		
-    		win.on('resize', function() {
-    			_this.setPosition();
-    		});
-    		
-    		this.dialogMinimize.on('click', function() {
-    		    _this.hide();
-    		});
-    		
-    		this.dialogMaxres.on('click', function() {
+	    // 选择器
+	    __$: function (i) {
+	        return this.__dialog.find('[i=' + i + ']');
+	    },
+	    
+	    // 最大化
+	    __maximize : function(obj) {
+	    	
+	    	var oldLeft = this.__dialog.offset().left,
+	    		oldTop = this.__dialog.offset().top;
     			
-    			var status = $(this).data('status');
-    			_this.maxres(status);
+    		obj.data({
+    			left : oldLeft,
+    			top : oldTop
+    		});
     			
-    		});
+    		this.__dialog.animate({
+    			left : 0,
+    			top : 0
+    		}, 500);
     		
-    		this.dialogClose.on('click', function() {
-    			_this.close();
-    		});
+    		this.__$('iframe').animate({
+    			width : $window.width() - 2,
+    			height : $window.height() - 31
+    		}, 500);
+	    	
+	    	obj.removeClass('dialog-maximize').addClass('dialog-restore').attr('title', '还原');
+
+	    	this.maxed = true;
+	    	
+	    },
+	    
+	    // 还原
+	    __restore : function(obj) {
+    			
+    		this.__dialog.animate({
+    			left : obj.data('left'),
+    			top : obj.data('top')
+    		}, 500);
     		
-    		if (this.settings.isDrag) {
-    			this.createIframeMask();
-    			$.ros.drag(_this.dialogTitle, _this.dialog);
-    		}
-    		
-    	}
+    		this.__$('iframe').animate({
+    			width : this.o.width,
+    			height : this.o.height
+    		}, 500);
+	    	
+	    	obj.removeClass('dialog-restore').addClass('dialog-maximize').attr('title', '最大化');
+	    	
+	    	this.maxed = false;
+	    	
+	    }
     	
     }
+    
+    // 当前叠加高度
+    Dialog.zIndex = 1024;
+
     
     var dialog = function(options) {
     	return new Dialog(options);

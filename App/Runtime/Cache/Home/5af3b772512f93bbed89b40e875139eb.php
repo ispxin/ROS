@@ -9,42 +9,41 @@
 
 	<body>
 
-		<div class="navbar" id="navbar">
-			<div class="navbar-wraper">
-				<div class="avatar"><img src="__IMG__/desktop/avatar.png" id="navbar-avatar" alt="请登录" /></div>
-				<div class="indicator">
-					<ul id="indicator">
-						<li class="active">
-							<span class="indicator-num indicator-num-1">1</span>
-							<span class="indicator-active"></span>
-						</li>
-						<li>
-							<span class="indicator-num indicator-num-2">2</span>
-							<span class="indicator-active"></span>
-						</li>
-						<li>
-							<span class="indicator-num indicator-num-3">3</span>
-							<span class="indicator-active"></span>
-						</li>
-						<li>
-							<span class="indicator-num indicator-num-4">4</span>
-							<span class="indicator-active"></span>
-						</li>
-						<li>
-							<span class="indicator-num indicator-num-5">5</span>
-							<span class="indicator-active"></span>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		
 		<!-- desk s -->
 		<div class="desk" id="desk">
+			<div class="navbar" id="navbar">
+				<div class="navbar-wraper">
+					<div class="avatar"><img src="__IMG__/desktop/avatar.png" id="navbar-avatar" alt="请登录" /></div>
+					<div class="indicator">
+						<ul id="indicator">
+							<li class="active">
+								<span class="indicator-num indicator-num-1">1</span>
+								<span class="indicator-active"></span>
+							</li>
+							<li>
+								<span class="indicator-num indicator-num-2">2</span>
+								<span class="indicator-active"></span>
+							</li>
+							<li>
+								<span class="indicator-num indicator-num-3">3</span>
+								<span class="indicator-active"></span>
+							</li>
+							<li>
+								<span class="indicator-num indicator-num-4">4</span>
+								<span class="indicator-active"></span>
+							</li>
+							<li>
+								<span class="indicator-num indicator-num-5">5</span>
+								<span class="indicator-active"></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 			<div class="desk-content" id="desk-content">
 				
 				<ul class="app-content">
-					<li id="app-1" class="app-item" data-id="1" data-title="我的博客" data-icon="__IMG__/app/clover.png" data-type="app" data-url="http://www.wangyingran.com" data-width="800" data-height="500" data-ismix="true" data-ismax="true" data-state="0">
+					<li class="app-item" data-id="app_1" data-title="我的博客" data-icon="__IMG__/app/clover.png" data-type="app" data-url="http://www.wangyingran.com" data-width="800" data-height="500" data-ismix="true" data-ismax="true" data-state="0">
 						<div class="app-icon">
 							<img src="__IMG__/app/clover.png">
 						</div>
@@ -52,7 +51,7 @@
 							<span><i>我的博客</i></span>
 						</div>
 					</li>
-					<li id="app-2" class="app-item" data-id="2" data-title="我的博客" data-icon="__IMG__/app/weibo.png" data-type="app" data-url="http://weibo.com/wangyingran" data-width="1000" data-height="600" data-ismix="true" data-ismax="true" data-state="0">
+					<li class="app-item" data-id="app_2" data-title="我的博客" data-icon="__IMG__/app/weibo.png" data-type="app" data-url="http://weibo.com/wangyingran" data-width="1000" data-height="600" data-ismix="true" data-ismax="true" data-state="0">
 						<div class="app-icon">
 							<img src="__IMG__/app/weibo.png">
 						</div>
@@ -63,370 +62,23 @@
 				</ul>
 				
 				<ul class="app-content">
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客2</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
+					
 				</ul>
 				
 				<ul class="app-content">
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客3</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
+					
 				</ul>
 				
 				<ul class="app-content">
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客4</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
+					
 				</ul>
 				
 				<ul class="app-content">
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客5</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					<li class="app-item" title="我的博客" type="app">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
+					
 				</ul>
 				
 			</div> 
+			<div class="desk-dialog" id="desk-dialog"></div>
 		</div>
 		<!-- desk e -->
 		

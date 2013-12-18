@@ -189,22 +189,21 @@ define(function(require, exports, module) {
 
         // App打开
         appOpen : function(obj) {
-           
-            if (obj.data('state')) {
+        	
+        	// var dialog;
+//            
+            // if (obj.data('state')) {
+// 
+                // if (!dialog.opened) {
+                    // dialog.show();
+                // }
+//                 
+            	// return;
+            // }
 
-                if (this.dialog.isHide) {
-                    this.dialog.show();
-                }
-                
-            	return;
-            }
-            
-            obj.data('state', 1);
-            
             var appData = obj.data();
-            
-            // 打开窗口
-            this.dialog = $.ros.dialog({
+
+            var dialog = $.ros.dialog({
             	id : appData.id,
                 icon : appData.icon,
                 title : appData.title,
@@ -214,6 +213,10 @@ define(function(require, exports, module) {
                 isMin : appData.ismin,
                 isMax : appData.ismax
             });
+            
+            obj.data('state', 1);
+            
+            console.log(dialog);
             
         },
     	
@@ -236,8 +239,8 @@ define(function(require, exports, module) {
             });
             
             // App打开
-            $('#desk').on('click', 'li', function() {
-               _this.appOpen($(this)); 
+            $('#desk-content').on('click', 'li', function() {
+            	_this.appOpen($(this)); 
             });
             
         }
