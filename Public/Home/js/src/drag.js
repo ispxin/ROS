@@ -5,7 +5,7 @@ define(function(require, exports, module) {
 
     var $document = $(document);
     
-    var Drag = function(dragObj, controlObj) {
+    function Drag(dragObj, controlObj) {
     	
     	this.dragObj = dragObj;
     	this.controlObj = controlObj || dragObj;

@@ -49,7 +49,7 @@ a:hover { color:#000;}
 
 /* desktop
 -----------------------------------------------*/
-.desk{ position:absolute; z-index:1; width:100%; height:100%; overflow:hidden;}
+.desk{ position:absolute; z-index:4; width:100%; height:100%; overflow:hidden;}
 .desk-content{ position:relative; margin:80px 120px;}
 .app-content{ position:absolute; left:0; top:0; width:100%; height:100%; opacity:1; overflow:hidden;}
 .app-content .app-item{ position:absolute; left:0; top:0; width:88px; height:88px; cursor:pointer;}
@@ -60,14 +60,12 @@ a:hover { color:#000;}
 .app-content .app-item .app-name span{ display:inline-block; height:20px; margin-left:5px; background:url(../images/desktop/app-name-bg-right.png) right no-repeat; color:#fff;}
 .app-content .app-item .app-name i{ position:relative; right:10px; display:block; height:20px; line-height:20px; padding-left:10px; background:url(../images/desktop/app-name-bg-left.png) left no-repeat;}
 
-.desk-dialog{}
-
 .task-bg{ position:absolute; bottom:0; width:100%; height:64px; background:url(../images/desktop/task-bg.png) bottom repeat-x;}
 .bottombar-bg{ position:absolute; bottom:0; width:100%; height:130px; background:url(../images/desktop/bottombar-bg.png) repeat-x;}
 
 /* task
 -----------------------------------------------*/
-.task{ position:absolute; z-index:2; bottom:0; left:0; width:100%;}
+.task{ position:absolute; z-index:5; bottom:0; left:0; width:100%;}
 .task-content{ float:right; height:64px; overflow:hidden;}
 .task-content ul{ float:right; height:100%;}
 .task-content ul li{ float:left; position:relative; width:112px; height:64px; margin-left:2px; overflow:hidden; background:url(../images/desktop/task-nor.png) no-repeat; cursor:pointer;}
