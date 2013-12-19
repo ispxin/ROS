@@ -71,8 +71,6 @@ define(function(require, exports, module) {
 
         	});
         	
-        	// console.log(taskList);
-        	
         },
         
         // 取消活动标记
