@@ -26,9 +26,9 @@ define(function(require, exports, module) {
     	
     	var _this = this;
     	
-    	// 判断是否显示
+    	// 是否已显示
     	this.opened = false;
-    	// 判断是否最大化
+    	// 是否已最大化
     	this.maxed = false;
     	
     	this.o = $.extend({}, defaults, options);
@@ -76,7 +76,14 @@ define(function(require, exports, module) {
     	if (this.o.isDrag) {
     		$.ros.drag(this.__$('title'), this.__dialog);
     		this.__$('title').on('mousedown', function() {
+    			
+    			// 置顶窗口
     			_this.zIndexUp();
+    			
+    			// 设置为活动任务
+    			_this.__task.setActive();
+    			
+    			// 解决拖拽bug
     			var iframeMask = $('<div class="iframeMask"></div>').appendTo(_this.__$('content'));
     			$document.on('mouseup', function() {
     				iframeMask.remove();
@@ -88,8 +95,6 @@ define(function(require, exports, module) {
     	this.__openTask();
     	
     }
-    
-    
     
     Dialog.prototype = {
     	
@@ -140,12 +145,22 @@ define(function(require, exports, module) {
     	
     	// 显示，隐藏切换
         toggle : function() {
-            
-            if (this.opened) {
-                this.hide();
-            } else {
-                this.show();
-            }
+        	
+        	var dialogCount = this.__getDialogCount();
+        	
+        	if (dialogCount > 1) {
+        		
+        		this.show();
+        		
+        	} else if (dialogCount == 1) {
+        		
+        		if (this.opened) {
+	                this.hide();
+	            } else {
+	                this.show();
+	            }
+        		
+        	}
             
         },
     	
@@ -172,13 +187,20 @@ define(function(require, exports, module) {
     			height : 0,
     			opacity : 0
     		}, 500, function() {
-    			// 删除队列标记
-    			delete dialogList[_this.o.id];
-    			// 关闭任务
-    			_this.__task.close();
-    			// 清除DOM
-    			_this.__dialog.remove();
+    			_this.remove();
     		});
+    		
+    	},
+    	
+    	// 销毁
+    	remove : function() {
+    		
+    		// 删除队列标记
+			delete dialogList[this.o.id];
+			// 关闭任务
+			this.__task.close();
+			// 清除DOM
+			this.__dialog.remove();
     		
     	},
     	
@@ -331,8 +353,15 @@ define(function(require, exports, module) {
 	            icon : this.o.icon
 	        });
 	        
-	        console.log(this.__task);
-	        
+	    },
+	    
+	    // 返回当前dialog队列数量
+	    __getDialogCount : function() {
+	    	var count = 0;
+	    	$.each(dialogList, function() {
+	    		count++;
+	    	});
+	    	return count;
 	    }
     	
     }
@@ -350,5 +379,9 @@ define(function(require, exports, module) {
     }
     
     $.ros.dialog = dialog;
+    
+    module.exports = {
+    	dialogList : dialogList
+    }
 
 });

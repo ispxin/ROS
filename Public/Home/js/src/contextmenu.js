@@ -3,60 +3,27 @@
  */
 define(function(require, exports, module) {
 
-    var app = require('./app');
+    var $document = $(document),
+    	app = require('./app'),
+    	dialog = require('./dialog'),
+    	obj = $('#contextmenu');
     
     var contextmenu = {
         
         // 初始化
         init : function() {
 
-            this.doc = $(document);
-            this.obj = $('#contextmenu');
-
-            this.bind();
-            
-        },
-        
-        // 显示右键菜单
-        show : function(ev) {
-            
-            this.obj.fadeIn(100);
-            
-            var iWidth = this.obj.outerWidth(),
-                iHeight = this.obj.outerHeight(),
-                x = ev.clientX,
-                y = ev.clientY,
-                w = this.doc.width() - iWidth,
-                h = this.doc.height() - iHeight;
-            
-            if (x > w) {
-                this.obj.css('left', x - iWidth);
-            } else {
-                this.obj.css('left', x);
-            }
-            
-            if (y > h) {
-                this.obj.css('top', y - iHeight);
-            } else {
-                this.obj.css('top', y);
-            }
-              
-        },
-        
-        // 事件
-        bind : function() {
-            
             var _this = this;
             
             // 右键调出菜单
-            this.doc.on('contextmenu', function(ev) {
+            $document.on('contextmenu', function(ev) {
                 _this.show(ev);
                 return false;
             });
             
             // 桌面单击关闭菜单
-            this.doc.on('click', function() {
-               _this.obj.fadeOut(100);
+            $document.on('click', function() {
+            	obj.fadeOut(100);
             });
             
             // 横向排序
@@ -73,11 +40,52 @@ define(function(require, exports, module) {
                 $(this).addClass('on');
             });
             
-            // 锁定
-            // $('#lockDesk').on('click', function() {
-                // $('#wallpaper').css('zIndex', 100000); 
-            // });
+            // 显示桌面
+            $('#showDesk').on('click', function() {
+            	if ($.isEmptyObject(dialog.dialogList)) {
+            		return;
+            	}
+            	$.each(dialog.dialogList, function(i, n) {
+            		n.hide();
+            	});
+            });
             
+            // 关闭所有应用
+            $('#closeAllApp').on('click', function() {
+            	if ($.isEmptyObject(dialog.dialogList)) {
+            		return;
+            	}
+            	$.each(dialog.dialogList, function(i, n) {
+            		n.remove();
+            	});
+            });
+            
+        },
+        
+        // 显示右键菜单
+        show : function(ev) {
+            
+            obj.fadeIn(100);
+            
+            var iWidth = obj.outerWidth(),
+                iHeight = obj.outerHeight(),
+                x = ev.clientX,
+                y = ev.clientY,
+                w = $document.width() - iWidth,
+                h = $document.height() - iHeight;
+            
+            if (x > w) {
+                obj.css('left', x - iWidth);
+            } else {
+                obj.css('left', x);
+            }
+            
+            if (y > h) {
+                obj.css('top', y - iHeight);
+            } else {
+                obj.css('top', y);
+            }
+              
         }
         
     }

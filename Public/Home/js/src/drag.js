@@ -3,7 +3,7 @@
  */
 define(function(require, exports, module) {
 
-    var doc = $(document);
+    var $document = $(document);
     
     var Drag = function(dragObj, controlObj) {
     	
@@ -23,8 +23,8 @@ define(function(require, exports, module) {
     		this.disX = ev.clientX - this.controlObj.position().left;
 	        this.disY = ev.clientY - this.controlObj.position().top;
 	        
-	        this.docWidth = doc.width();
-	        this.docHeight = doc.height();
+	        this.docWidth = $document.width();
+	        this.docHeight = $document.height();
 	        
 	        this.controlWidth = this.controlObj.outerWidth();
 	        this.controlHeight = this.controlObj.outerHeight();
@@ -33,11 +33,11 @@ define(function(require, exports, module) {
 	            this.setCapture();
 	        }
 	        
-	        doc.on('mousemove.drag', function(ev) {
+	        $document.on('mousemove.drag', function(ev) {
 	        	_this.move(ev);
 	        });
 	        
-	        doc.on('mouseup.drag', function() {
+	        $document.on('mouseup.drag', function() {
     			_this.up();
     		});
     		
@@ -70,8 +70,8 @@ define(function(require, exports, module) {
     	// 鼠标弹起
     	up : function() {
 
-    		doc.off('mousemove.drag');
-    		doc.off('mouseup.drag');
+    		$document.off('mousemove.drag');
+    		$document.off('mouseup.drag');
     		
     		if (this.dragObj.releaseCapture) {
                 this.dragObj.releaseCapture();

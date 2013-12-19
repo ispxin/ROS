@@ -59,6 +59,30 @@
 							<span><i>新浪微博</i></span>
 						</div>
 					</li>
+					<li class="app-item" data-id="app_3" data-title="我的博客" data-icon="__IMG__/app/clover.png" data-type="app" data-url="http://www.wangyingran.com" data-width="800" data-height="500" data-ismix="true" data-ismax="true" data-state="0">
+						<div class="app-icon">
+							<img src="__IMG__/app/clover.png">
+						</div>
+						<div class="app-name">
+							<span><i>我的博客</i></span>
+						</div>
+					</li>
+					<li class="app-item" data-id="app_4" data-title="我的博客" data-icon="__IMG__/app/clover.png" data-type="app" data-url="http://www.wangyingran.com" data-width="800" data-height="500" data-ismix="true" data-ismax="true" data-state="0">
+						<div class="app-icon">
+							<img src="__IMG__/app/clover.png">
+						</div>
+						<div class="app-name">
+							<span><i>我的博客</i></span>
+						</div>
+					</li>
+					<li class="app-item" data-id="app_5" data-title="我的博客" data-icon="__IMG__/app/clover.png" data-type="app" data-url="http://www.wangyingran.com" data-width="800" data-height="500" data-ismix="true" data-ismax="true" data-state="0">
+						<div class="app-icon">
+							<img src="__IMG__/app/clover.png">
+						</div>
+						<div class="app-name">
+							<span><i>我的博客</i></span>
+						</div>
+					</li>
 				</ul>
 				
 				<ul class="app-content">
@@ -111,7 +135,10 @@
 						<a href="javascript:;" class="contextmenu-a" id="lockDesk">锁定</a>
 					</li>
 					<li class="contextmenu-li">
-						<a href="#" class="contextmenu-a">显示桌面</a>
+						<a href="javascript:;" class="contextmenu-a" id="showDesk">显示桌面</a>
+					</li>
+					<li class="contextmenu-li">
+						<a href="javascript:;" class="contextmenu-a" id="closeAllApp">关闭所有应用</a>
 					</li>
 					<li class="contextmenu-li">
 						<span class="line"></span>

@@ -7,7 +7,7 @@ define(function(require, exports, module) {
     	require('./dialog');
     	require('./task');
 
-    var win = $(window);
+    var $window = $(window);
 
 	// 防反跳、延迟函数的执行在函数最后一次调用时刻的 wait 毫秒之后
 	function debounce(func, wait, immediate) {
@@ -52,9 +52,9 @@ define(function(require, exports, module) {
     	// 设置桌面
     	setDesk : function() {
     	    
-    	    this.iWidth = win.width() - 240;
-            this.iHeight = win.height() - 160;
-            this.iLeft = win.width() - 120;
+    	    this.iWidth = $window.width() - 240;
+            this.iHeight = $window.height() - 160;
+            this.iLeft = $window.width() - 120;
     		
     		this.oDeskContent.css({
     			width : this.iWidth,
@@ -74,7 +74,7 @@ define(function(require, exports, module) {
     	// 设置Navbar位置
     	setNavbar : function() {
     		this.oNavbar.css({
-    			left : (win.width() - 240) / 2,
+    			left : ($window.width() - 240) / 2,
     			top : 10,
     			display : 'block'
     		});
@@ -176,7 +176,7 @@ define(function(require, exports, module) {
     		var setAppXDebounce = debounce(this.setAppX, 100);
     		var setAppYDebounce = debounce(this.setAppY, 100);
 
-    		win.on('resize', function() {
+    		$window.on('resize', function() {
     			setDeskDebounce();
     			if (GLOBAL.sortType == 'x') {
                     setAppXDebounce();
