@@ -34,7 +34,8 @@ define(function(require, exports, module) {
     	require('./dialog');
     	require('./task');
 
-    var $window = $(window);
+    var $window = $(window),
+    	$document = $(document);
     
     var desk = {
     	
@@ -263,7 +264,7 @@ define(function(require, exports, module) {
             var _this = this;
             
             // Navbar拖拽
-            $.ros.drag(this.oNavbar);
+            $.ros.drag(true, this.oNavbar);
 
             // 指示器切换
             this.aIndicator.on('click', function() {
@@ -275,15 +276,42 @@ define(function(require, exports, module) {
                 login.open();
             });
             
-            // App打开
-            this.oDeskContent.on('click', 'li', function() {
-            	_this.appOpen($(this)); 
-            });
-            
             // App拖拽
             this.oDeskContent.find('li').each(function() {
-                $.ros.drag($(this));
+                $.ros.drag(false, $(this));
             });
+            
+            // 鼠标按下App
+            this.oDeskContent.on('mousedown', 'li', function(ev) {
+            	
+            	var $this = $(this);
+        		
+        		// 鼠标按下表明用户要打开App
+        		$this.data('isOpenApp', true);
+        		// 获取当前点击位置
+        		var iX = ev.clientX;
+        		var iY = ev.clientY;
+        		
+        		$document.on('mousemove.isOpenApp', function(ev) {
+        			// 鼠标移动表明用户不需要打开App，只是拖动App切换位置
+        			if (Math.abs(ev.clientX - iX) > 5 || Math.abs(ev.clientY - iY) > 5) {
+        				$this.data('isOpenApp', false);
+        			}
+        		});
+        		
+        	});
+        	
+        	// 鼠标弹起App
+        	this.oDeskContent.on('mouseup', 'li', function() {
+            	
+            	if ($(this).data('isOpenApp')) {
+            		_this.appOpen($(this));
+            	}
+            	
+            	$document.off('mousemove.isOpenApp');
+        		
+        	});
+            
             
         }
     	

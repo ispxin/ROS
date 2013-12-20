@@ -4,7 +4,7 @@
 define(function(require, exports, module) {
 
     var $document = $(document),
-    	app = require('./app'),
+    	desk = require('./desk'),
     	dialog = require('./dialog'),
     	obj = $('#contextmenu');
     
@@ -18,7 +18,7 @@ define(function(require, exports, module) {
             // 右键调出菜单
             $document.on('contextmenu', function(ev) {
                 _this.show(ev);
-                return false;
+                ev.preventDefault();
             });
             
             // 桌面单击关闭菜单
@@ -28,14 +28,14 @@ define(function(require, exports, module) {
             
             // 横向排序
             $('#setAppX').on('click', function() {
-                app.setAppSort('x');
+                desk.setAppSort('x');
                 $(this).parent().parent().find('a').removeClass('on');
                 $(this).addClass('on');
             });
             
             // 纵向排序
             $('#setAppY').on('click', function() {
-                app.setAppSort('y');
+                desk.setAppSort('y');
                 $(this).parent().parent().find('a').removeClass('on');
                 $(this).addClass('on');
             });

@@ -40,45 +40,33 @@
 					</div>
 				</div>
 			</div>
-			<div class="desk-content" id="desk-content">
-				
-				<!-- <ul class="app-content">
-					<li class="app-item" data-id="app_1" data-type="app" data-title="我的博客" data-icon="__IMG__/app/clover.png" data-url="http://www.wangyingran.com" data-width="800" data-height="500" data-ismix="true" data-ismax="true">
-						<div class="app-icon">
-							<img src="__IMG__/app/clover.png">
-						</div>
-						<div class="app-name">
-							<span><i>我的博客</i></span>
-						</div>
-					</li>
-					
-				</ul> -->
-				
-			</div> 
+			<div class="desk-content" id="desk-content"></div> 
 			<div class="desk-dialog" id="desk-dialog"></div>
+			
+			
+			<!-- task s -->
+			<div class="task">
+				<div class="task-next disabled">
+					<span class="task-btn-next" id="task-btn-next"></span>
+				</div>
+				<div class="task-content" id="task-content">
+					<ul id="task-content-inner">
+	
+					</ul>
+				</div>
+				<div class="task-prev">
+					<span class="task-btn-prev" id="task-btn-prev"></span>
+				</div>
+			</div>
+			<!-- task e -->
+			
+			<!-- bg s -->
+			<div class="task-bg"></div>
+			<div class="bottombar-bg"></div>
+			<!-- bg e -->
+			
 		</div>
 		<!-- desk e -->
-		
-		<!-- task s -->
-		<div class="task">
-			<div class="task-next disabled">
-				<span class="task-btn-next" id="task-btn-next"></span>
-			</div>
-			<div class="task-content" id="task-content">
-				<ul id="task-content-inner">
-
-				</ul>
-			</div>
-			<div class="task-prev">
-				<span class="task-btn-prev" id="task-btn-prev"></span>
-			</div>
-		</div>
-		<!-- task e -->
-		
-		<!-- bg s -->
-		<div class="task-bg"></div>
-		<div class="bottombar-bg"></div>
-		<!-- bg e -->
 
 		<!-- contextmenu s -->
 		<div class="contextmenu" id="contextmenu">

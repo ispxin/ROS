@@ -74,7 +74,8 @@ define(function(require, exports, module) {
 
     	// 绑定拖拽事件
     	if (this.o.isDrag) {
-    		$.ros.drag(this.__$('title'), this.__dialog);
+    		$.ros.drag(false, this.__$('title'), this.__dialog);
+    		
     		this.__$('title').on('mousedown', function() {
     			
     			// 置顶窗口

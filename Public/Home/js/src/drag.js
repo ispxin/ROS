@@ -5,8 +5,9 @@ define(function(require, exports, module) {
 
     var $document = $(document);
     
-    function Drag(dragObj, controlObj) {
+    function Drag(lock, dragObj, controlObj) {
     	
+    	this.lock = lock;
     	this.dragObj = dragObj;
     	this.controlObj = controlObj || dragObj;
     	
@@ -48,17 +49,21 @@ define(function(require, exports, module) {
 
     		var L = ev.clientX - this.disX;
             var T = ev.clientY - this.disY;
-
-            if (L < 0) {
-                L = 0;
-            } else if (L > this.docWidth - this.controlWidth) {
-                L = this.docWidth - this.controlWidth;
-            }
-            if (T < 0) {
-                T = 0;
-            } else if (T > this.docHeight - this.controlHeight) {
-                T = this.docHeight - this.controlHeight;
-            }
+			
+			if (this.lock) {
+				
+				if (L < 0) {
+	                L = 0;
+	            } else if (L > this.docWidth - this.controlWidth) {
+	                L = this.docWidth - this.controlWidth;
+	            }
+	            if (T < 0) {
+	                T = 0;
+	            } else if (T > this.docHeight - this.controlHeight) {
+	                T = this.docHeight - this.controlHeight;
+	            }
+				
+			}
 
             this.controlObj.css({
             	left : L,
@@ -87,8 +92,7 @@ define(function(require, exports, module) {
     		this.dragObj.on('mousedown', function(ev) {
     			
     			_this.down(ev);
-
-    			return false;
+    			ev.preventDefault();
     			
     		});
 
@@ -96,8 +100,8 @@ define(function(require, exports, module) {
     	
     }
     
-    var drag = function(dragObj, controlObj) {
-    	new Drag(dragObj, controlObj);
+    var drag = function(lock, dragObj, controlObj) {
+    	new Drag(lock, dragObj, controlObj);
     }
     
     if (!$.ros) {
