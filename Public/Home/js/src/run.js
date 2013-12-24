@@ -10,7 +10,7 @@ define(function(require) {
 	require('./desk').init();
 	
 	// 加载Contextmenu模块
-	// require('./contextmenu').init();
+	require('./contextmenu').init();
 
 	// console.log(seajs.cache);
 

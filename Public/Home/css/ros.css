@@ -44,7 +44,8 @@ a:hover { color:#000;}
 { background-image:url(../images/desktop/sprite_main.png); background-repeat:no-repeat;}
 
 .contextmenu-a .icon-arrow,
-.contextmenu .icon
+.contextmenu .icon,
+.app-add
 { background-image:url(../images/desktop/all-icons.png); background-repeat:no-repeat;}
 
 /* desktop
@@ -59,6 +60,8 @@ a:hover { color:#000;}
 .app-content .app-item .app-name{ text-align:center; text-shadow:1px 1px 1px #666;}
 .app-content .app-item .app-name span{ display:inline-block; height:20px; margin-left:5px; background:url(../images/desktop/app-name-bg-right.png) right no-repeat; color:#fff;}
 .app-content .app-item .app-name i{ position:relative; right:10px; display:block; height:20px; line-height:20px; padding-left:10px; background:url(../images/desktop/app-name-bg-left.png) left no-repeat;}
+
+.app-add{ display:block; width:50px; height:50px; background-position:-380px -500px;}
 
 .task-bg{ position:absolute; bottom:0; width:100%; height:64px; background:url(../images/desktop/task-bg.png) bottom repeat-x;}
 .bottombar-bg{ position:absolute; bottom:0; width:100%; height:130px; background:url(../images/desktop/bottombar-bg.png) repeat-x;}
