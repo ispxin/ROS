@@ -156,6 +156,9 @@ define(function(require, exports, module) {
            this.aAppContent.eq(index).stop().animate({ left : 0, opacity : 1 }, 600);
            
            this.iNow = index;
+           
+           // 当前屏幕
+           GLOBAL.nowScreen = index;
   
         },
     	
@@ -403,6 +406,15 @@ define(function(require, exports, module) {
             });
             
         },
+        
+        // 删除应用
+        appDel : function(obj) {
+            
+            obj.remove();
+            
+            this.setAppSort(GLOBAL.sortType);
+            
+        },
     	
     	// 事件
         bind : function() {
@@ -445,6 +457,12 @@ define(function(require, exports, module) {
     	},
     	setAppSort : function(type) {
     	    desk.setAppSort(type);
+    	},
+    	appOpen : function(obj) {
+    	    desk.appOpen(obj);
+    	},
+    	appDel : function(obj) {
+    	    desk.appDel(obj);
     	}
     }
 

@@ -208,6 +208,8 @@ background:-moz-linear-gradient(0% 0% 270deg, #fff, #fff, #f0f0f0 100%);
 .contextmenu .icon-current{ display:none; background-position:-100px -460px;}
 .contextmenu .icon-folder{ background-position:-160px -80px;}
 .contextmenu .icon-app{ background-position:-140px -80px;}
+.contextsubmenu-a.disabled{ color:#999;}
+.contextsubmenu-a.disabled:hover{ background:none; color:#999; cursor:default;}
 
 /* other
 -----------------------------------------------*/

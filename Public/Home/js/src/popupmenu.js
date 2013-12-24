@@ -32,6 +32,7 @@ define(function(require, exports, module) {
 			$('#desk-content').on('contextmenu', 'li[data-type="app"]', function(ev) {
 				
 				var appmenu = _this.appmenu();
+				    appmenu.obj = $(this);
 				
 				_this.show(ev, appmenu);
 				
@@ -99,7 +100,7 @@ define(function(require, exports, module) {
 			var tpl = '<div class="contextmenu-style">' +
 							'<ul class="contextmenu-ul">' +
 								'<li class="contextmenu-li">' +
-									'<a class="contextmenu-a" href="javascript:;" id="openApp">打开应用</a>' +
+									'<a class="contextmenu-a" href="javascript:;" id="appOpen">打开应用</a>' +
 								'</li>' +
 								'<li class="contextmenu-li">' +
 									'<span class="line"></span>' +
@@ -107,36 +108,50 @@ define(function(require, exports, module) {
 								'<li class="contextmenu-li contextsubmenu">' +
 									'<a class="contextmenu-a" href="#">移动应用到<span class="icon-arrow"></span></a>' +
 									'<div class="contextsubmenu-wrap">' +
-										'<ul class="contextsubmenu-ul contextmenu-style">' +
+										'<ul class="contextsubmenu-ul contextmenu-style" id="screenMove">' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#">桌面1</a>' +
+												'<a class="contextsubmenu-a" href="#" data-desk="1">桌面1</a>' +
 											'</li>' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#">桌面2</a>' +
+												'<a class="contextsubmenu-a" href="#" data-desk="2">桌面2</a>' +
 											'</li>' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#">桌面3</a>' +
+												'<a class="contextsubmenu-a" href="#" data-desk="3">桌面3</a>' +
 											'</li>' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#">桌面4</a>' +
+												'<a class="contextsubmenu-a" href="#" data-desk="4">桌面4</a>' +
 											'</li>' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#">桌面5</a>' +
+												'<a class="contextsubmenu-a" href="#" data-desk="5">桌面5</a>' +
 											'</li>' +
 										'</ul>' +
 									'</div>' +
 								'</li>' +
 								'<li class="contextmenu-li">' +
-									'<a class="contextmenu-a" href="javascript:;">卸载应用</a>' +
+									'<a class="contextmenu-a" href="javascript:;" id="appDel">卸载应用</a>' +
 								'</li>' +
 							'</ul>' +
 						'</div>';
 			
 			if (!TPL.appmenu) {
-				
+			    
 				TPL.appmenu = $('<div class="contextmenu"></div>').html(tpl).appendTo('body');
-
+				
+				$('#appOpen').on('click', function() {
+                    desk.appOpen(TPL.appmenu.obj);
+                });
+                
+                $('#appDel').on('click', function() {
+                    desk.appDel(TPL.appmenu.obj);
+                });
+                
 			}
+
+			$('#screenMove li').each(function(i) {
+			    if (i == GLOBAL.nowScreen) {
+			        $(this).find('a').addClass('disabled');
+			    }
+			});
 
 			return TPL.appmenu;
 			
