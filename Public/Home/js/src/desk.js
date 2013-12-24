@@ -117,7 +117,7 @@ define(function(require, exports, module) {
                     
                 });
                 
-                html += '<li data-ismax="true" data-ismin="true" data-width="800" data-height="500" data-url="http://www.wangyingran.com" data-icon="/ros/Public/Home/images/app/app-add.png" data-title="应用市场" data-type="add" data-id="add" class="app-item"><div class="app-icon"><span class="app-add"></span></div><div class="app-name"><span><i>添加应用</i></span></div></li></ul>';
+                html += '<li data-ismax="false" data-ismin="true" data-width="800" data-height="500" data-url="http://www.wangyingran.com" data-icon="/ros/Public/Home/images/app/app-add.png" data-title="应用市场" data-type="add" data-id="add" class="app-item"><div class="app-icon"><span class="app-add"></span></div><div class="app-name"><span><i>添加应用</i></span></div></li></ul>';
 
             });
             

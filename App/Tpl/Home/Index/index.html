@@ -69,7 +69,7 @@
 		<!-- desk e -->
 
 		<!-- contextmenu s -->
-		<div class="contextmenu" id="contextmenu">
+		<!-- <div class="contextmenu" id="contextmenu">
 			<div class="contextmenu-style">
 				<ul class="contextmenu-ul">
 					<li class="contextmenu-li">
@@ -130,7 +130,7 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 		<!-- contextmenu e -->
 		
 		<!-- wallpaper s -->
