@@ -127,10 +127,10 @@ define(function(require, exports, module) {
     	// 显示
     	show : function() {
 
-    		this.__dialog.show();
+    		this.__dialog.fadeIn(500);
     		
     		this.zIndexUp();
-    		
+
     		this.opened = true;
     		
     	},
@@ -139,7 +139,7 @@ define(function(require, exports, module) {
     	hide : function() {
 
     		this.__dialog.hide();
-    		
+
     		this.opened = false;
     		
     	},
@@ -166,12 +166,12 @@ define(function(require, exports, module) {
         },
     	
     	// 最大化，还原
-    	maxres : function(obj) {
+    	maxres : function() {
     		
     		if (!this.maxed) {
-    			this.__maximize(obj);
+    			this.__maximize();
     		} else {
-    			this.__restore(obj);
+    			this.__restore();
     		}
 
     	},
@@ -237,7 +237,7 @@ define(function(require, exports, module) {
             if (isUrl) {
                 return '<iframe i="iframe" src="'+ this.o.content +'" frameborder="0" allowtransparency="true" scrolling="auto" width="'+ this.o.width +'" height="'+ this.o.height +'"></iframe>';
             } else {
-            	return this.o.content;
+            	return '<div style="width:'+ this.o.width +'px; height:'+ this.o.height +'px; overflow:hidden;">'+ this.o.content +'</div>'
             }
     		
     	},
@@ -299,12 +299,14 @@ define(function(require, exports, module) {
 	    },
 	    
 	    // 最大化
-	    __maximize : function(obj) {
+	    __maximize : function() {
+	    	
+	    	this.zIndexUp();
 	    	
 	    	var oldLeft = this.__dialog.offset().left,
 	    		oldTop = this.__dialog.offset().top;
     			
-    		obj.data({
+    		this.__dialog.data({
     			left : oldLeft,
     			top : oldTop
     		});
@@ -319,18 +321,18 @@ define(function(require, exports, module) {
     			height : $window.height() - 31
     		}, 500);
 	    	
-	    	obj.removeClass('dialog-maximize').addClass('dialog-restore').attr('title', '还原');
+	    	this.__$('maxres').removeClass('dialog-maximize').addClass('dialog-restore').attr('title', '还原');
 
 	    	this.maxed = true;
 	    	
 	    },
 	    
 	    // 还原
-	    __restore : function(obj) {
+	    __restore : function() {
     			
     		this.__dialog.animate({
-    			left : obj.data('left'),
-    			top : obj.data('top')
+    			left : this.__dialog.data('left'),
+    			top : this.__dialog.data('top')
     		}, 500);
     		
     		this.__$('iframe').animate({
@@ -338,7 +340,7 @@ define(function(require, exports, module) {
     			height : this.o.height
     		}, 500);
 	    	
-	    	obj.removeClass('dialog-restore').addClass('dialog-maximize').attr('title', '最大化');
+	    	this.__$('maxres').removeClass('dialog-restore').addClass('dialog-maximize').attr('title', '最大化');
 	    	
 	    	this.maxed = false;
 	    	

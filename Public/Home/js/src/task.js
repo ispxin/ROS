@@ -4,6 +4,8 @@
 define(function(require, exports, module) {
     
     var $window = $(window),
+    	$document = $(document),
+    	popupmenu = require('./popupmenu'),
     	taskList = {};
 
     var Task = function(options) {
@@ -36,6 +38,21 @@ define(function(require, exports, module) {
                 
             });
             
+            this.__task.on('contextmenu', function(ev) {
+
+            	var taskmenu = popupmenu.taskmenu(_this.dialog);
+            	
+            	$('.contextmenu').hide();
+            	
+            	popupmenu.show(ev, taskmenu);
+            	
+            	$document.one('click', function() {
+					taskmenu.hide();
+				});
+
+				return false;
+			});
+            
         },
         
         // 创建任务
@@ -44,7 +61,6 @@ define(function(require, exports, module) {
             var tpl = '<div class="task-app-icon"><img src="'+ this.icon +'"></div><div class="task-app-title">'+ this.title +'</div>';
 
             this.__task = $('<li>')
-            //.addClass('active')
             .html(tpl)
             .appendTo($('#task-content-inner'));
             

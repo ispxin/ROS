@@ -13,7 +13,7 @@ define(function(require) {
 	require('./desk').init();
 	
 	// 加载popupmenu模块
-	require('./popupmenu').init();
+	// require('./popupmenu').init();
 
 	// console.log(seajs.cache);
 

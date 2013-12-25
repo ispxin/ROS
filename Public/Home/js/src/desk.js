@@ -7,7 +7,7 @@ define(function(require, exports, module) {
     // 静态App数据，后期ajax动态调用数据
     var appData = [
         [
-            { id : 'app_1', type : 'app',  title : '我的博客1', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : true},
+            { id : 'app_1', type : 'app',  title : '我的博客1', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : false},
             { id : 'app_2', type : 'app',  title : '我的博客2', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : true},
             { id : 'app_3', type : 'app',  title : '我的博客3', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : true},
             { id : 'app_4', type : 'app',  title : '我的博客4', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : true},
@@ -30,9 +30,10 @@ define(function(require, exports, module) {
 
 
     var login = require('./login'),
-        debounce = require('./debounce');
-    	require('./dialog');
-    	require('./task');
+    	popupmenu = require('./popupmenu'),
+        debounce = require('./debounce'),
+    	dialog = require('./dialog'),
+    	task = require('./task');
 
     var $window = $(window),
     	$document = $(document);
@@ -117,7 +118,7 @@ define(function(require, exports, module) {
                     
                 });
                 
-                html += '<li data-ismax="false" data-ismin="true" data-width="800" data-height="500" data-url="http://www.wangyingran.com" data-icon="/ros/Public/Home/images/app/app-add.png" data-title="应用市场" data-type="add" data-id="add" class="app-item"><div class="app-icon"><span class="app-add"></span></div><div class="app-name"><span><i>添加应用</i></span></div></li></ul>';
+                html += '<li class="app-item" data-type="add"><div class="app-icon"><span class="app-add"></span></div><div class="app-name"><span><i>添加应用</i></span></div></li></ul>';
 
             });
             
@@ -394,7 +395,7 @@ define(function(require, exports, module) {
         	
             var appData = obj.data();
 
-            var dialog = $.ros.dialog({
+            $.ros.dialog({
             	id : appData.id,
                 icon : appData.icon,
                 title : appData.title,
@@ -415,11 +416,59 @@ define(function(require, exports, module) {
             this.setAppSort(GLOBAL.sortType);
             
         },
+        
+        // 添加应用
+        appAdd : function() {
+        	
+        	$.ros.dialog({
+            	id : 'add',
+                icon : '/ros/Public/Home/images/app/app-add.png',
+                title : '应用市场',
+                content : '',
+                width : 800,
+                height : 500,
+                isMax : false
+            });
+        	
+        },
     	
     	// 事件
         bind : function() {
             
             var _this = this;
+            
+            // 桌面右键菜单
+            $document.on('contextmenu', function(ev) {
+				
+				var contextmenu = popupmenu.contextmenu(_this, dialog);
+				
+				$('.contextmenu').hide();
+				
+				popupmenu.show(ev, contextmenu);
+				
+				$document.one('click', function() {
+					contextmenu.hide();
+				});
+				
+				return false;
+			});
+			
+			// App右键菜单
+			this.oDeskContent.on('contextmenu', 'li[data-type="app"]', function(ev) {
+				
+	        	var appmenu = popupmenu.appmenu(_this, $(this));
+	        	
+	        	$('.contextmenu').hide();
+	        	
+	        	popupmenu.show(ev, appmenu);
+	        	
+	        	$document.one('click', function() {
+					appmenu.hide();
+				});
+				
+				return false;
+	        	
+	        });
             
             // Navbar拖拽
             $.ros.drag(true, this.oNavbar);
@@ -439,16 +488,19 @@ define(function(require, exports, module) {
                 // $.ros.drag(false, $(this));
             // });
             
+            // 添加应用
+            this.oDeskContent.on('click', 'li[data-type="add"]', function() {
+            	_this.appAdd();
+            });
+            
             // 临时App打开
-            this.oDeskContent.on('click', 'li', function() {
+            this.oDeskContent.on('click', 'li[data-type="app"]', function() {
 	        	_this.appOpen($(this));
 	        });
             
         }
     	
     }
-
-    
 
 	// 开放接口
     module.exports = {
@@ -463,6 +515,9 @@ define(function(require, exports, module) {
     	},
     	appDel : function(obj) {
     	    desk.appDel(obj);
+    	},
+    	appAdd : function() {
+    		desk.appAdd();
     	}
     }
 
