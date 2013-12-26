@@ -36,7 +36,8 @@ define(function(require, exports, module) {
     	task = require('./task');
 
     var $window = $(window),
-    	$document = $(document);
+    	$document = $(document),
+    	$body = $('body');
     
     var desk = {
     	
@@ -417,6 +418,18 @@ define(function(require, exports, module) {
             
         },
         
+        // 移动应用
+        appMoveDesk : function(app, deskId) {
+            
+            // 获取到添加应用对象
+            var oAddApp = this.oDeskContent.children().eq(deskId).children().eq(-1);
+            // 将app插入到添加应用前一位
+            $(oAddApp).before(app);
+            // 重新排序
+            this.setAppSort(GLOBAL.sortType);
+            
+        },
+        
         // 添加应用
         appAdd : function() {
         	
@@ -437,19 +450,25 @@ define(function(require, exports, module) {
             
             var _this = this;
             
+            // 桌面单击隐藏右键菜单
+            $body.on('click', function() {
+                $('.contextmenu').hide();
+            });
+            
+            // 阻止桌面右键默认事件
+            $body.on('contextmenu', function() {
+               return false; 
+            });
+            
             // 桌面右键菜单
-            $document.on('contextmenu', function(ev) {
+            this.oDesk.on('contextmenu', function(ev) {
 				
 				var contextmenu = popupmenu.contextmenu(_this, dialog);
 				
 				$('.contextmenu').hide();
 				
 				popupmenu.show(ev, contextmenu);
-				
-				$document.one('click', function() {
-					contextmenu.hide();
-				});
-				
+
 				return false;
 			});
 			
@@ -461,10 +480,6 @@ define(function(require, exports, module) {
 	        	$('.contextmenu').hide();
 	        	
 	        	popupmenu.show(ev, appmenu);
-	        	
-	        	$document.one('click', function() {
-					appmenu.hide();
-				});
 				
 				return false;
 	        	

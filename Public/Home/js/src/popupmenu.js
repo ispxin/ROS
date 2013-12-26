@@ -133,19 +133,19 @@ define(function(require, exports, module) {
 									'<div class="contextsubmenu-wrap">' +
 										'<ul class="contextsubmenu-ul contextmenu-style" id="mScreenMove">' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#" data-desk="1">桌面1</a>' +
+												'<a class="contextsubmenu-a" href="#" data-desk="0">桌面1</a>' +
 											'</li>' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#" data-desk="2">桌面2</a>' +
+												'<a class="contextsubmenu-a" href="#" data-desk="1">桌面2</a>' +
 											'</li>' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#" data-desk="3">桌面3</a>' +
+												'<a class="contextsubmenu-a" href="#" data-desk="2">桌面3</a>' +
 											'</li>' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#" data-desk="4">桌面4</a>' +
+												'<a class="contextsubmenu-a" href="#" data-desk="3">桌面4</a>' +
 											'</li>' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#" data-desk="5">桌面5</a>' +
+												'<a class="contextsubmenu-a" href="#" data-desk="4">桌面5</a>' +
 											'</li>' +
 										'</ul>' +
 									'</div>' +
@@ -174,6 +174,11 @@ define(function(require, exports, module) {
 			    } else {
 			    	$(this).find('a').removeClass('disabled');
 			    }
+			});
+			
+			$('#mScreenMove a').not('.disabled').off('click').on('click', function() {
+			    var deskId = $(this).data('desk');
+                desk.appMoveDesk(app, deskId);
 			});
 
 			return TPL.appmenu;
@@ -234,7 +239,7 @@ define(function(require, exports, module) {
 			});
 
 			$('#mCloseDialog').off('click').on('click', function() {
-				dialog.close();
+				dialog.remove();
 			});
 
 			return TPL.menu;
@@ -243,9 +248,7 @@ define(function(require, exports, module) {
 		
 		// 显示菜单
 		show : function(ev, obj) {
-            
-            obj.fadeIn(100);
-            
+
             var iWidth = obj.outerWidth(),
                 iHeight = obj.outerHeight(),
                 x = ev.clientX,
@@ -264,6 +267,8 @@ define(function(require, exports, module) {
             } else {
                 obj.css('top', y);
             }
+            
+            obj.fadeIn(100);
               
         }
 	

@@ -45,11 +45,7 @@ define(function(require, exports, module) {
             	$('.contextmenu').hide();
             	
             	popupmenu.show(ev, taskmenu);
-            	
-            	$document.one('click', function() {
-					taskmenu.hide();
-				});
-
+				
 				return false;
 			});
             
