@@ -50,7 +50,7 @@ a:hover { color:#000;}
 
 /* desktop
 -----------------------------------------------*/
-.desk{ position:absolute; z-index:5; width:100%; height:100%; overflow:hidden;}
+.desk{ position:absolute; z-index:5; width:100%; height:100%; overflow:hidden; background:url(../images/desktop/transparent-bg.png);}
 .desk-content{ position:relative; margin:80px 120px;}
 .app-content{ position:absolute; left:0; top:0; width:100%; height:100%; opacity:1;}
 .app-content .app-item{ position:absolute; left:0; top:0; width:88px; height:88px; cursor:pointer;}
@@ -210,6 +210,20 @@ background:-moz-linear-gradient(0% 0% 270deg, #fff, #fff, #f0f0f0 100%);
 .contextmenu .icon-app{ background-position:-140px -80px;}
 .contextsubmenu-a.disabled{ color:#999;}
 .contextsubmenu-a.disabled:hover{ background:none; color:#999; cursor:default;}
+
+/* lock-desk
+-----------------------------------------------*/
+.lock-desk{ position:absolute; left:50%; top:50%; z-index:2; width:180px; height:200px; margin:-90px 0 0 -90px;}
+.lock-desk-avatar{ width:104px; height:104px; margin:0 auto 30px auto;}
+.lock-desk-avatar img{ display:block; width:100px; height:100px; border:2px #fff solid;
+-moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;
+-moz-box-shadow:3px 3px 10px rgba(0,0,0,0.3); -webkit-box-shadow:3px 3px 10px rgba(0,0,0,0.3); box-shadow:3px 3px 10px rgba(0,0,0,0.3);}
+.lock-desk-form{ position:relative; width:180px; height:32px;}
+.lock-desk-input{ width:137px; height:20px; line-height:20px; padding:5px 35px 5px 5px; font-size:14px; color:#333; border:1px rgba(0,0,0,0.4) solid;
+-moz-box-shadow:1px 2px 3px rgba(0,0,0,0.2) inset; -webkit-box-shadow:1px 2px 3px rgba(0,0,0,0.2) inset; box-shadow:1px 2px 3px rgba(0,0,0,0.2) inset;
+-moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;}
+.lock-desk-input:focus{ border:1px rgba(0,0,0,0.5) solid;}
+.lock-desk-enter{ display:block; position:absolute; right:8px; top:8px; width:16px; height:16px; background:url(../images/desktop/lock-desk-enter.png) no-repeat; cursor:pointer;}
 
 /* other
 -----------------------------------------------*/

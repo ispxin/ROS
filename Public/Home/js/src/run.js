@@ -11,9 +11,6 @@ define(function(require) {
 	
 	// 加载Desk模块
 	require('./desk').init();
-	
-	// 加载popupmenu模块
-	// require('./popupmenu').init();
 
 	// console.log(seajs.cache);
 

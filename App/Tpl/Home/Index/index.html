@@ -67,71 +67,6 @@
 			
 		</div>
 		<!-- desk e -->
-
-		<!-- contextmenu s -->
-		<!-- <div class="contextmenu" id="contextmenu">
-			<div class="contextmenu-style">
-				<ul class="contextmenu-ul">
-					<li class="contextmenu-li">
-						<a href="javascript:;" class="contextmenu-a" id="lockDesk">锁定</a>
-					</li>
-					<li class="contextmenu-li">
-						<a href="javascript:;" class="contextmenu-a" id="showDesk">显示桌面</a>
-					</li>
-					<li class="contextmenu-li">
-						<a href="javascript:;" class="contextmenu-a" id="closeAllApp">关闭所有应用</a>
-					</li>
-					<li class="contextmenu-li">
-						<span class="line"></span>
-					</li>
-					<li class="contextmenu-li contextsubmenu">
-						<a href="#" class="contextmenu-a">添加<span class="icon-arrow"></span></a>
-						<div class="contextsubmenu-wrap">
-							<ul class="contextsubmenu-ul contextmenu-style">
-								<li class="contextsubmenu-li">
-									<a href="#" class="contextsubmenu-a">添加应用<span class="icon icon-app"></span></a>
-								</li>
-								<li class="contextsubmenu-li">
-									<a href="#" class="contextsubmenu-a">新建文件夹<span class="icon icon-folder"></span></a>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li class="contextmenu-li">
-						<span class="line"></span>
-					</li>
-					<li class="contextmenu-li">
-						<a href="#" class="contextmenu-a">更换壁纸</a>
-					</li>
-					<li class="contextmenu-li">
-						<a href="#" class="contextmenu-a">系统设置</a>
-					</li>
-					<li class="contextmenu-li contextsubmenu">
-						<a href="#" class="contextmenu-a">排序方式<span class="icon-arrow"></span></a>
-						<div class="contextsubmenu-wrap">
-							<ul class="contextsubmenu-ul contextmenu-style">
-								<li class="contextsubmenu-li">
-									<a href="javascript:;" class="contextsubmenu-a" id="setAppX">横向排列<span class="icon icon-current"></span></a>
-								</li>
-								<li class="contextsubmenu-li">
-									<a href="javascript:;" class="contextsubmenu-a on" id="setAppY">纵向排列<span class="icon icon-current"></span></a>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li class="contextmenu-li">
-						<span class="line"></span>
-					</li>
-					<li class="contextmenu-li">
-						<a href="#" class="contextmenu-a">反馈</a>
-					</li>
-					<li class="contextmenu-li">
-						<a href="#" class="contextmenu-a">注销</a>
-					</li>
-				</ul>
-			</div>
-		</div> -->
-		<!-- contextmenu e -->
 		
 		<!-- wallpaper s -->
 		<div class="wallpaper" id="wallpaper"><img src="__IMG__/wallpaper/wallpaper-1.jpg" /></div>
@@ -142,9 +77,9 @@
 			alias : {
 				"jquery" : "__JS__/lib/jquery/1.8.3/jquery"
 			},
-			map: [
-			    [ /^(.*\/ros\/Public\/Home\/js\/src\/.*\.(?:css|js))(?:.*)$/i, '$1?201312270958' ]
-			],
+			// map: [
+			    // [ /^(.*\/ros\/Public\/Home\/js\/src\/.*\.(?:css|js))(?:.*)$/i, '$1?201312270958' ]
+			// ],
 			preload : ["jquery"],
 			debug: true
 		});

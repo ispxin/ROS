@@ -444,6 +444,52 @@ define(function(require, exports, module) {
             });
         	
         },
+        
+        // 锁定桌面
+        lockDesk : function() {
+        	
+        	var _this = this;
+        	
+        	var wallpaperSrc = $('#wallpaper img').attr('src');
+        	
+        	var tpl = '<div class="lock-desk">' +
+							'<div class="lock-desk-avatar">' +
+								'<img src="/ros/Public/Home/images/desktop/lock-avatar.jpg" />' +
+							'</div>' +
+							'<div class="lock-desk-form">' +
+								'<input type="password" class="lock-desk-input" />' +
+								'<span class="lock-desk-enter" title="进入" id="enterDesk"></span>' +
+							'</div>' +
+						'</div>' +
+						'<div style="position:absolute; left:0; top:0; width:100%; height:100%; z-index:1;"></div>' +
+						'<img src="'+ wallpaperSrc +'" style="position:absolute; left:0; top:0; z-index:0; width:100%; height:100%;">';
+        	
+        	this.oLock = $('<div>').css({
+        		display : 'none',
+        		position : 'absolute',
+        		left : 0,
+        		top : 0,
+        		width : '100%',
+        		height : '100%',
+        		zIndex : 9999
+        	}).html(tpl).appendTo('body');
+        	
+        	$('#enterDesk').on('click', function() {
+        		_this.unlockDesk();
+        	});
+        	
+        	this.oLock.fadeIn(600);
+
+        },
+        
+        // 解锁桌面
+        unlockDesk : function(password) {
+        	
+        	this.oLock.fadeOut(300, function() {
+        		$(this).remove();
+        	});
+        	
+        },
     	
     	// 事件
         bind : function() {
@@ -462,8 +508,6 @@ define(function(require, exports, module) {
             
             // 桌面右键菜单
             this.oDesk.on('contextmenu', function(ev) {
-				
-				alert(1)
 				
 				var contextmenu = popupmenu.contextmenu(_this, dialog);
 				
@@ -523,6 +567,9 @@ define(function(require, exports, module) {
     module.exports = {
     	init : function() {
     		desk.init();
+    	},
+    	lockDesk : function() {
+    		desk.lockDesk();
     	},
     	setAppSort : function(type) {
     	    desk.setAppSort(type);

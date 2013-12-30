@@ -110,6 +110,11 @@ define(function(require, exports, module) {
 	            $('#mAppAdd').on('click', function() {
 	            	desk.appAdd();
 	            });
+	            
+	            // 锁定桌面
+	            $('#mLockDesk').on('click', function() {
+	            	desk.lockDesk();
+	            });
 				
 			}
 
