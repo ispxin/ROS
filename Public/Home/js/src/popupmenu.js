@@ -68,9 +68,9 @@ define(function(require, exports, module) {
 							'</ul>' +
 						'</div>';
 			
-			if (!TPL.contextmenu) {
+			if (!GLOBAL.tpl.contextmenu) {
 				
-				TPL.contextmenu = $('<div class="contextmenu"></div>').html(tpl).appendTo('body');
+				GLOBAL.tpl.contextmenu = $('<div class="contextmenu"></div>').html(tpl).appendTo('body');
 				
 				// 横向排序
 	            $('#mSetAppX').on('click', function() {
@@ -118,7 +118,7 @@ define(function(require, exports, module) {
 				
 			}
 
-			return TPL.contextmenu;
+			return GLOBAL.tpl.contextmenu;
 			
 		},
 		
@@ -161,8 +161,8 @@ define(function(require, exports, module) {
 							'</ul>' +
 						'</div>';
 			
-			if (!TPL.appmenu) {
-				TPL.appmenu = $('<div class="contextmenu"></div>').html(tpl).appendTo('body');
+			if (!GLOBAL.tpl.appmenu) {
+				GLOBAL.tpl.appmenu = $('<div class="contextmenu"></div>').html(tpl).appendTo('body');
 			}
 			
 			$('#mAppOpen').off('click').on('click', function() {
@@ -186,7 +186,7 @@ define(function(require, exports, module) {
                 desk.appMoveDesk(app, deskId);
 			});
 
-			return TPL.appmenu;
+			return GLOBAL.tpl.appmenu;
 			
 		},
 		
@@ -210,8 +210,8 @@ define(function(require, exports, module) {
 							'</ul>' +
 						'</div>';
 			
-			if (!TPL.menu) {
-				TPL.menu = $('<div class="contextmenu"></div>').html(tpl).appendTo('body');
+			if (!GLOBAL.tpl.menu) {
+				GLOBAL.tpl.menu = $('<div class="contextmenu"></div>').html(tpl).appendTo('body');
 			}
 			
 			var mMaxresDialog = $('#mMaxresDialog'),
@@ -247,7 +247,7 @@ define(function(require, exports, module) {
 				dialog.remove();
 			});
 
-			return TPL.menu;
+			return GLOBAL.tpl.menu;
 			
 		},
 		
