@@ -133,19 +133,19 @@ define(function(require, exports, module) {
 									'<div class="contextsubmenu-wrap">' +
 										'<ul class="contextsubmenu-ul contextmenu-style" id="mScreenMove">' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#" data-desk="0">桌面1</a>' +
+												'<a class="contextsubmenu-a" href="javascript:;" data-desk="0">桌面1</a>' +
 											'</li>' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#" data-desk="1">桌面2</a>' +
+												'<a class="contextsubmenu-a" href="javascript:;" data-desk="1">桌面2</a>' +
 											'</li>' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#" data-desk="2">桌面3</a>' +
+												'<a class="contextsubmenu-a" href="javascript:;" data-desk="2">桌面3</a>' +
 											'</li>' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#" data-desk="3">桌面4</a>' +
+												'<a class="contextsubmenu-a" href="javascript:;" data-desk="3">桌面4</a>' +
 											'</li>' +
 											'<li class="contextsubmenu-li">' +
-												'<a class="contextsubmenu-a" href="#" data-desk="4">桌面5</a>' +
+												'<a class="contextsubmenu-a" href="javascript:;" data-desk="4">桌面5</a>' +
 											'</li>' +
 										'</ul>' +
 									'</div>' +

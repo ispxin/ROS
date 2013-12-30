@@ -463,6 +463,8 @@ define(function(require, exports, module) {
             // 桌面右键菜单
             this.oDesk.on('contextmenu', function(ev) {
 				
+				alert(1)
+				
 				var contextmenu = popupmenu.contextmenu(_this, dialog);
 				
 				$('.contextmenu').hide();
