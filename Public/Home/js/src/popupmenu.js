@@ -3,12 +3,16 @@
  */
 define(function(require, exports, module) {
 
-    var $document = $(document);
+    var $document = $(document),
+    	user = require('./user'),
+    	login = require('./login');
     
 	var popupmenu = {
 		
 		// 桌面右键菜单
 		contextmenu : function(desk, dialog) {
+			
+			var isLogin = user.checkLogin();
 			
 			var tpl = '<div class="contextmenu-style">' +
 							'<ul class="contextmenu-ul">' +
@@ -16,7 +20,7 @@ define(function(require, exports, module) {
 									'<a href="javascript:;" class="contextmenu-a" id="mShowDesk">显示桌面</a>' +
 								'</li>' +
 								'<li class="contextmenu-li">' +
-									'<a href="javascript:;" class="contextmenu-a" id="mCloseAllApp">关闭所有应用</a>' +
+									'<a href="javascript:;" class="contextmenu-a" id="mCloseAllApp">关闭所有窗口</a>' +
 								'</li>' +
 								'<li class="contextmenu-li">' +
 									'<span class="line"></span>' +
@@ -59,12 +63,9 @@ define(function(require, exports, module) {
 								'<li class="contextmenu-li">' +
 									'<span class="line"></span>' +
 								'</li>' +
-								'<li class="contextmenu-li">' +
-									'<a href="javascript:;" class="contextmenu-a" id="mLockDesk">锁定</a>' +
-								'</li>' +
-								'<li class="contextmenu-li">' +
-									'<a href="#" class="contextmenu-a">注销</a>' +
-								'</li>' +
+								( isLogin ? '<li class="contextmenu-li"><a href="javascript:;" class="contextmenu-a" id="mLockDesk">锁定</a></li>' : '' ) +
+								( isLogin ? '<li class="contextmenu-li"><a href="javascript:;" class="contextmenu-a" id="mLogout">注销</a></li>' : '' ) +
+								( isLogin ? '' : '<li class="contextmenu-li"><a href="javascript:;" class="contextmenu-a" id="mLogin">登录</a></li>' ) +
 							'</ul>' +
 						'</div>';
 			
@@ -115,6 +116,16 @@ define(function(require, exports, module) {
 	            $('#mLockDesk').on('click', function() {
 	            	desk.lockDesk();
 	            });
+	            
+	            // 注销
+				$('#mLogout').on('click', function() {
+					user.logout();
+				});
+				
+				// 登录
+				$('#mLogin').on('click', function() {
+					login.open();
+				});
 				
 			}
 

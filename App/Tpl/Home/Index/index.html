@@ -8,6 +8,9 @@
 	</head>
 
 	<body>
+		
+		<!-- loading s -->
+		<div id="loading"></div>
 
 		<!-- desk s -->
 		<div class="desk" id="desk">

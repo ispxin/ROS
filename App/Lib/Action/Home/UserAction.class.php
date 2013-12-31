@@ -1,6 +1,6 @@
 <?php
 
-class UserAction extends Action {
+class UserAction extends CommonAction {
 	
 	// 登录
 	public function signin() {
@@ -31,9 +31,12 @@ class UserAction extends Action {
 			} else {
 
 				session(C('USER_AUTH_KEY'), $authInfo['id']);
-				session('user', $authInfo['user']);
+				session('username', $authInfo['user']);
+				
+				cookie('ROS_username', $authInfo['user']);
+				cookie('ROS_status', 1);
 
-				$this -> ajaxReturn($map, '登录成功', 1);
+				$this -> ajaxReturn($authInfo, '登录成功', 1);
 
 			}
 		}
@@ -89,5 +92,12 @@ class UserAction extends Action {
 		$this -> ajaxReturn(0, '注册成功', 1);
 		
     }
+
+	// 退出
+	public function logout() {
+		session('[destroy]');
+		cookie('ROS_status', null);
+		$this -> ajaxReturn(0, '成功退出', 1);
+	}
 	
 }

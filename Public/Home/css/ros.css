@@ -50,6 +50,7 @@ a:hover { color:#000;}
 
 /* desktop
 -----------------------------------------------*/
+#loading{ position:absolute; left:0; top:0; z-index:10000; width:100%; height:100%; background:#fff url(../images/desktop/loading.gif) center no-repeat;}
 .desk{ position:absolute; z-index:5; width:100%; height:100%; overflow:hidden; background:url(../images/desktop/transparent-bg.png);}
 .desk-content{ position:relative; margin:80px 120px;}
 .app-content{ position:absolute; left:0; top:0; width:100%; height:100%; opacity:1;}

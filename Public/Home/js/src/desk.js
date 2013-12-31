@@ -29,7 +29,8 @@ define(function(require, exports, module) {
     ];
 
 
-    var login = require('./login'),
+    var user = require('./user'),
+    	login = require('./login'),
     	popupmenu = require('./popupmenu'),
         debounce = require('./debounce'),
     	dialog = require('./dialog'),
@@ -490,6 +491,21 @@ define(function(require, exports, module) {
         	});
         	
         },
+        
+        // 账号设置窗口
+        userSetting : function() {
+        	
+        	$.ros.dialog({
+            	id : 'userSetting',
+                icon : '/ros/Public/Home/images/app/user.png',
+                title : '账号设置',
+                content : '',
+                width : 500,
+                height : 400,
+                isMax : false
+            });
+        	
+        },
     	
     	// 事件
         bind : function() {
@@ -541,7 +557,13 @@ define(function(require, exports, module) {
             
             // Login模块
 			$('#navbar-avatar').on('click', function() {
-                login.open();
+				
+				if (user.checkLogin()) {
+					_this.userSetting();
+				} else {
+					login.open();
+				}
+
             });
 
             // App拖拽
@@ -558,6 +580,8 @@ define(function(require, exports, module) {
             this.oDeskContent.on('click', 'li[data-type="app"]', function() {
 	        	_this.appOpen($(this));
 	        });
+	        
+	        $('#loading').fadeOut(500);
             
         }
     	

@@ -171,8 +171,9 @@ define(function(require, exports, module) {
 	    			
 	    			if (msg.status == 1) {
 	    				
-	    				console.log(msg);
-	    				_this.close();
+	    				// console.log(msg);
+	    				// _this.close();
+	    				location.reload();
 	    				
 	    			} else if (msg.status == 0) {
 	    				
