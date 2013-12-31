@@ -17,7 +17,7 @@ define(function(require) {
 		logout : function() {
 			
 			$.ajax({
-				url : './User/logout',
+				url : './index.php/User/logout',
 	    		type : 'get',
 	    		success : function(msg) {
 					if (msg.status == 1) {

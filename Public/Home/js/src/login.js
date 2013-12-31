@@ -164,7 +164,7 @@ define(function(require, exports, module) {
 			
 			// 验证后端
 	        $.ajax({
-	    		url : './User/signin',
+	    		url : './index.php/User/signin',
 	    		data : data,
 	    		type : 'post',
 	    		success : function(msg) {
