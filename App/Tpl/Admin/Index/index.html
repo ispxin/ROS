@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="index">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{$Think.config.CFG_WEBNAME}</title>
+		<include file="Common:import" />
+	</head>
+	<body>
+
+		<!-- header s -->
+		<include file="Common:header" />
+		<!-- header e -->
+		
+		<!-- nav s -->
+		<div class="r-left">
+			<include file="Common:nav" />
+		</div>
+		<!-- nav e -->
+		
+		<!-- main s -->
+		<div class="r-right">
+			<div class="r-main">
+				<iframe src="__GROUP__/Index/main" name="main" frameborder="0"></iframe>
+			</div>
+		</div>
+		<!-- main e -->
+		
+		<script>
+			// 导航菜单
+			$('#j-nav h2').on('click', function() {
+				$('#j-nav ul').stop().slideUp(200);
+				$(this).next().stop().slideDown(200);
+				$('#j-nav h2').find('.j-subnav-icon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+				$(this).find('.j-subnav-icon').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+			});
+		</script>
+
+	</body>
+</html>

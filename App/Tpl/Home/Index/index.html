@@ -16,7 +16,7 @@
 		<div class="desk" id="desk">
 			<div class="navbar" id="navbar">
 				<div class="navbar-wraper">
-					<div class="avatar"><img src="__IMG__/desktop/avatar.png" id="navbar-avatar" alt="请登录" /></div>
+					<div class="avatar"><img src="__IMG__/desktop/avatar.gif" id="navbar-avatar" alt="请登录" /></div>
 					<div class="indicator">
 						<ul id="indicator">
 							<li class="active">

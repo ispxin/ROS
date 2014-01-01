@@ -33,10 +33,10 @@ class UserAction extends CommonAction {
 				session(C('USER_AUTH_KEY'), $authInfo['id']);
 				session('username', $authInfo['user']);
 				
-				cookie('ROS_username', $authInfo['user']);
+				cookie('ROS_username', $authInfo['user'], 60*60*24*365);
 				cookie('ROS_status', 1);
 
-				$this -> ajaxReturn($authInfo, '登录成功', 1);
+				$this -> ajaxReturn(2, '登录成功', 1);
 
 			}
 		}
@@ -97,7 +97,7 @@ class UserAction extends CommonAction {
 	public function logout() {
 		session('[destroy]');
 		cookie('ROS_status', null);
-		$this -> ajaxReturn(0, '成功退出', 1);
+		$this -> ajaxReturn(0, '成功', 1);
 	}
 	
 }

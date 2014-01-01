@@ -62,9 +62,19 @@ define(function(require, exports, module) {
 	    create : function() {
 	        this.login = $('<div>', { class : 'login', id : 'login' }).html(tpl).appendTo('body');
             this.mask = $('<div>', { class : 'mask' }).appendTo('body');
+            
+            var username = $.cookie('ROS_username');
+            
+            if (username) {
+                $('#user').val(username);
+                $('#password').focus();
+            } else {
+                $('#user').focus();
+            }
 
             $(this.login).animate({ top : '50%' }, 400);
             $(this.mask).animate({ opacity : 0.3 }, 400);
+
 	    },
 	    
 	    // 关闭

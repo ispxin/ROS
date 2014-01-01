@@ -5,26 +5,26 @@ define(function(require, exports, module) {
     
     
     // 静态App数据，后期ajax动态调用数据
-    var appData = [
+    var appData2 = [
         [
-            { id : 'app_1', type : 'app',  title : '我的博客1', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : false},
-            { id : 'app_2', type : 'app',  title : '我的博客2', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : true},
-            { id : 'app_3', type : 'app',  title : '我的博客3', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : true},
-            { id : 'app_4', type : 'app',  title : '我的博客4', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : true},
-            { id : 'app_5', type : 'app',  title : '我的博客5', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : true},
-            { id : 'app_6', type : 'app',  title : '我的博客6', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : true}
+            { id : 'app_1', type : 'app',  title : '我的博客1', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 0},
+            { id : 'app_2', type : 'app',  title : '我的博客2', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 0},
+            { id : 'app_3', type : 'app',  title : '我的博客3', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1},
+            { id : 'app_4', type : 'app',  title : '我的博客4', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1},
+            { id : 'app_5', type : 'app',  title : '我的博客5', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1},
+            { id : 'app_6', type : 'app',  title : '我的博客6', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1}
         ],
         [
-            { id : 'app_7', type : 'app',  title : '我的博客', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : true}
+            { id : 'app_7', type : 'app',  title : '我的博客', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1}
         ],
         [
-            { id : 'app_8', type : 'app',  title : '我的博客', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : true}
+            { id : 'app_8', type : 'app',  title : '我的博客', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1}
         ],
         [
-            { id : 'app_9', type : 'app',  title : '我的博客', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : true}
+            { id : 'app_9', type : 'app',  title : '我的博客', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1}
         ],
         [
-            { id : 'app_10', type : 'app',  title : '我的博客', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMin : true, isMax : true}
+            { id : 'app_10', type : 'app',  title : '我的博客', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1}
         ]
     ];
 
@@ -53,7 +53,7 @@ define(function(require, exports, module) {
             this.oIndicator = $('#indicator');
             this.aIndicator = this.oIndicator.children();
     		
-    		this.createApp();
+    		this.getApp();
     		this.setDesk();
     		this.setNavbar();
             this.setAppSort(GLOBAL.sortType);
@@ -86,13 +86,19 @@ define(function(require, exports, module) {
     	},
     	
     	// 创建App
-    	createApp : function() {
+    	getApp : function() {
     	    
-    	    var html = this.createAppHtml(appData);
-    	    
-    	    this.oDeskContent.append(html);
-    	    
-    	    this.aAppContent = this.oDeskContent.children();
+    	    var _this = this;
+            
+            $.ajax({
+                url : './index.php/Index/getApp',
+                type : 'get',
+                async : false
+            }).done(function(appData) {
+                var html = _this.createAppHtml(appData.data);
+                _this.oDeskContent.append(html);
+                _this.aAppContent = _this.oDeskContent.children();
+            });
     	      
     	},
     	
@@ -109,14 +115,17 @@ define(function(require, exports, module) {
                     
                     var item = data[i][j];
                     
-                    html += '<li class="app-item" data-id="'+ item.id +'" data-index="'+ j +'" data-type="'+ item.type +'" data-title="'+ item.title +'" data-icon="'+ item.icon +'" data-url="'+ item.url +'" data-width="'+ item.width +'" data-height="'+ item.height +'" data-ismin="'+ item.isMin +'" data-ismax="'+ item.isMax +'">' +
-                                '<div class="app-icon">' +
-                                    '<img src="'+ item.icon +'">' +
-                                '</div>' +
-                                '<div class="app-name">' +
-                                    '<span><i>'+ item.title +'</i></span>' +
-                                '</div>' +
-                            '</li>';
+                    if (item !== null) {
+                    
+                        html += '<li class="app-item" data-id="'+ item.id +'" data-index="'+ j +'" data-type="'+ item.type +'" data-title="'+ item.title +'" data-icon="'+ item.icon +'" data-url="'+ item.url +'" data-width="'+ item.width +'" data-height="'+ item.height +'" data-ismin="'+ item.isMin +'" data-ismax="'+ item.isMax +'">' +
+                                    '<div class="app-icon">' +
+                                        '<img src="'+ item.icon +'">' +
+                                    '</div>' +
+                                    '<div class="app-name">' +
+                                        '<span><i>'+ item.title +'</i></span>' +
+                                    '</div>' +
+                                '</li>';
+                    }
                     
                 });
                 
@@ -404,7 +413,6 @@ define(function(require, exports, module) {
                 content : appData.url,
                 width : appData.width,
                 height : appData.height,
-                isMin : appData.ismin,
                 isMax : appData.ismax
             });
             
@@ -453,13 +461,16 @@ define(function(require, exports, module) {
         	
         	var wallpaperSrc = $('#wallpaper img').attr('src');
         	
-        	var tpl = '<div class="lock-desk">' +
+        	var username = $.cookie('ROS_username');
+        	
+        	var tpl = '<div class="lock-desk" id="lock-desk">' +
 							'<div class="lock-desk-avatar">' +
-								'<img src="/ros/Public/Home/images/desktop/lock-avatar.jpg" />' +
+								'<img src="/ros/Public/Home/images/desktop/avatar.gif" />' +
 							'</div>' +
 							'<div class="lock-desk-form">' +
-								'<input type="password" class="lock-desk-input" />' +
-								'<span class="lock-desk-enter" title="进入" id="enterDesk"></span>' +
+								'<input type="hidden" name="user" id="user" value="'+ username +'" />' +
+								'<input type="password" class="lock-desk-input" name="password" id="password" />' +
+								'<div class="lock-desk-enter" title="进入" id="enterDesk"></div>' +
 							'</div>' +
 						'</div>' +
 						'<div style="position:absolute; left:0; top:0; width:100%; height:100%; z-index:1;"></div>' +
@@ -474,22 +485,86 @@ define(function(require, exports, module) {
         		height : '100%',
         		zIndex : 9999
         	}).html(tpl).appendTo('body');
-        	
+
         	$('#enterDesk').on('click', function() {
-        		_this.unlockDesk();
+        	    var data = {
+        	        user : $('#user').val(),
+        	        password : $('#password').val()
+        	    }
+        		_this.unlockDesk(data);
         	});
+
+            $('#password').on('keyup', function(ev) {
+                
+                if ($(this).val()) {
+                    $(this).next().show();
+                } else {
+                    $(this).next().hide();
+                }
+
+                if (ev.keyCode == 13) {
+
+                    if (!$(this).val()) {
+                        _this.lockWaggle();
+                        return;
+                    }
+
+                    var data = {
+                        user : $('#user').val(),
+                        password : $('#password').val()
+                    }
+                    _this.unlockDesk(data);
+                }
+
+            }); 
         	
-        	this.oLock.fadeIn(600);
+        	user.lock().done(function(msg) {
+        	    _this.oLock.fadeIn(600);
+        	    $('#password').focus();
+        	});
 
         },
         
         // 解锁桌面
-        unlockDesk : function(password) {
+        unlockDesk : function(data) {
+            
+            var _this = this;
+
+            $.ajax({
+                url : './index.php/User/signin',
+                type : 'post',
+                data : data,
+                success : function(msg) {
+                    console.log(msg);
+                    
+                    if (msg.status == 1) {
+                        _this.oLock.fadeOut(300, function() {
+                            $(this).remove();
+                        });
+                    } else if (msg.status == 0) {
+                        _this.lockWaggle();
+                        $('#password').focus();
+                    }
+   
+                }
+            });
         	
-        	this.oLock.fadeOut(300, function() {
-        		$(this).remove();
-        	});
-        	
+        },
+        
+        // 锁屏晃动
+        lockWaggle : function() {
+
+            var iNow = 0;
+            var arr = [-95, -85, -94, -86, -93, -87, -92, -88, -91, -89, -90];
+            
+            var timer = setInterval(function() {
+                $('#lock-desk').css('margin-left', arr[iNow]);
+                iNow++;
+                if (iNow == arr.length) {
+                    clearInterval(timer);
+                }
+            }, 30);
+
         },
         
         // 账号设置窗口

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{$Think.config.CFG_WEBNAME}</title>
+		<include file="Common:import" />
+	</head>
+	<body class="iframeBody">
+
+		<!-- page header s -->
+		<div class="page-header"><a href="__GROUP__/Index/main" class="glyphicon glyphicon-circle-arrow-left" title="返回"></a> 编辑文章目录</div>
+		<!-- page header e -->
+
+		<!-- panel s -->
+		<form action="__URL__/editSave" method="post">
+			<input type="hidden" name="id" value="{$field.id}">
+			<div class="form-group">
+				<label>名称</label>
+				<input type="text" class="form-control w500" name="name" value="{$field.name}" />
+			</div>
+			<div class="form-group">
+				<label>别名</label>
+				<input type="text" class="form-control w500" name="alias" value="{$field.alias}" />
+			</div>
+			<div class="form-group">
+				<label>父级</label>
+				<select class="form-control w500" name="parent">
+				    <option value="0">无</option>
+
+				    <volist name="category_list" id="data">
+					<option value="{$data.id}" <if condition="$data['id'] eq $field['parent']">selected="selected"</if> >{$data.html}{$data.name}</option>
+				    </volist>
+
+				</select>
+			</div>
+			<div class="form-group">
+				<label>描述</label>
+				<input type="text" class="form-control w500" name="description" value="{$field.description}" />
+			</div>
+			<div class="form-group">
+				<label>排序</label>
+				<input type="text" class="form-control w500" name="sort" value="{$field.sort}" />
+			</div>
+			<P>
+				<button type="submit" class="btn btn-primary btn-lg">
+					<span class="glyphicon glyphicon-ok-sign"></span> 提交
+				</button>
+			</P>
+		</form>
+		<!-- panel e -->
+
+		<!-- pager s -->
+		<ul class="pagination pull-right">
+			{$page}
+		</ul>
+		<!-- pager e -->
+
+	</body>
+</html>

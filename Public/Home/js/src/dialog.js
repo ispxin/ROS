@@ -17,9 +17,9 @@ define(function(require, exports, module) {
     	content : 'Hello world : )',
     	width : 300,
     	height : 200,
-    	isDrag : true,
-    	isMin : true,
-    	isMax : true
+    	isDrag : 1,
+    	isMin : 1,
+    	isMax : 1
     }
     
     function Dialog(options) {
