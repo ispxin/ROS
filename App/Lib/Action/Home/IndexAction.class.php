@@ -17,7 +17,7 @@ class IndexAction extends CommonAction {
 		$User = M('User');
 		
 		if ( !isset ( $_SESSION['userid'] ) ) {
-			$userid = 0;
+			$userid = 1;
 		} else {
 			$userid = $_SESSION['userid'];
 		}

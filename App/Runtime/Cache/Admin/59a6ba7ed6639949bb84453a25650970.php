@@ -1,10 +1,14 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>{$Think.config.CFG_WEBNAME}</title>
-		<include file="Common:import" />
+		<title><?php echo (C("CFG_WEBNAME")); ?></title>
+		<link rel="stylesheet" href="__CSS__/bootstrap.css">
+<link rel="stylesheet" href="__CSS__/bootstrap-reset.css">
+<link rel="stylesheet" href="__CSS__/style.css">
+<script src="__JS__/jquery-1.8.3.min.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
 		<script type="text/javascript" src="__PUBLIC__/Plugins/ckeditor/ckeditor.js"></script>
 	</head>
 	<body class="iframeBody">
@@ -25,11 +29,9 @@
 								<span id="j-cate-current">选择分类</span> <span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu" id="j-cate-list">
-								<volist name="category_list" id="data">
-								<li>
-									<a href="javascript:;" data-id="{$data.id}">{$data.html}<span>{$data.name}</span></a>
-							    </li>
-							    </volist>
+								<?php if(is_array($category_list)): $i = 0; $__LIST__ = $category_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><li>
+									<a href="javascript:;" data-id="<?php echo ($data["id"]); ?>"><?php echo ($data["html"]); ?><span><?php echo ($data["name"]); ?></span></a>
+							    </li><?php endforeach; endif; else: echo "" ;endif; ?>
 							</ul>
 						</div>
 						<input type="hidden" name="category" id="j-input-cate" />

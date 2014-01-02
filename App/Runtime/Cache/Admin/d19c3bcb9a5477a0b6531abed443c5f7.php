@@ -46,7 +46,7 @@
 			<div class="r-subnav-icon"><span class="glyphicon glyphicon-chevron-up j-subnav-icon"></span></div>
 		</h2>
 		<ul>
-			<li><a href="__GROUP__/App/add" target="main">添加应用</a></li>
+			<li><a href="__GROUP__/App/add" target="main">发布应用</a></li>
 			<li><a href="__GROUP__/App" target="main">所有应用</a></li>
 			<li><a href="__GROUP__/Category" target="main">应用分类</a></li>
 		</ul>
