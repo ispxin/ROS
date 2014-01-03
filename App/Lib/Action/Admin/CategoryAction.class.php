@@ -2,21 +2,22 @@
 
 class CategoryAction extends CommonAction {
 	
-	// 文章目录首页 <视图>
+	// 分类首页 <视图>
 	public function index() {
-		import('Class.Category', APP_PATH);
-		$category_list = M('Category') -> order('sort ASC') -> select();
-		$category_list = Category::unlimitedForLevel($category_list);
-
+		
+		$Category = M('Category');
+		
+		$category_list = $Category -> order('sort asc') -> select();
+		
 		foreach ($category_list as $key => $value) {
-			$category_list[$key]['article_count'] = $this -> getCategoryArticleCount($value['id']);
+			$category_list[$key]['app_count'] = $this -> getCategoryAppCount($value['id']);
 		}
 		
 		$this -> assign('category_list', $category_list);
 		$this -> display();
 	}
 
-	// 添加文章目录 <保存>
+	// 添加分类 <保存>
 	public function addSave() {
 		
 		$Category = D('Category');
@@ -37,15 +38,11 @@ class CategoryAction extends CommonAction {
 		
 	}
 	
-	// 编辑文章目录 <视图>
+	// 编辑分类 <视图>
 	public function edit() {
 		
 		$id = $this -> _get('id');
 		$field = M('Category') -> where(array('id' => $id)) -> find();
-
-		import('Class.Category', APP_PATH);
-		$category_list = M('Category') -> order('sort ASC') -> select();
-		$category_list = Category::unlimitedForLevel($category_list);
 		
 		if ($field) {
 			$this -> assign('field', $field);
@@ -57,7 +54,7 @@ class CategoryAction extends CommonAction {
 		$this -> display();
 	}
 	
-	// 编辑文章目录 <保存>
+	// 编辑分类 <保存>
 	public function editSave() {
 		
 		$Category = D('Category');
@@ -91,19 +88,15 @@ class CategoryAction extends CommonAction {
 		
 	}
 
-	// 删除目录 <删除>
+	// 删除分类 <删除>
 	public function delete() {
 
 		$id = $this -> _get('id');
 
-		$count = $this -> getCategoryArticleCount($id);
-
-		if($this -> isParent($id)) {
-			$this -> error('此文章目录下有子目录，不能删除！');
-		}
+		$count = $this -> getCategoryAppCount($id);
 
 		if ($count > 0) {
-			$this -> error('此文章目录下有文章，不能删除！');
+			$this -> error('此分类下有应用，不能删除！');
 		}
 
 		$result = M('Category') -> where(array('id' => $id)) -> delete();
@@ -116,27 +109,13 @@ class CategoryAction extends CommonAction {
 
 	}
 
-	// 获取文章目录下文章数 <内部方法>
-	protected function getCategoryArticleCount($category) {
+	// 获取分类下应用数 <内部方法>
+	protected function getCategoryAppCount($category) {
 
-		$count = M('Article') -> where(array('category' => $category)) -> count();
+		$count = M('App') -> where(array('category' => $category)) -> count();
 
 		return $count;
 		
-	}
-
-
-	// 判断文章目录是否为父级 <内部方法>
-	protected function isParent($category) {
-
-		$count = M('Category') -> where(array('parent' => $category)) -> count();
-
-		if ($count > 0) {
-			return true;
-		} else {
-			return false;
-		}
-
 	}
 
 }

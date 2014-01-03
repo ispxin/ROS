@@ -2,12 +2,44 @@
 
 class AppAction extends CommonAction {
 	
-	// 所有文章 <视图>
+	// 所有应用 <视图>
     public function index() {
 
-    	$article = M('App');
+    	$App = M('App');
 
-    	
+    	// 判断状态
+    	if (isset($_GET['state'])) {
+    		$app_state =  $this -> _get('state');
+    	} else {
+    		$app_state = 1;
+    	}
+
+    	// 获取某个状态
+    	$where['state'] = $app_state;
+
+    	// 获取某个目录
+    	if (!empty($_GET['category'])) {
+    		$where['category'] = $this -> _get('category');
+    	}
+
+    	// 分页实例化
+    	$Page = $this -> paging($App, $where);
+
+    	// 获取应用数
+    	$app_count = $this -> getAppCount();
+
+    	// 获取应用列表
+    	$app_list = $App -> where($where) -> order('id desc') -> limit($Page -> firstRow.','.$Page -> listRows) -> select();
+
+    	// 获取文章目录名称
+    	foreach ($app_list as $key => $value) {
+			$app_list[$key]['category_name'] = $this -> getAppCategory($value['category']);
+		}
+
+		$this -> assign('app_state', $app_state);
+		$this -> assign('app_count', $app_count);
+		$this -> assign('app_list', $app_list);
+		$this -> assign('page', $Page -> show());
 		$this -> display();
 		
     }
@@ -86,17 +118,17 @@ class AppAction extends CommonAction {
 	}
 
 	// 改变文章状态 <保存>
-	// $state = 0 => 草稿
-	// $state = 2 => 回收站
+	// $state = 0 => 回收站
+	// $state = 1 => 已发布
 	public function change() {
 
 		$id = $this -> _get('id');
 		$state = $this -> _get('state');
 
-		$result = M('Article') -> where(array('id' => $id)) -> setField('state', $state);
+		$result = M('App') -> where(array('id' => $id)) -> setField('state', $state);
 
 		if ($result) {
-			$this -> success('操作成功！', '__GROUP__/Article');
+			$this -> success('操作成功！', '__GROUP__/App');
 		} else {
 			$this -> error('操作失败！');
 		}
@@ -108,7 +140,7 @@ class AppAction extends CommonAction {
 
 		$id = $this -> _get('id');
 
-		$result = M('Article') -> where(array('id' => $id)) -> delete();
+		$result = M('App') -> where(array('id' => $id)) -> delete();
 
 		if ($result) {
 			$this -> success('删除成功！', '__GROUP__/Article');
@@ -118,12 +150,11 @@ class AppAction extends CommonAction {
 
 	}
 
-	// 获取文章数 <内部方法>
-	protected function getArticleCount() {
-		$article = M('Article');
-		$arr['draft'] = $article -> where(array('state' => 0)) -> count();
-		$arr['posted'] = $article -> where(array('state' => 1)) -> count();
-		$arr['rubbish'] = $article -> where(array('state' => 2)) -> count();
+	// 获取应用数 <内部方法>
+	protected function getAppCount() {
+		$App = M('App');
+		$arr['rubbish'] = $App -> where(array('state' => 0)) -> count();
+		$arr['posted'] = $App -> where(array('state' => 1)) -> count();
 		return $arr;
 	}
 	

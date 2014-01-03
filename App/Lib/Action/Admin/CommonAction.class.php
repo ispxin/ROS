@@ -24,9 +24,9 @@ class CommonAction extends Action {
 		return $page;
 	}
 
-	// 获取文章目录名称 <内部方法>
-	protected function getArticleCategory($article_category_id) {
-		$name = M('Category') -> where(array('id' => $article_category_id)) -> getField('name');
+	// 获取应用分类名称 <内部方法>
+	protected function getAppCategory($app_category_id) {
+		$name = M('Category') -> where(array('id' => $app_category_id)) -> getField('name');
 		return $name;
 	}
 	
