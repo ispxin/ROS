@@ -553,9 +553,8 @@ define(function(require, exports, module) {
         
         // 锁屏晃动
         lockWaggle : function() {
-
             var iNow = 0;
-            var arr = [-95, -85, -94, -86, -93, -87, -92, -88, -91, -89, -90];
+            var arr = [-116, -106, -115, -107, -114, -108, -113, -109, -112, -110, -111];
             
             var timer = setInterval(function() {
                 $('#lock-desk').css('margin-left', arr[iNow]);
