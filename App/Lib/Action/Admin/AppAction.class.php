@@ -44,7 +44,7 @@ class AppAction extends CommonAction {
 		
     }
 	
-	// 写文章 <视图>
+	// 添加应用 <视图>
 	public function add() {
 
 		
@@ -52,7 +52,7 @@ class AppAction extends CommonAction {
 
 	}
 
-	// 发布文章 <保存>
+	// 添加应用 <保存>
 	public function addSave() {
 
 		$article = D('Article');
@@ -73,7 +73,7 @@ class AppAction extends CommonAction {
 
 	}
 
-	// 编辑文章 <视图>
+	// 编辑应用 <视图>
 	public function edit() {
 
 		$id = $this -> _get('id');
@@ -96,7 +96,7 @@ class AppAction extends CommonAction {
 
 	}
 
-	// 保存编辑文章 <保存>
+	// 保存编辑应用 <保存>
 	public function editSave() {
 
 		$article = D('Article');
@@ -117,7 +117,7 @@ class AppAction extends CommonAction {
 
 	}
 
-	// 改变文章状态 <保存>
+	// 改变应用状态 <保存>
 	// $state = 0 => 回收站
 	// $state = 1 => 已发布
 	public function change() {
@@ -135,7 +135,7 @@ class AppAction extends CommonAction {
 
 	}
 
-	// 永久删除文章 <删除>
+	// 永久删除应用 <删除>
 	public function delete() {
 
 		$id = $this -> _get('id');
