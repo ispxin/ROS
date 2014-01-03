@@ -214,16 +214,18 @@ background:-moz-linear-gradient(0% 0% 270deg, #fff, #fff, #f0f0f0 100%);
 
 /* lock-desk
 -----------------------------------------------*/
-.lock-desk{ position:absolute; left:50%; top:50%; z-index:2; width:180px; height:200px; margin:-90px 0 0 -90px;}
-.lock-desk-avatar{ width:104px; height:104px; margin:0 auto 30px auto;}
+.lock-desk{ position:absolute; left:50%; top:50%; z-index:2; width:180px; height:200px; padding:20px 20px 0 20px; margin:-111px 0 0 -111px; background:#fff; background-clip:padding-box; border:1px #b8cbcb solid; border:1px rgba(0, 0, 0, 0.1) solid;
+-moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px;
+-moz-box-shadow:3px 3px 10px rgba(0,0,0,0.3); -webkit-box-shadow:3px 3px 10px rgba(0,0,0,0.3); box-shadow:3px 3px 10px rgba(0,0,0,0.3);}
+.lock-desk-avatar{ width:104px; height:104px; margin:5px auto 30px auto;}
 .lock-desk-avatar img{ display:block; width:100px; height:100px; border:2px #fff solid;
 -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:60px;
 -moz-box-shadow:3px 3px 10px rgba(0,0,0,0.3); -webkit-box-shadow:3px 3px 10px rgba(0,0,0,0.3); box-shadow:3px 3px 10px rgba(0,0,0,0.3);}
 .lock-desk-form{ position:relative; width:180px; height:32px;}
-.lock-desk-input{ width:137px; height:20px; line-height:20px; padding:5px 35px 5px 5px; font-size:14px; color:#333; border:1px rgba(0,0,0,0.4) solid;
--moz-box-shadow:1px 2px 3px rgba(0,0,0,0.2) inset; -webkit-box-shadow:1px 2px 3px rgba(0,0,0,0.2) inset; box-shadow:1px 2px 3px rgba(0,0,0,0.2) inset;
+.lock-desk-input{ width:137px; height:20px; line-height:20px; padding:5px 35px 5px 5px; font-size:14px; color:#333; border:1px #ccc solid;
+-moz-box-shadow:1px 2px 3px #ddd inset; -webkit-box-shadow:1px 2px 3px #ddd inset; box-shadow:1px 2px 3px #ddd inset;
 -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;}
-.lock-desk-input:focus{ border:1px rgba(0,0,0,0.5) solid;}
+.lock-desk-input:focus{ border:1px #aaa solid;}
 .lock-desk-enter{ display:none; position:absolute; right:8px; top:8px; width:16px; height:16px; background:url(../images/desktop/lock-desk-enter.png) no-repeat; cursor:pointer;}
 
 /* other
