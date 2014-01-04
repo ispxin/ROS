@@ -89,7 +89,7 @@ class UserAction extends CommonAction {
 		// 保存数据
 		M('User') -> data($data) -> add();
 		
-		$this -> ajaxReturn(0, '注册成功', 1);
+		$this -> ajaxReturn(array('user' => $user), '注册成功', 1);
 		
     }
 

@@ -117,7 +117,7 @@ define(function(require, exports, module) {
                     
                     if (item !== null) {
                     
-                        html += '<li class="app-item" data-id="'+ item.id +'" data-index="'+ j +'" data-type="'+ item.type +'" data-title="'+ item.title +'" data-icon="'+ item.icon +'" data-url="'+ item.url +'" data-width="'+ item.width +'" data-height="'+ item.height +'" data-ismin="'+ item.isMin +'" data-ismax="'+ item.isMax +'">' +
+                        html += '<li title="'+ item.title +'" class="app-item" data-id="'+ item.id +'" data-index="'+ j +'" data-type="'+ item.type +'" data-title="'+ item.title +'" data-icon="'+ item.icon +'" data-url="'+ item.url +'" data-width="'+ item.width +'" data-height="'+ item.height +'" data-ismax="'+ item.isMax +'">' +
                                     '<div class="app-icon">' +
                                         '<img src="'+ item.icon +'">' +
                                     '</div>' +
@@ -467,6 +467,7 @@ define(function(require, exports, module) {
 							'<div class="lock-desk-avatar">' +
 								'<img src="/ros/Public/Home/images/desktop/avatar.gif" />' +
 							'</div>' +
+							'<div class="lock-desk-user">'+ username +'</div>' +
 							'<div class="lock-desk-form">' +
 								'<input type="hidden" name="user" id="user" value="'+ username +'" />' +
 								'<input type="password" class="lock-desk-input" name="password" id="password" />' +
@@ -522,6 +523,10 @@ define(function(require, exports, module) {
         	    _this.oLock.fadeIn(600);
         	    $('#password').focus();
         	});
+        	
+        	$document.on('click.lockFocus', function() {
+        	    $('#password').focus();
+        	});
 
         },
         
@@ -535,11 +540,11 @@ define(function(require, exports, module) {
                 type : 'post',
                 data : data,
                 success : function(msg) {
-                    console.log(msg);
                     
                     if (msg.status == 1) {
                         _this.oLock.fadeOut(300, function() {
                             $(this).remove();
+                            $document.off('click.lockFocus');
                         });
                     } else if (msg.status == 0) {
                         _this.lockWaggle();
@@ -554,9 +559,11 @@ define(function(require, exports, module) {
         // 锁屏晃动
         lockWaggle : function() {
             var iNow = 0;
+            var timer = null;
             var arr = [-116, -106, -115, -107, -114, -108, -113, -109, -112, -110, -111];
             
-            var timer = setInterval(function() {
+            clearInterval(timer);
+            timer = setInterval(function() {
                 $('#lock-desk').css('margin-left', arr[iNow]);
                 iNow++;
                 if (iNow == arr.length) {

@@ -29,7 +29,8 @@ class IndexAction extends CommonAction {
 			array_push($appData, array());	
 			$appIdList = explode(',', $deskData[$userid]['desk'.$i]);
 			foreach ($appIdList as $v) {
-				$app = $App -> where(array('appid' => $v)) -> find();
+				$v = explode('_', $v);
+				$app = $App -> where(array('id' => $v[1])) -> find();
 				array_push($appData[$i-1], $app);
 			}
 		}

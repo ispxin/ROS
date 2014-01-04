@@ -13,21 +13,18 @@
 	<body class="iframeBody">
 
 		<!-- page header s -->
-		<div class="page-header"><a href="__GROUP__/Index/main" class="glyphicon glyphicon-circle-arrow-left" title="返回"></a> 文章管理</div>
+		<div class="page-header"><a href="__GROUP__/Index/main" class="glyphicon glyphicon-circle-arrow-left" title="返回"></a> 所有应用</div>
 		<!-- page header e -->
 		
 		<!-- tabs s -->
 		<div class="row">
 			<div class="col-md-9">
 				<ul class="nav nav-pills mb20">
-					<li <?php if(($article_state) == "1"): ?>class="active"<?php endif; ?>>
-				    	<a href="__URL__/index/state/1"><span class="badge pull-right"><?php echo ($article_count["posted"]); ?></span>已发布</a>
+					<li <?php if(($app_state) == "1"): ?>class="active"<?php endif; ?>>
+				    	<a href="__URL__/index/state/1"><span class="badge pull-right"><?php echo ($app_count["posted"]); ?></span>已发布</a>
 					</li>
-					<li <?php if(($article_state) == "0"): ?>class="active"<?php endif; ?>>
-				    	<a href="__URL__/index/state/0"><span class="badge pull-right"><?php echo ($article_count["draft"]); ?></span>草稿箱</a>
-					</li>
-					<li <?php if(($article_state) == "2"): ?>class="active"<?php endif; ?>>
-				    	<a href="__URL__/index/state/2"><span class="badge pull-right"><?php echo ($article_count["rubbish"]); ?></span>回收站</a>
+					<li <?php if(($app_state) == "0"): ?>class="active"<?php endif; ?>>
+				    	<a href="__URL__/index/state/0"><span class="badge pull-right"><?php echo ($app_count["rubbish"]); ?></span>回收站</a>
 					</li>
 				</ul>
 			</div>
@@ -46,34 +43,34 @@
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th width="">标题</th>
-					<th width="150">目录</th>
-					<th width="200">标签</th>
-					<th width="150">发布时间</th>
-					<th width="150">更新时间</th>
-					<th width="80">浏览量</th>
-					<th width="80">评论</th>
+					<th>应用标题</th>
+					<th width="100">分类</th>
+					<th width="80">宽度</th>
+					<th width="80">高度</th>
+					<th width="80">最大化</th>
+					<th width="120">提供者</th>
+					<th width="180">发布时间</th>
 					<th width="160">操作</th>
 				</tr>
 			</thead>
 			<tbody>
-				<?php if(is_array($article_list)): $i = 0; $__LIST__ = $article_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><tr>
-					<td><a href="__ROOT__/" target="_blank"><?php echo ($data["title"]); ?></a></td>
-					<td><a href="__URL__/index/state/<?php echo ($article_state); ?>/category/<?php echo ($data["category"]); ?>"><?php echo ($data["category_name"]); ?></a></td>
+				<?php if(is_array($app_list)): $i = 0; $__LIST__ = $app_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><tr>
 					<td>
-						<a href="#" class="label label-success">grunt</a>
-						<a href="#" class="label label-success">html</a>
+						<img src="<?php echo ($data["icon"]); ?>" width="20" height="20" title="<?php echo ($data["title"]); ?>" />
+						<a href="__ROOT__/" target="_blank"><?php echo ($data["title"]); ?></a>
 					</td>
-					<td><?php echo (date("Y-m-d H:i:s",$data["post_datetime"])); ?></td>
-					<td><?php echo (date("Y-m-d H:i:s",$data["update_datetime"])); ?></td>
-					<td><?php echo ($data["view"]); ?></td>
-					<td><a href="#" class="label label-danger">0</a></td>
+					<td><a href="__URL__/index/state/<?php echo ($app_state); ?>/category/<?php echo ($data["category"]); ?>"><?php echo ($data["category_name"]); ?></a></td>
+					<td>500</td>
+					<td>300</td>
+					<td>支持</td>
+					<td>ispxin</td>
+					<td><?php echo (date("Y-m-d H:i:s",$data["pubdate"])); ?></td>
 					<td>
-						<?php if($article_state == 2): ?><a href="__URL__/change/id/<?php echo ($data["id"]); ?>/state/0" class="btn btn-default btn-xs j-article-remove"><span class="glyphicon glyphicon-share-alt"></span> 还原</a>
-						<a href="__URL__/delete/id/<?php echo ($data["id"]); ?>" class="btn btn-default btn-xs j-article-remove"><span class="glyphicon glyphicon-remove"></span> 永久删除</a>
+						<?php if($app_state == 0): ?><a href="__URL__/change/id/<?php echo ($data["id"]); ?>/state/1" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt"></span> 还原</a>
+						<a href="__URL__/delete/id/<?php echo ($data["id"]); ?>" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span> 永久删除</a>
 						<?php else: ?>
 						<a href="__URL__/edit/id/<?php echo ($data["id"]); ?>" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit"></span> 编辑</a>
-						<a href="__URL__/change/id/<?php echo ($data["id"]); ?>/state/2" class="btn btn-default btn-xs j-article-remove"><span class="glyphicon glyphicon-trash"></span> 移至回收站</a><?php endif; ?>
+						<a href="__URL__/change/id/<?php echo ($data["id"]); ?>/state/0" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-trash"></span> 移至回收站</a><?php endif; ?>
 					</td>
 				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 			</tbody>

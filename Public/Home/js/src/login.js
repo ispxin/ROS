@@ -161,6 +161,7 @@ define(function(require, exports, module) {
         
             if (!checkUserFlag) {
             	$('#user').focus();
+            	this.waggle();
                 return false;
             }
             
@@ -169,6 +170,7 @@ define(function(require, exports, module) {
             
             if (!checkPasswordFlag) {
             	$('#password').focus();
+            	this.waggle();
                 return false;
             }
 			
@@ -189,8 +191,10 @@ define(function(require, exports, module) {
 	    				
 	    				if (msg.data == 0) {
 	    					oMessageUser.html('账号不存在').parent().addClass('error');
+	    					_this.waggle();
 	    				} else if (msg.data == 1) {
 	    					oMessagePassword.html('密码错误').parent().addClass('error');
+	    					_this.waggle();
 	    				}
 	    				
 	    			}
@@ -293,6 +297,7 @@ define(function(require, exports, module) {
         
             if (!checkRegUserFlag) {
             	$('#reg-user').focus();
+            	this.waggle();
                 return false;
             }
             
@@ -301,6 +306,7 @@ define(function(require, exports, module) {
         
             if (!checkRegPasswordFlag) {
             	$('#reg-password').focus();
+            	this.waggle();
                 return false;
             }
             
@@ -309,6 +315,7 @@ define(function(require, exports, module) {
         
             if (!checkRegPasswordRepeatFlag) {
             	$('#reg-password-repeat').focus();
+            	this.waggle();
                 return false;
             }
             
@@ -317,30 +324,32 @@ define(function(require, exports, module) {
         
             if (!checkPasswordSameFlag) {
             	$('#reg-password-repeat').focus();
+            	this.waggle();
                 return false;
             }
 	    	
 	    	// 注册请求
 	    	$.ajax({
-	    		url : './User/register',
+	    		url : './index.php/User/register',
 	    		data : data,
 	    		type : 'post',
 	    		success : function(msg) {
-	    			
-	    			console.log(msg);
 
 	    			if (msg.status == 1) {
-
+                        
 	    				$('#register input').val('');
 	    				_this.change('signin');
-	    				$('#user').focus();
+	    				$('#user').val(msg.data.user);
+	    				$('#password').focus();
 	    				
 	    			} else if (msg.status == 0) {
 	    				
 	    				if (msg.data == 1) {
 	    					oMessageRegUser.html('E-mail已被注册').parent().addClass('error');
+	    					_this.waggle();
 	    				} else if (msg.data == 2) {
 	    					oMessageRegPasswordRepeat.html('E-密码不一致').parent().addClass('error');
+	    					_this.waggle();
 	    				}
 	    				
 	    			}
@@ -349,6 +358,22 @@ define(function(require, exports, module) {
 	    	});
 
 	    },
+	    
+	    waggle : function() {
+            var iNow = 0;
+            var timer = null;
+            var arr = [-155, -145, -154, -146, -153, -147, -152, -148, -151, -149, -150];
+            
+            clearInterval(timer);
+            timer = setInterval(function() {
+                $('#login').css('margin-left', arr[iNow]);
+                iNow++;
+                if (iNow == arr.length) {
+                    clearInterval(timer);
+                }
+            }, 30);
+
+        },
 	    
 	    // 事件
 	    bind : function() {

@@ -54,22 +54,24 @@ class AppAction extends CommonAction {
 
 	// 添加应用 <保存>
 	public function addSave() {
+		
+		dump($_POST);
 
-		$article = D('Article');
-		
-		$data = $article -> create();
-		
-		if (!$data) {
-			exit( $this -> error( $article -> getError() ) );
-		}
-
-		$result = $article -> add($data);
-		
-		if ($result) {
-			$this -> success('发布成功！', '__GROUP__/Article');
-		} else {
-			$this -> error('发布失败！');
-		}
+		// $article = D('Article');
+// 		
+		// $data = $article -> create();
+// 		
+		// if (!$data) {
+			// exit( $this -> error( $article -> getError() ) );
+		// }
+// 
+		// $result = $article -> add($data);
+// 		
+		// if ($result) {
+			// $this -> success('发布成功！', '__GROUP__/Article');
+		// } else {
+			// $this -> error('发布失败！');
+		// }
 
 	}
 
