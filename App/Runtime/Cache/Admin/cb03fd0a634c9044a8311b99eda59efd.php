@@ -13,7 +13,7 @@
 	<body class="iframeBody">
 
 		<!-- page header s -->
-		<div class="page-header"><a href="__GROUP__/Index/main" class="glyphicon glyphicon-circle-arrow-left" title="返回"></a> 所有应用</div>
+		<div class="page-header"><a href="__GROUP__/Index/main" class="glyphicon glyphicon-circle-arrow-left" title="返回"></a> 应用管理</div>
 		<!-- page header e -->
 		
 		<!-- tabs s -->
@@ -57,13 +57,15 @@
 				<?php if(is_array($app_list)): $i = 0; $__LIST__ = $app_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><tr>
 					<td>
 						<img src="<?php echo ($data["icon"]); ?>" width="20" height="20" title="<?php echo ($data["title"]); ?>" />
-						<a href="__ROOT__/" target="_blank"><?php echo ($data["title"]); ?></a>
+						<a href="<?php echo ($data["url"]); ?>" target="_blank"><?php echo ($data["title"]); ?></a>
 					</td>
 					<td><a href="__URL__/index/state/<?php echo ($app_state); ?>/category/<?php echo ($data["category"]); ?>"><?php echo ($data["category_name"]); ?></a></td>
-					<td>500</td>
-					<td>300</td>
-					<td>支持</td>
-					<td>ispxin</td>
+					<td><?php echo ($data["width"]); ?></td>
+					<td><?php echo ($data["height"]); ?></td>
+					<td>
+						<?php if(($data['isMax']) == "1"): ?>支持<?php endif; ?>
+					</td>
+					<td><?php echo ($data["author"]); ?></td>
 					<td><?php echo (date("Y-m-d H:i:s",$data["pubdate"])); ?></td>
 					<td>
 						<?php if($app_state == 0): ?><a href="__URL__/change/id/<?php echo ($data["id"]); ?>/state/1" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt"></span> 还原</a>

@@ -9,7 +9,7 @@
 	<body class="iframeBody">
 
 		<!-- page header s -->
-		<div class="page-header"><a href="__GROUP__/Index/main" class="glyphicon glyphicon-circle-arrow-left" title="返回"></a> 所有应用</div>
+		<div class="page-header"><a href="__GROUP__/Index/main" class="glyphicon glyphicon-circle-arrow-left" title="返回"></a> 应用管理</div>
 		<!-- page header e -->
 		
 		<!-- tabs s -->
@@ -54,13 +54,15 @@
 				<tr>
 					<td>
 						<img src="{$data.icon}" width="20" height="20" title="{$data.title}" />
-						<a href="__ROOT__/" target="_blank">{$data.title}</a>
+						<a href="{$data.url}" target="_blank">{$data.title}</a>
 					</td>
 					<td><a href="__URL__/index/state/{$app_state}/category/{$data.category}">{$data.category_name}</a></td>
-					<td>500</td>
-					<td>300</td>
-					<td>支持</td>
-					<td>ispxin</td>
+					<td>{$data.width}</td>
+					<td>{$data.height}</td>
+					<td>
+						<eq name="data['isMax']" value="1">支持</eq>
+					</td>
+					<td>{$data.author}</td>
 					<td>{$data.pubdate|date="Y-m-d H:i:s",###}</td>
 					<td>
 						<if condition="$app_state eq 0">

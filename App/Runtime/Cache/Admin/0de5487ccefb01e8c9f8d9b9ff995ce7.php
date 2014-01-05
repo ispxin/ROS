@@ -1,10 +1,14 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>{$Think.config.CFG_WEBNAME}</title>
-		<include file="Common:import" />
+		<title><?php echo (C("CFG_WEBNAME")); ?></title>
+		<link rel="stylesheet" href="__CSS__/bootstrap.css">
+<link rel="stylesheet" href="__CSS__/bootstrap-reset.css">
+<link rel="stylesheet" href="__CSS__/style.css">
+<script src="__JS__/jquery-1.8.3.min.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
 	</head>
 	<body class="iframeBody">
 
@@ -24,19 +28,17 @@
 						<div class="input-group">
 							<div class="input-group-btn">
 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-									<span id="j-cate-current">{$field.category_name}</span> <span class="caret"></span>
+									<span id="j-cate-current"><?php echo ($field["category_name"]); ?></span> <span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu" id="j-cate-list">
-									<volist name="category_list" id="data">
-										<li>
-											<a href="javascript:;" data-id="{$data.id}">{$data.html}<span>{$data.name}</span></a>
-										</li>
-									</volist>
+									<?php if(is_array($category_list)): $i = 0; $__LIST__ = $category_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><li>
+											<a href="javascript:;" data-id="<?php echo ($data["id"]); ?>"><?php echo ($data["html"]); ?><span><?php echo ($data["name"]); ?></span></a>
+										</li><?php endforeach; endif; else: echo "" ;endif; ?>
 								</ul>
 							</div>
-							<input type="hidden" name="id" value="{$field.id}" />
-							<input type="hidden" name="category" id="j-input-cate" value="{$field.category}" />
-							<input type="text" class="form-control" name="title" placeholder="请填写应用标题" value="{$field.title}" />
+							<input type="hidden" name="id" value="<?php echo ($field["id"]); ?>" />
+							<input type="hidden" name="category" id="j-input-cate" value="<?php echo ($field["category"]); ?>" />
+							<input type="text" class="form-control" name="title" placeholder="请填写应用标题" value="<?php echo ($field["title"]); ?>" />
 						</div>
 					</div>
 					<!-- 目录 标题 e -->
@@ -44,28 +46,28 @@
 					<div class="form-group">
 						<div class="input-group">
 							<span class="input-group-addon">提供者</span>
-							<input type="text" class="form-control" name="author" placeholder="请填写应用提供者" value="{$field.author}" />
+							<input type="text" class="form-control" name="author" placeholder="请填写应用提供者" value="<?php echo ($field["author"]); ?>" />
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<div class="input-group">
 							<span class="input-group-addon">地址</span>
-							<input type="text" class="form-control" name="url" placeholder="请填写应用地址" value="{$field.url}" />
+							<input type="text" class="form-control" name="url" placeholder="请填写应用地址" value="<?php echo ($field["url"]); ?>" />
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<div class="input-group">
 							<span class="input-group-addon">图标</span>
-							<input type="text" class="form-control" name="icon" placeholder="请填写图标地址" value="{$field.icon}" />
+							<input type="text" class="form-control" name="icon" placeholder="请填写图标地址" value="<?php echo ($field["icon"]); ?>" />
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<div class="input-group">
 							<span class="input-group-addon">宽度</span>
-							<input type="text" class="form-control" name="width" value="{$field.width}" />
+							<input type="text" class="form-control" name="width" value="<?php echo ($field["width"]); ?>" />
 							<span class="input-group-addon">px</span>
 						</div>
 					</div>
@@ -73,22 +75,22 @@
 					<div class="form-group">
 						<div class="input-group">
 							<span class="input-group-addon">高度</span>
-							<input type="text" class="form-control" name="height" value="{$field.height}" />
+							<input type="text" class="form-control" name="height" value="<?php echo ($field["height"]); ?>" />
 							<span class="input-group-addon">px</span>
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<textarea class="form-control" rows="5" placeholder="请填写应用描述" name="description">{$field.description}</textarea>
+						<textarea class="form-control" rows="5" placeholder="请填写应用描述" name="description"><?php echo ($field["description"]); ?></textarea>
 					</div>
 					
 					<div class="form-group">
 						<span class="mr10">窗口是否支持最大化：</span>
 						<label class="mr20">
-							<input type="radio" name="isMax" <eq name="field['isMax']" value="1">checked="checked"</eq> value="1" /> 是
+							<input type="radio" name="isMax" <?php if(($field['isMax']) == "1"): ?>checked="checked"<?php endif; ?> value="1" /> 是
 					    </label>
 					    <label>
-							<input type="radio" name="isMax" <eq name="field['isMax']" value="0">checked="checked"</eq> value="0" /> 否
+							<input type="radio" name="isMax" <?php if(($field['isMax']) == "0"): ?>checked="checked"<?php endif; ?> value="0" /> 否
 					    </label>
 					</div>
 

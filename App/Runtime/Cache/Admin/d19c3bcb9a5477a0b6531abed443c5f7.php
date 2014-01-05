@@ -47,7 +47,7 @@
 		</h2>
 		<ul>
 			<li><a href="__GROUP__/App/add" target="main">发布应用</a></li>
-			<li><a href="__GROUP__/App" target="main">所有应用</a></li>
+			<li><a href="__GROUP__/App" target="main">应用管理</a></li>
 			<li><a href="__GROUP__/Category" target="main">应用分类</a></li>
 		</ul>
 	</div>

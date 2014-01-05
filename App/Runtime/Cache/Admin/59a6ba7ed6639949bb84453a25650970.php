@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="__CSS__/style.css">
 <script src="__JS__/jquery-1.8.3.min.js"></script>
 <script src="__JS__/bootstrap.min.js"></script>
-		<script type="text/javascript" src="__PUBLIC__/Plugins/ckeditor/ckeditor.js"></script>
 	</head>
 	<body class="iframeBody">
 
@@ -38,22 +37,29 @@
 								</ul>
 							</div>
 							<input type="hidden" name="category" id="j-input-cate" />
-							<input type="text" class="form-control" name="title" />
+							<input type="text" class="form-control" name="title" placeholder="请填写应用标题" />
 						</div>
 					</div>
 					<!-- 目录 标题 e -->
 					
 					<div class="form-group">
 						<div class="input-group">
+							<span class="input-group-addon">提供者</span>
+							<input type="text" class="form-control" name="author" placeholder="请填写应用提供者" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="input-group">
 							<span class="input-group-addon">地址</span>
-							<input type="text" class="form-control" name="url" />
+							<input type="text" class="form-control" name="url" placeholder="请填写应用地址" />
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<div class="input-group">
 							<span class="input-group-addon">图标</span>
-							<input type="text" class="form-control" name="icon" />
+							<input type="text" class="form-control" name="icon" placeholder="请填写图标地址" />
 						</div>
 					</div>
 					
@@ -74,18 +80,22 @@
 					</div>
 					
 					<div class="form-group">
-						<textarea class="form-control" rows="5" placeholder="请输入应用描述" name="description"></textarea>
+						<textarea class="form-control" rows="5" placeholder="请填写应用描述" name="description"></textarea>
 					</div>
 					
-					<div class="checkbox">
-						<label>
-							<input type="checkbox" name="isMax" checked="checked" value="1" /> 应用窗口支持最大化
+					<div class="form-group">
+						<span class="mr10">窗口是否支持最大化：</span>
+						<label class="mr20">
+							<input type="radio" name="isMax" checked="checked" value="1" /> 是
+					    </label>
+					    <label>
+							<input type="radio" name="isMax" value="0" /> 否
 					    </label>
 					</div>
 
 					<!-- post btn s -->
 					<div class="form-group">
-						<button type="submit" name="state" value="1" class="btn btn-primary btn-lg">
+						<button type="submit" class="btn btn-primary btn-lg">
 							<span class="glyphicon glyphicon-ok-sign"></span> 发布
 						</button>
 					</div>

@@ -46,32 +46,31 @@ class AppAction extends CommonAction {
 	
 	// 添加应用 <视图>
 	public function add() {
-
-		
+		$category_list = M('Category') -> order('sort asc') -> select();
+		$this -> assign('category_list', $category_list);
 		$this -> display();
-
 	}
 
 	// 添加应用 <保存>
 	public function addSave() {
 		
 		dump($_POST);
+		
+		$App = D('App');
 
-		// $article = D('Article');
-// 		
-		// $data = $article -> create();
-// 		
-		// if (!$data) {
-			// exit( $this -> error( $article -> getError() ) );
-		// }
-// 
-		// $result = $article -> add($data);
-// 		
-		// if ($result) {
-			// $this -> success('发布成功！', '__GROUP__/Article');
-		// } else {
-			// $this -> error('发布失败！');
-		// }
+		$data = $App -> create();
+
+		if (!$data) {
+			exit( $this -> error( $App -> getError() ) );
+		}
+
+		$result = $App -> add();
+
+		if ($result) {
+			$this -> success('发布成功！', '__GROUP__/App');
+		} else {
+			$this -> error('发布失败！');
+		}
 
 	}
 
@@ -79,14 +78,12 @@ class AppAction extends CommonAction {
 	public function edit() {
 
 		$id = $this -> _get('id');
-		$field = M('Article') -> where(array('id' => $id)) -> find();
+		$field = M('App') -> where(array('id' => $id)) -> find();
 		
 		if ($field) {
-			$field['category_name'] = $this -> getArticleCategory($field['category']);
+			$field['category_name'] = $this -> getAppCategory($field['category']);
 
-			import('Class.Category', APP_PATH);
 			$category_list = M('Category') -> order('sort ASC') -> select();
-			$category_list = Category::unlimitedForLevel($category_list);
 
 			$this -> assign('field', $field);
 			$this -> assign('category_list', $category_list);
@@ -101,18 +98,18 @@ class AppAction extends CommonAction {
 	// 保存编辑应用 <保存>
 	public function editSave() {
 
-		$article = D('Article');
+		$App = D('App');
 		
-		$data = $article -> create();
+		$data = $App -> create();
 
 		if (!$data) {
-			exit( $this -> error( $article -> getError() ) );
+			exit( $this -> error( $App -> getError() ) );
 		}
 
-		$result = $article -> where(array('id' => $data['id'])) -> save($data);
+		$result = $App -> where(array('id' => $data['id'])) -> save($data);
 		
 		if ($result) {
-			$this -> success('操作成功！', '__GROUP__/Article');
+			$this -> success('操作成功！', '__GROUP__/App');
 		} else {
 			$this -> error('操作失败！');
 		}
