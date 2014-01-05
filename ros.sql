@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2014-01-05 00:08:01
+-- 生成日期: 2014-01-05 23:17:47
 -- 服务器版本: 5.6.12
 -- PHP 版本: 5.3.26
 
@@ -50,18 +50,18 @@ CREATE TABLE IF NOT EXISTS `ros_app` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` int(11) NOT NULL,
   `type` char(50) CHARACTER SET utf8 NOT NULL,
-  `title` char(50) CHARACTER SET utf8 NOT NULL,
-  `icon` char(50) CHARACTER SET utf8 NOT NULL,
+  `title` char(255) CHARACTER SET utf8 NOT NULL,
+  `icon` char(255) CHARACTER SET utf8 NOT NULL,
   `width` int(11) NOT NULL,
   `height` int(11) NOT NULL,
-  `url` char(50) CHARACTER SET utf8 NOT NULL,
+  `url` char(255) CHARACTER SET utf8 NOT NULL,
   `isMax` int(11) NOT NULL,
   `state` int(11) NOT NULL,
   `description` longtext COLLATE utf8_bin,
-  `author` char(255) COLLATE utf8_bin NOT NULL,
+  `author` char(50) COLLATE utf8_bin NOT NULL,
   `pubdate` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=6 ;
 
 --
 -- 转存表中的数据 `ros_app`
@@ -70,7 +70,9 @@ CREATE TABLE IF NOT EXISTS `ros_app` (
 INSERT INTO `ros_app` (`id`, `category`, `type`, `title`, `icon`, `width`, `height`, `url`, `isMax`, `state`, `description`, `author`, `pubdate`) VALUES
 (1, 1, 'app', '我的博客', '/ros/Public/Home/images/app/clover.png', 500, 300, 'http://www.wangyingran.com', 1, 0, NULL, 'ispxin', 1386829188),
 (2, 1, 'app', '我的博客', '/ros/Public/Home/images/app/clover.png', 500, 300, 'http://www.wangyingran.com', 1, 1, NULL, 'ispxin', 1386829188),
-(3, 5, 'app', 'QQ音乐', '/ros/Public/Home/images/app/clover.png', 500, 300, 'http://www.wangyingran.com', 1, 1, NULL, 'ispxin', 1386829188);
+(3, 5, 'app', 'QQ音乐', '/ros/Public/Home/images/app/clover.png', 500, 300, 'http://www.wangyingran.com', 1, 1, '', 'ispxin', 1386829188),
+(4, 1, 'app', '读书天下', 'http://4.web.qstatic.com/webqqpic/pubapps/2/2534/images/big.png', 715, 460, 'http://www.dooland.com/magazine/api/q+/flash.php', 0, 1, '读书天下描述啊～', '平台提供', 1386829188),
+(5, 1, '', '腾讯微博', 'http://2.web.qstatic.com/webqqpic/pubapps/0/2/images/big.png', 1000, 800, 'http://t.qq.com', 1, 1, '腾讯微博简介哦～~~~', '平台提供', 1386829188);
 
 -- --------------------------------------------------------
 
