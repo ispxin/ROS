@@ -8,13 +8,12 @@ define(function(require, exports, module) {
     
     var $window = $(window),
     	$document = $(document),
-    	dialogList = {},
-    	urlRe = /^[a-zA-z]+:\/\/[^\s]*$/;
+    	dialogList = {};
     
     var defaults = {
     	icon : null,
     	title : '',
-    	content : 'Hello world : )',
+    	url : '',
     	width : 300,
     	height : 200,
     	isDrag : 1,
@@ -126,9 +125,8 @@ define(function(require, exports, module) {
 
     	// 显示
     	show : function() {
-
-    		this.__dialog.fadeIn(500);
     		
+    		this.__dialog.show();
     		this.zIndexUp();
 
     		this.opened = true;
@@ -139,6 +137,7 @@ define(function(require, exports, module) {
     	hide : function() {
 
     		this.__dialog.hide();
+    		this.__task.cancelActive();
 
     		this.opened = false;
     		
@@ -152,6 +151,7 @@ define(function(require, exports, module) {
         	if (dialogCount > 1) {
         		
         		this.show();
+        		this.__task.setActive();
         		
         	} else if (dialogCount == 1) {
         		
@@ -159,6 +159,7 @@ define(function(require, exports, module) {
 	                this.hide();
 	            } else {
 	                this.show();
+	                this.__task.setActive();
 	            }
         		
         	}
@@ -230,16 +231,8 @@ define(function(require, exports, module) {
 	    },
 
     	// 处理内容
-    	__processContent : function() {
-    		
-    		var isUrl = urlRe.test(this.o.content);
-            
-            if (isUrl) {
-                return '<iframe i="iframe" src="'+ this.o.content +'" frameborder="0" allowtransparency="true" scrolling="auto" width="'+ this.o.width +'" height="'+ this.o.height +'"></iframe>';
-            } else {
-            	return '<div style="width:'+ this.o.width +'px; height:'+ this.o.height +'px; overflow:hidden;">'+ this.o.content +'</div>'
-            }
-    		
+    	__processUrl : function() {
+			return '<iframe i="iframe" src="'+ this.o.url +'" frameborder="0" allowtransparency="true" scrolling="auto" width="'+ this.o.width +'" height="'+ this.o.height +'"></iframe>';
     	},
     	
     	// 创建模板
@@ -256,7 +249,7 @@ define(function(require, exports, module) {
 							'<span i="close" class="dialog-close" title="关闭"></span>' +
 						'</div>' +
 					'</div>' +
-					'<div i="content" class="dialog-content">'+ this.__processContent() +'</div>' +
+					'<div i="content" class="dialog-content">'+ this.__processUrl() +'</div>' +
 				'</div>';
     		
     		return tmplate;

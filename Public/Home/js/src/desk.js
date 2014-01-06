@@ -2,32 +2,6 @@
  * Desk 模块
  */
 define(function(require, exports, module) {
-    
-    
-    // 静态App数据，后期ajax动态调用数据
-    var appData2 = [
-        [
-            { id : 'app_1', type : 'app',  title : '我的博客1', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 0},
-            { id : 'app_2', type : 'app',  title : '我的博客2', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 0},
-            { id : 'app_3', type : 'app',  title : '我的博客3', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1},
-            { id : 'app_4', type : 'app',  title : '我的博客4', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1},
-            { id : 'app_5', type : 'app',  title : '我的博客5', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1},
-            { id : 'app_6', type : 'app',  title : '我的博客6', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1}
-        ],
-        [
-            { id : 'app_7', type : 'app',  title : '我的博客', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1}
-        ],
-        [
-            { id : 'app_8', type : 'app',  title : '我的博客', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1}
-        ],
-        [
-            { id : 'app_9', type : 'app',  title : '我的博客', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1}
-        ],
-        [
-            { id : 'app_10', type : 'app',  title : '我的博客', icon : '/ros/Public/Home/images/app/clover.png', width : 500, height : 300,  url : 'http://www.wangyingran.com', isMax : 1}
-        ]
-    ];
-
 
     var user = require('./user'),
     	login = require('./login'),
@@ -410,7 +384,7 @@ define(function(require, exports, module) {
             	id : appData.id,
                 icon : appData.icon,
                 title : appData.title,
-                content : appData.url,
+                url : appData.url,
                 width : appData.width,
                 height : appData.height,
                 isMax : appData.ismax
@@ -446,7 +420,7 @@ define(function(require, exports, module) {
             	id : 'add',
                 icon : '/ros/Public/Home/images/app/app-add.png',
                 title : '应用市场',
-                content : '',
+                url : './index.php/App',
                 width : 800,
                 height : 500,
                 isMax : false
@@ -580,7 +554,7 @@ define(function(require, exports, module) {
             	id : 'userSetting',
                 icon : '/ros/Public/Home/images/app/user.png',
                 title : '账号设置',
-                content : '',
+                url : '',
                 width : 500,
                 height : 400,
                 isMax : false

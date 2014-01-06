@@ -45,7 +45,7 @@ a:hover { color:#000;}
 
 .contextmenu-a .icon-arrow,
 .contextmenu .icon,
-.app-add
+.app-content .app-item .app-add
 { background-image:url(../images/desktop/all-icons.png); background-repeat:no-repeat;}
 
 /* desktop
@@ -62,7 +62,7 @@ a:hover { color:#000;}
 .app-content .app-item .app-name span{ display:inline-block; height:20px; margin-left:5px; background:url(../images/desktop/app-name-bg-right.png) right no-repeat; color:#fff;}
 .app-content .app-item .app-name i{ position:relative; right:10px; display:block; height:20px; line-height:20px; padding-left:10px; background:url(../images/desktop/app-name-bg-left.png) left no-repeat;}
 
-.app-add{ display:block; width:50px; height:50px; background-position:-380px -500px;}
+.app-content .app-item .app-add{ display:block; width:50px; height:50px; background-position:-380px -500px;}
 
 .task-bg{ position:absolute; bottom:0; width:100%; height:64px; background:url(../images/desktop/task-bg.png) bottom repeat-x;}
 .bottombar-bg{ position:absolute; bottom:0; width:100%; height:130px; background:url(../images/desktop/bottombar-bg.png) repeat-x;}
@@ -148,7 +148,7 @@ background:-moz-linear-gradient(0% 0% 270deg, #fff, #fff, #f0f0f0 100%);
 .dialog-restore{ background-position:-97px -61px;}
 .dialog-restore:hover{ background-position:-97px -32px;}
 .dialog-content{ position:relative; width:100%; height:100%;}
-.dialog-content iframe{ border:0;}
+.dialog-content iframe{ border:0; overflow-x:hidden; overflow-y:hidden;}
 .iframeMask{ position:absolute; left:0; top:0; background:none; width:100%; height:100%; filter:alpha(opacity=0); opacity:0;}
 .dialog-foot{}
 

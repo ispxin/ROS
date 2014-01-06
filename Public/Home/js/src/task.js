@@ -32,10 +32,7 @@ define(function(require, exports, module) {
             this.__createTask();
             
             this.__task.on('click', function() {
-                
                 _this.dialog.toggle();
-                _this.setActive();
-                
             });
             
             this.__task.on('contextmenu', function(ev) {
