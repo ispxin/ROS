@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50090
 File Encoding         : 65001
 
-Date: 2014-01-06 18:27:38
+Date: 2014-01-07 19:03:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -55,10 +55,10 @@ CREATE TABLE `ros_app` (
 -- ----------------------------
 -- Records of ros_app
 -- ----------------------------
-INSERT INTO `ros_app` VALUES ('1', '1', 'app', '我的博客', '/ros/Public/Home/images/app/clover.png', '500', '300', 'http://www.wangyingran.com', '1', '0', null, 'ispxin', '1386829188');
+INSERT INTO `ros_app` VALUES ('1', '1', 'app', '我的博客', '/ros/Public/Home/images/app/clover.png', '500', '300', 'http://www.wangyingran.com', '1', '1', null, 'ispxin', '1386829188');
 INSERT INTO `ros_app` VALUES ('2', '1', 'app', '我的博客', '/ros/Public/Home/images/app/clover.png', '500', '300', 'http://www.wangyingran.com', '1', '1', null, 'ispxin', '1386829188');
 INSERT INTO `ros_app` VALUES ('3', '5', 'app', 'QQ音乐', '/ros/Public/Home/images/app/clover.png', '500', '300', 'http://www.wangyingran.com', '1', '1', '', 'ispxin', '1386829188');
-INSERT INTO `ros_app` VALUES ('4', '1', 'app', '读书天下', 'http://4.web.qstatic.com/webqqpic/pubapps/2/2534/images/big.png', '715', '480', 'http://www.dooland.com/magazine/api/q+/flash.php', '0', '1', 0xE8AFBBE4B9A6E5A4A9E4B88BE68F8FE8BFB0E5958AEFBD9E, '平台提供', '1386829188');
+INSERT INTO `ros_app` VALUES ('4', '1', 'app', '读书天下', 'http://4.web.qstatic.com/webqqpic/pubapps/2/2534/images/big.png', '715', '530', 'http://www.dooland.com/magazine/api/q+/flash.php', '0', '1', 0xE8AFBBE4B9A6E5A4A9E4B88BE68F8FE8BFB0E5958AEFBD9E, '平台提供', '1386829188');
 INSERT INTO `ros_app` VALUES ('5', '1', 'app', '腾讯微博', 'http://2.web.qstatic.com/webqqpic/pubapps/0/2/images/big.png', '1000', '800', 'http://t.qq.com', '1', '1', 0xE885BEE8AEAFE5BEAEE58D9AE7AE80E4BB8BE593A6EFBD9E7E7E7E, '平台提供', '1386829188');
 
 -- ----------------------------
@@ -106,7 +106,7 @@ CREATE TABLE `ros_user` (
 -- Records of ros_user
 -- ----------------------------
 INSERT INTO `ros_user` VALUES ('1', 'guest@ros.com', '21232f297a57a5a743894a0e4a801fc3', 'app_1', 'app_2', 'app_3', '', '', '', '1386829188', '0');
-INSERT INTO `ros_user` VALUES ('2', 'ispxin@vip.qq.com', '21232f297a57a5a743894a0e4a801fc3', 'app_1,app_2,app_4,app_5', 'app_3', '', '', '', '', '1386829188', '0');
+INSERT INTO `ros_user` VALUES ('2', 'ispxin@vip.qq.com', '21232f297a57a5a743894a0e4a801fc3', 'app_1,app_2,app_4', 'app_3', '', '', '', '', '1386829188', '0');
 INSERT INTO `ros_user` VALUES ('3', 'bbb@qq.com', '21232f297a57a5a743894a0e4a801fc3', '', '', '', '', '', '', '1386829188', '0');
 INSERT INTO `ros_user` VALUES ('4', 'ccc@qq.com', '21232f297a57a5a743894a0e4a801fc3', '', '', '', '', '', '', '1386829188', '0');
 INSERT INTO `ros_user` VALUES ('5', 'ddd@qq.com', '21232f297a57a5a743894a0e4a801fc3', '', '', '', '', '', '', '1386830447', '0');
