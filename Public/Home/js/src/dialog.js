@@ -232,7 +232,7 @@ define(function(require, exports, module) {
 
     	// 处理内容
     	__processUrl : function() {
-			return '<iframe i="iframe" src="'+ this.o.url +'" frameborder="no" allowtransparency="true" scrolling="auto" width="'+ this.o.width +'" height="'+ this.o.height +'"></iframe>';
+			return '<iframe i="iframe" name="dialog-'+ this.o.id +'" src="'+ this.o.url +'" frameborder="no" allowtransparency="true" scrolling="auto" width="'+ this.o.width +'" height="'+ this.o.height +'"></iframe>';
     	},
     	
     	// 创建模板

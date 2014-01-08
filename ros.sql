@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50090
 File Encoding         : 65001
 
-Date: 2014-01-07 19:03:22
+Date: 2014-01-08 18:36:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -105,8 +105,8 @@ CREATE TABLE `ros_user` (
 -- ----------------------------
 -- Records of ros_user
 -- ----------------------------
-INSERT INTO `ros_user` VALUES ('1', 'guest@ros.com', '21232f297a57a5a743894a0e4a801fc3', 'app_1', 'app_2', 'app_3', '', '', '', '1386829188', '0');
-INSERT INTO `ros_user` VALUES ('2', 'ispxin@vip.qq.com', '21232f297a57a5a743894a0e4a801fc3', 'app_1,app_2,app_4', 'app_3', '', '', '', '', '1386829188', '0');
+INSERT INTO `ros_user` VALUES ('1', 'guest@ros.com', '21232f297a57a5a743894a0e4a801fc3', ',app_1', ',app_2', ',app_3', '', '', '', '1386829188', '0');
+INSERT INTO `ros_user` VALUES ('2', 'ispxin@vip.qq.com', '21232f297a57a5a743894a0e4a801fc3', ',app_1,app_2,app_3,app_5,app_4', '', '', '', '', '', '1386829188', '0');
 INSERT INTO `ros_user` VALUES ('3', 'bbb@qq.com', '21232f297a57a5a743894a0e4a801fc3', '', '', '', '', '', '', '1386829188', '0');
 INSERT INTO `ros_user` VALUES ('4', 'ccc@qq.com', '21232f297a57a5a743894a0e4a801fc3', '', '', '', '', '', '', '1386829188', '0');
 INSERT INTO `ros_user` VALUES ('5', 'ddd@qq.com', '21232f297a57a5a743894a0e4a801fc3', '', '', '', '', '', '', '1386830447', '0');

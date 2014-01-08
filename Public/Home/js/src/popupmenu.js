@@ -52,10 +52,10 @@ define(function(require, exports, module) {
 									'<div class="contextsubmenu-wrap">' +
 										'<ul class="contextsubmenu-ul contextmenu-style">' +
 											'<li class="contextsubmenu-li">' +
-												'<a href="javascript:;" class="contextsubmenu-a" id="mSetAppX">横向排列<span class="icon icon-current"></span></a>' +
+												'<a href="javascript:;" class="contextsubmenu-a '+ ( $.cookie("ROS_sortType") == 'x' ? 'on' : '' ) +' " id="mSetAppX">横向排列<span class="icon icon-current"></span></a>' +
 											'</li>' +
 											'<li class="contextsubmenu-li">' +
-												'<a href="javascript:;" class="contextsubmenu-a on" id="mSetAppY">纵向排列<span class="icon icon-current"></span></a>' +
+												'<a href="javascript:;" class="contextsubmenu-a '+ ( $.cookie("ROS_sortType") == 'y' ? 'on' : '' ) +' " id="mSetAppY">纵向排列<span class="icon icon-current"></span></a>' +
 											'</li>' +
 										'</ul>' +
 									'</div>' +
@@ -185,7 +185,7 @@ define(function(require, exports, module) {
             });
 
 			$('#mScreenMove li').each(function(i) {
-			    if (i == GLOBAL.nowScreen) {
+			    if (i == $.cookie('ROS_desk') - 1) {
 			        $(this).find('a').addClass('disabled');
 			    } else {
 			    	$(this).find('a').removeClass('disabled');

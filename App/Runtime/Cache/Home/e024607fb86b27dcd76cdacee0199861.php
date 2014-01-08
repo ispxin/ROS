@@ -39,7 +39,9 @@
 							<div class="app-description"><?php echo ($data["description"]); ?></div>
 						</div>
 						<div class="app-add">
-							<span class="btn-addApp" data-id="<?php echo ($data["id"]); ?>">添加</span>
+							<?php if($data['isAddApp'] == 0): ?><span class="btn-addApp" data-id="<?php echo ($data["id"]); ?>">添加</span>
+							<?php elseif($data['isAddApp'] == 1): ?>
+							<span class="btn-addApp disabled">已添加</span><?php endif; ?>
 						</div>
 					</div><?php endforeach; endif; else: echo "" ;endif; ?>
 					
@@ -62,15 +64,7 @@
 			preload : ["jquery"],
 			debug: true
 		});
-		
-		seajs.use("jquery", function($) {
-			
-			$('#appList').on('click', '.btn-addApp', function() {
-				alert($(this).data('id'));
-			});
-			
-		});
-
+		seajs.use('__JS__/src/app');
 		</script>
 		
 	</body>

@@ -18,7 +18,17 @@ define(function(require, exports, module) {
     	
     	// 初始化
     	init : function() {
-			
+    		
+    		// 设置Cookie初始值
+    		$.cookie('ROS_desk', 1);
+    		
+    		if (!$.cookie('ROS_sortType')) {
+    			this.sortType = GLOBAL.sortType;
+    			$.cookie('ROS_sortType', GLOBAL.sortType, {expires : GLOBAL.validDate});
+    		} else {
+    			this.sortType = $.cookie('ROS_sortType');
+    		}
+
 			this.iNow = 0;
 			
     		this.oDesk = $('#desk');
@@ -30,7 +40,7 @@ define(function(require, exports, module) {
     		this.getApp();
     		this.setDesk();
     		this.setNavbar();
-            this.setAppSort(GLOBAL.sortType);
+            this.setAppSort(this.sortType);
             // this.appMove();
     		this.resizeDesk();
     		this.bind();
@@ -143,8 +153,8 @@ define(function(require, exports, module) {
            
            this.iNow = index;
            
-           // 当前屏幕
-           GLOBAL.nowScreen = index;
+           // 设置当前屏幕
+           $.cookie('ROS_desk', ++index);
   
         },
     	
@@ -207,7 +217,7 @@ define(function(require, exports, module) {
     	
     	// 设置App排序方式
     	setAppSort : function(type) {
-    	    GLOBAL.sortType = type;
+    	    $.cookie('ROS_sortType', type, {expires : GLOBAL.validDate});
     	    if (type == 'x') {
                 this.setAppX();
             } else if (type == 'y') {
@@ -366,9 +376,9 @@ define(function(require, exports, module) {
 
     		$window.on('resize', function() {
     			setDeskDebounce();
-    			if (GLOBAL.sortType == 'x') {
+    			if ($.cookie('ROS_sortType') == 'x') {
                     setAppXDebounce();
-                } else if (GLOBAL.sortType == 'y') {
+                } else if ($.cookie('ROS_sortType') == 'y') {
                     setAppYDebounce();
                 }
     		});
@@ -397,7 +407,7 @@ define(function(require, exports, module) {
             
             obj.remove();
             
-            this.setAppSort(GLOBAL.sortType);
+            this.setAppSort($.cookie('ROS_sortType'));
             
         },
         
@@ -409,7 +419,7 @@ define(function(require, exports, module) {
             // 将app插入到添加应用前一位
             $(oAddApp).before(app);
             // 重新排序
-            this.setAppSort(GLOBAL.sortType);
+            this.setAppSort($.cookie('ROS_sortType'));
             
         },
         

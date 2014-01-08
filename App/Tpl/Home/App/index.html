@@ -42,7 +42,11 @@
 							<div class="app-description">{$data.description}</div>
 						</div>
 						<div class="app-add">
+							<if condition="$data['isAddApp'] eq 0">
 							<span class="btn-addApp" data-id="{$data.id}">添加</span>
+							<elseif condition="$data['isAddApp'] eq 1" />
+							<span class="btn-addApp disabled">已添加</span>
+							</if>
 						</div>
 					</div>
 					</volist>
@@ -66,15 +70,7 @@
 			preload : ["jquery"],
 			debug: true
 		});
-		
-		seajs.use("jquery", function($) {
-			
-			$('#appList').on('click', '.btn-addApp', function() {
-				alert($(this).data('id'));
-			});
-			
-		});
-
+		seajs.use('__JS__/src/app');
 		</script>
 		
 	</body>
