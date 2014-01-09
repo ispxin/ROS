@@ -1,0 +1,1444 @@
+[ 2014-01-10T00:13:34+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.032954s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037829s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.182293s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.187284s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.012669s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000407s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000323s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000688s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014440s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000960s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001243s ]
+
+[ 2014-01-10T00:13:39+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.012024s ]
+INFO: [ route_check ] --END-- [ RunTime:0.012071s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000254s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.043045s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.012324s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.010216s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:13:51+08:00 ] 127.0.0.1 /ros/index.php/User/signin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.008813s ]
+INFO: [ route_check ] --END-- [ RunTime:0.009309s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+SQL: SHOW COLUMNS FROM `ros_user` [ RunTime:0.010190s ]
+SQL: SELECT * FROM `ros_user` WHERE ( `user` = 'ispxin@vip.qq.com' ) LIMIT 1   [ RunTime:0.008559s ]
+
+[ 2014-01-10T00:13:51+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000268s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.020084s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020130s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000189s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000162s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000097s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000239s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000786s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000310s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000340s ]
+
+[ 2014-01-10T00:13:52+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000330s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000233s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000264s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001589s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001140s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) ORDER BY id asc  [ RunTime:0.000270s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 1 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.016254s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 2 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000278s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 3 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000256s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 4 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000246s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 5 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000217s ]
+
+[ 2014-01-10T00:14:13+08:00 ] 127.0.0.1 /ros/index.php/App
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001490s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002088s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.008176s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008231s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.001245s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001187s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) LIMIT 1   [ RunTime:0.000369s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.012779s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000322s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001286s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000254s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000202s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000135s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000123s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 3 ) LIMIT 1   [ RunTime:0.000226s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 3 )  [ RunTime:0.000187s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000196s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000135s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000129s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000122s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.077311s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.077678s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.012036s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000173s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000100s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.006012s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.018457s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.009701s ]
+INFO: [ view_end ] --END-- [ RunTime:0.009752s ]
+
+[ 2014-01-10T00:19:41+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.022313s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022733s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000417s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000172s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000099s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000497s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001525s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000816s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001158s ]
+
+[ 2014-01-10T00:19:42+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000414s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000263s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001585s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001054s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) ORDER BY id asc  [ RunTime:0.000260s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 1 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000297s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 2 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 3 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000222s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 4 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000204s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 5 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000231s ]
+
+[ 2014-01-10T00:19:45+08:00 ] 127.0.0.1 /ros/index.php/App
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001302s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001786s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000479s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.014848s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001225s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) LIMIT 1   [ RunTime:0.000353s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.000198s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000300s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001289s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000241s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000208s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000144s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000125s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 3 ) LIMIT 1   [ RunTime:0.000127s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 3 )  [ RunTime:0.000122s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000129s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000117s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000129s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000120s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.022131s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022493s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000526s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000165s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000096s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000239s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001158s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001369s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001423s ]
+
+[ 2014-01-10T00:25:22+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001138s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.014574s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015190s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000216s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000438s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000147s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000487s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001597s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000807s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001090s ]
+
+[ 2014-01-10T00:25:22+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000383s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000262s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001639s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001066s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) ORDER BY id asc  [ RunTime:0.000308s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 1 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000253s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 2 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000175s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 3 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000159s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 4 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000182s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 5 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000168s ]
+
+[ 2014-01-10T00:25:24+08:00 ] 127.0.0.1 /ros/index.php/User/logout
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000322s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000282s ]
+
+[ 2014-01-10T00:25:24+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000314s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003729s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003777s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000197s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000163s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000101s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000190s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000746s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000242s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000272s ]
+
+[ 2014-01-10T00:25:24+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000354s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000263s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001350s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001078s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000247s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:25:25+08:00 ] 127.0.0.1 /ros/index.php/App
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000363s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.001309s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001240s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) LIMIT 1   [ RunTime:0.000234s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.000205s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001023s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000215s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000207s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000141s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000124s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 3 ) LIMIT 1   [ RunTime:0.000135s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 3 )  [ RunTime:0.000123s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000127s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000122s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000130s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000117s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.049569s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049922s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000581s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000166s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000096s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000219s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001185s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001554s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001602s ]
+
+[ 2014-01-10T00:25:28+08:00 ] 127.0.0.1 /ros/index.php/App/addApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000330s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+
+[ 2014-01-10T00:25:35+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003554s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003597s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000196s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000176s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000111s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000197s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000786s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000281s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000314s ]
+
+[ 2014-01-10T00:25:36+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000350s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001839s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001254s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000242s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:25:37+08:00 ] 127.0.0.1 /ros/index.php/App
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000371s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.001492s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001136s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) LIMIT 1   [ RunTime:0.000318s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.000349s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001259s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000213s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000166s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000214s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000164s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 3 ) LIMIT 1   [ RunTime:0.000157s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 3 )  [ RunTime:0.000150s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000157s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000137s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000139s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000128s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.049795s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050117s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000549s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000166s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000101s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000238s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001701s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001383s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001596s ]
+
+[ 2014-01-10T00:25:38+08:00 ] 127.0.0.1 /ros/index.php/App/addApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000349s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000240s ]
+
+[ 2014-01-10T00:26:18+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000271s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003726s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003772s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000214s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000164s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000101s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000204s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000779s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000269s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000301s ]
+
+[ 2014-01-10T00:26:18+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000353s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000262s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001164s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001054s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000239s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:26:27+08:00 ] 127.0.0.1 /ros/index.php/App
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000380s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.001130s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.000999s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) LIMIT 1   [ RunTime:0.000319s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.000221s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000182s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.004408s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000265s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000238s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000196s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000130s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 3 ) LIMIT 1   [ RunTime:0.000193s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 3 )  [ RunTime:0.000142s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000175s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000137s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000141s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000124s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.048333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048387s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000220s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000167s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000100s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000194s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000779s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000273s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000305s ]
+
+[ 2014-01-10T00:26:30+08:00 ] 127.0.0.1 /ros/index.php/App/addApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000324s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000239s ]
+
+[ 2014-01-10T00:26:59+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004048s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000198s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000169s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000106s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000202s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000775s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000284s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000317s ]
+
+[ 2014-01-10T00:27:00+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000319s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000240s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001252s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.000905s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000287s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:27:01+08:00 ] 127.0.0.1 /ros/index.php/App
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000381s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.001139s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) LIMIT 1   [ RunTime:0.000367s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.000258s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000260s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001152s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000197s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000185s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000199s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000129s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 3 ) LIMIT 1   [ RunTime:0.000138s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 3 )  [ RunTime:0.000129s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000132s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000124s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000134s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000120s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.065991s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066040s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000210s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000161s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000099s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000194s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000761s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000263s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000295s ]
+
+[ 2014-01-10T00:27:02+08:00 ] 127.0.0.1 /ros/index.php/App/addApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000333s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+
+[ 2014-01-10T00:27:27+08:00 ] 127.0.0.1 /ros/index.php/User/signin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000361s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000259s ]
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+SQL: SHOW COLUMNS FROM `ros_user` [ RunTime:0.001156s ]
+SQL: SELECT * FROM `ros_user` WHERE ( `user` = 'ispxin@vip.qq.com' ) LIMIT 1   [ RunTime:0.000321s ]
+
+[ 2014-01-10T00:27:27+08:00 ] 127.0.0.1 /ros/index.php/App
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000333s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000247s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.001512s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) LIMIT 1   [ RunTime:0.000355s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.000254s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001183s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000219s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000136s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000141s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000130s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 3 ) LIMIT 1   [ RunTime:0.000128s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 3 )  [ RunTime:0.000143s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000130s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000118s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000163s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000133s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007304s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007645s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000479s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000201s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000110s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000204s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001103s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000296s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000332s ]
+
+[ 2014-01-10T00:27:37+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000266s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004177s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004217s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000188s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000167s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000107s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000199s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000757s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000268s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000301s ]
+
+[ 2014-01-10T00:27:38+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000332s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000248s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001212s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.000911s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) ORDER BY id asc  [ RunTime:0.000271s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 1 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000270s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 2 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000149s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 3 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000143s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 4 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000142s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 5 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000178s ]
+
+[ 2014-01-10T00:27:40+08:00 ] 127.0.0.1 /ros/index.php/User/logout
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000335s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000263s ]
+
+[ 2014-01-10T00:27:40+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000264s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003577s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003627s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000204s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000152s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000099s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000193s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000748s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000271s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000301s ]
+
+[ 2014-01-10T00:27:41+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000354s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000263s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001506s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001249s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000354s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:28:31+08:00 ] 127.0.0.1 /ros/index.php/App
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000369s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000273s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.001159s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001074s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) LIMIT 1   [ RunTime:0.000349s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.000268s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000210s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.004286s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000273s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000179s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000155s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000130s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 3 ) LIMIT 1   [ RunTime:0.000148s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 3 )  [ RunTime:0.000132s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000170s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000142s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000171s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000133s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005418s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005462s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000192s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000160s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000093s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000181s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000716s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000247s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000276s ]
+
+[ 2014-01-10T00:28:32+08:00 ] 127.0.0.1 /ros/index.php/App/addApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000342s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+
+[ 2014-01-10T00:35:01+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000314s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003838s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003883s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000181s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000182s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000101s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000187s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000741s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000261s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000291s ]
+
+[ 2014-01-10T00:35:02+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000376s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000273s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001183s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.000993s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000275s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:35:02+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003934s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003985s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000216s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000169s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000107s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000202s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000793s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000280s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000313s ]
+
+[ 2014-01-10T00:35:03+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000356s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000263s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001179s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001157s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000254s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:35:04+08:00 ] 127.0.0.1 /ros/index.php/App
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000355s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.001306s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001291s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) LIMIT 1   [ RunTime:0.000317s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.000229s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000205s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001045s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000178s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000166s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000200s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000161s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 3 ) LIMIT 1   [ RunTime:0.000192s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 3 )  [ RunTime:0.000214s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000177s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000171s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000284s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000149s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006156s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006213s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000225s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000162s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000112s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000245s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000859s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000294s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000329s ]
+
+[ 2014-01-10T00:35:05+08:00 ] 127.0.0.1 /ros/index.php/App/addApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000335s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+
+[ 2014-01-10T00:35:12+08:00 ] 127.0.0.1 /ros/index.php/User/signin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000360s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+SQL: SHOW COLUMNS FROM `ros_user` [ RunTime:0.000970s ]
+SQL: SELECT * FROM `ros_user` WHERE ( `user` = 'ispxin@vip.qq.com' ) LIMIT 1   [ RunTime:0.000303s ]
+
+[ 2014-01-10T00:35:12+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003860s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003903s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000185s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000153s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000095s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000189s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000712s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000249s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000279s ]
+
+[ 2014-01-10T00:35:13+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000391s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000282s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001264s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001333s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) ORDER BY id asc  [ RunTime:0.000298s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 1 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000289s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 2 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000227s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 3 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000200s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 4 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000222s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 5 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000227s ]
+
+[ 2014-01-10T00:36:30+08:00 ] 127.0.0.1 /ros/index.php/User/logout
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.015174s ]
+INFO: [ route_check ] --END-- [ RunTime:0.015629s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.009652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009716s ]
+
+[ 2014-01-10T00:36:30+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000316s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.017947s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018317s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000223s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000174s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000108s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.008991s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009802s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000776s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001033s ]
+
+[ 2014-01-10T00:36:31+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000330s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000243s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.004808s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001278s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000284s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:36:32+08:00 ] 127.0.0.1 /ros/index.php/App
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000380s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000294s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.004788s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.007075s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) LIMIT 1   [ RunTime:0.000490s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.000283s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000234s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001184s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000202s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000137s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000140s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000124s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 3 ) LIMIT 1   [ RunTime:0.000137s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 3 )  [ RunTime:0.000127s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000235s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000185s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000143s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000125s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015488s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015822s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000552s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000177s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000103s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000264s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001240s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001200s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001256s ]
+
+[ 2014-01-10T00:36:36+08:00 ] 127.0.0.1 /ros/index.php/App/addApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000380s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000262s ]
+
+[ 2014-01-10T00:36:40+08:00 ] 127.0.0.1 /ros/index.php/User/signin
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000394s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000272s ]
+NOTIC: 建议使用I方法替代_post
+NOTIC: 建议使用I方法替代_post
+SQL: SHOW COLUMNS FROM `ros_user` [ RunTime:0.001965s ]
+SQL: SELECT * FROM `ros_user` WHERE ( `user` = 'ispxin@vip.qq.com' ) LIMIT 1   [ RunTime:0.000212s ]
+
+[ 2014-01-10T00:36:40+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000313s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003746s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003785s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000187s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000168s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000101s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000203s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000752s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000252s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000282s ]
+
+[ 2014-01-10T00:36:40+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000366s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000242s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001533s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001070s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) ORDER BY id asc  [ RunTime:0.000220s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 1 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000204s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 2 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000147s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 3 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000140s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 4 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000145s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 5 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000222s ]
+
+[ 2014-01-10T00:36:56+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000319s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003832s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003877s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000190s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000164s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000102s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000196s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000749s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000268s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000309s ]
+
+[ 2014-01-10T00:36:56+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000360s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000273s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001360s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001190s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 2 ) ORDER BY id asc  [ RunTime:0.000233s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 1 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000244s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 2 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000199s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 3 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000156s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 4 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000147s ]
+SQL: SELECT `id`,`title`,`url`,`icon`,`width`,`height`,`isMax` FROM `ros_app` WHERE ( `id` = 5 ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000141s ]
+
+[ 2014-01-10T00:36:58+08:00 ] 127.0.0.1 /ros/index.php/User/logout
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000381s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+
+[ 2014-01-10T00:36:58+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003822s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003874s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000218s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000164s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000113s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000196s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000795s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000280s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000313s ]
+
+[ 2014-01-10T00:36:59+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000354s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000262s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001301s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001237s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000260s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:36:59+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000316s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004154s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004203s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000251s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000170s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000097s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000200s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000829s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000251s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000283s ]
+
+[ 2014-01-10T00:37:00+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000357s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000264s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001147s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001104s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000191s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:37:11+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000313s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003918s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003969s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000208s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000175s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000109s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000205s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000798s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000285s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000319s ]
+
+[ 2014-01-10T00:37:11+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000359s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001284s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001090s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000232s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:38:03+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000331s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003856s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003905s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000228s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000175s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000114s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000203s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000826s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000284s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000318s ]
+
+[ 2014-01-10T00:38:04+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000354s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001223s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001096s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000214s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:39:20+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000294s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003835s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003882s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000194s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000163s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000102s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000204s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000758s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000285s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000318s ]
+
+[ 2014-01-10T00:39:20+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000382s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000264s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001206s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001426s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000268s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:39:40+08:00 ] 127.0.0.1 /ros/index.php/App
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000381s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000301s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.001184s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001178s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) LIMIT 1   [ RunTime:0.000362s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.053717s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000292s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001418s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000244s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000190s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000190s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000154s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 3 ) LIMIT 1   [ RunTime:0.000153s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 3 )  [ RunTime:0.000182s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000142s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000174s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000145s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000141s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005774s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005826s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000187s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000155s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000094s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000182s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000710s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000274s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000315s ]
+
+[ 2014-01-10T00:39:42+08:00 ] 127.0.0.1 /ros/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000302s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.003872s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003922s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000208s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000193s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000108s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000204s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000814s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000311s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000344s ]
+
+[ 2014-01-10T00:39:43+08:00 ] 127.0.0.1 /ros/index.php/Index/getApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000404s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000283s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001256s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001057s ]
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = 1 ) ORDER BY id asc  [ RunTime:0.000240s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/wangyingran/sites/ROS/App/Lib/Action/Home/IndexAction.class.php 第 31 行.
+
+[ 2014-01-10T00:39:44+08:00 ] 127.0.0.1 /ros/index.php/App
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000383s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000312s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.001733s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001246s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) LIMIT 1   [ RunTime:0.000336s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.000218s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000225s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001351s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000228s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000175s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000213s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000186s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 3 ) LIMIT 1   [ RunTime:0.000275s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 3 )  [ RunTime:0.000244s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000187s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000159s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000178s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000184s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005708s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005759s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000242s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000170s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000107s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000211s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000830s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000287s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000321s ]
+
+[ 2014-01-10T00:39:46+08:00 ] 127.0.0.1 /ros/index.php/App/addApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000334s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000247s ]
+
+[ 2014-01-10T00:39:51+08:00 ] 127.0.0.1 /ros/index.php/App/addApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000360s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+
+[ 2014-01-10T00:40:06+08:00 ] 127.0.0.1 /ros/index.php/App/index/category/1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000362s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000235s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000273s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.001427s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001175s ]
+NOTIC: 建议使用I方法替代_get
+NOTIC: 建议使用I方法替代_get
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) AND ( `category` = 1 ) LIMIT 1   [ RunTime:0.000263s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.000292s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) AND ( `category` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000325s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.001164s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000260s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000175s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000209s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000132s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000141s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000125s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000138s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000128s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.023536s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023586s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000212s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000168s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000104s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000202s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000785s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000279s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000322s ]
+
+[ 2014-01-10T00:40:09+08:00 ] 127.0.0.1 /ros/index.php/App/addApp
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000389s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000264s ]
+
+[ 2014-01-10T00:40:12+08:00 ] 127.0.0.1 /ros/index.php/App
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000348s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+SQL: SHOW COLUMNS FROM `ros_category` [ RunTime:0.001159s ]
+SQL: SHOW COLUMNS FROM `ros_app` [ RunTime:0.001095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ros_app` WHERE ( `state` = 1 ) LIMIT 1   [ RunTime:0.000264s ]
+SQL: SELECT * FROM `ros_category` ORDER BY sort asc  [ RunTime:0.000219s ]
+SQL: SELECT `id`,`title`,`icon`,`description` FROM `ros_app` WHERE ( `state` = 1 ) ORDER BY id asc LIMIT 0,5   [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `ros_userapp` [ RunTime:0.004027s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 1 ) LIMIT 1   [ RunTime:0.000220s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 1 )  [ RunTime:0.000136s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 2 ) LIMIT 1   [ RunTime:0.000143s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 2 )  [ RunTime:0.000125s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 3 ) LIMIT 1   [ RunTime:0.000137s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 3 )  [ RunTime:0.000127s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 4 ) LIMIT 1   [ RunTime:0.000135s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 4 )  [ RunTime:0.000147s ]
+NOTIC: [8] Undefined index: userid /Users/wangyingran/sites/ROS/App/Lib/Action/Home/AppAction.class.php 第 190 行.
+SQL: SELECT * FROM `ros_userapp` WHERE ( `userid` = null ) AND ( `appid` = 5 ) LIMIT 1   [ RunTime:0.000154s ]
+SQL: SELECT `id` FROM `ros_userapp` WHERE ( `type` = 1 ) AND ( `appid` = 5 )  [ RunTime:0.000135s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005693s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005743s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000249s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000162s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000105s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000216s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000831s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000309s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000342s ]
+

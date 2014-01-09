@@ -4,7 +4,6 @@
 define(function(require, exports, module) {
 
     var user = require('./user'),
-    	login = require('./login'),
     	popupmenu = require('./popupmenu'),
         debounce = require('./debounce'),
     	dialog = require('./dialog'),

@@ -63,7 +63,7 @@ class AppAction extends CommonAction {
 		$isLogin =  $this -> checkLogin();
 
 		if (!$isLogin) {
-			exit;
+			$this -> ajaxReturn(0, '未登陆', 2);
 		}
 		
 		if (!is_numeric($_POST['desk']) || !is_numeric($_POST['appid']) || !is_numeric($_POST['type'])) {
@@ -107,7 +107,7 @@ class AppAction extends CommonAction {
 		$isLogin =  $this -> checkLogin();
 
 		if (!$isLogin) {
-			exit;
+			$this -> ajaxReturn(0, '未登陆', 2);
 		}
 		
 		if (!is_numeric($_POST['appid']) || !is_numeric($_POST['type'])) {
@@ -148,7 +148,7 @@ class AppAction extends CommonAction {
 		$isLogin =  $this -> checkLogin();
 
 		if (!$isLogin) {
-			exit;
+			$this -> ajaxReturn(0, '未登陆', 2);
 		}
 		
 		if (!is_numeric($_POST['appid']) || !is_numeric($_POST['type']) || !is_numeric($_POST['desk'])) {

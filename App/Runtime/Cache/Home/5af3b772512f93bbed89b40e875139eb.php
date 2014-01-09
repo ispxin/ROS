@@ -5,6 +5,10 @@
 		<title><?php echo (C("CFG_WEBNAME")); ?></title>
 		<link href="__CSS__/ros.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="__JS__/seajs/sea.js"></script>
+		<script type="text/javascript">
+			var CONFIG = {};
+			CONFIG.WEBURL = '<?php echo (C("CFG_WEBURL")); ?>';
+		</script>
 	</head>
 
 	<body>

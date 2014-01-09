@@ -5,6 +5,10 @@
 		<title><?php echo (C("CFG_WEBNAME")); ?></title>
 		<link href="__CSS__/ros.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="__JS__/seajs/sea.js"></script>
+		<script type="text/javascript">
+			var CONFIG = {};
+			CONFIG.WEBURL = '<?php echo (C("CFG_WEBURL")); ?>';
+		</script>
 	</head>
 
 	<body>
@@ -29,7 +33,7 @@
 					</ul>
 				</div>
 				<div class="appCenter-centent-list" id="appList">
-					
+
 					<?php if(is_array($app_list)): $i = 0; $__LIST__ = $app_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><div class="app-item">
 						<div class="app-icon">
 							<a href=""><img src="<?php echo ($data["icon"]); ?>" /></a>
@@ -38,6 +42,7 @@
 							<h2 class="app-title"><a href="#"><?php echo ($data["title"]); ?></a></h2>
 							<div class="app-description"><?php echo ($data["description"]); ?></div>
 						</div>
+						<div class="app-count">已有<span><?php echo ($data["appCount"]); ?></span>人添加</div>
 						<div class="app-add">
 							<?php if($data['isAddApp'] == 0): ?><span class="btn-addApp" data-id="<?php echo ($data["id"]); ?>">添加</span>
 							<?php elseif($data['isAddApp'] == 1): ?>

@@ -8,6 +8,8 @@ define(function(require) {
     
     // 加载cookie插件
     require('./cookie');
+    
+    var login = require('./login');
 
     var app = {
     	
@@ -77,10 +79,13 @@ define(function(require) {
 	    		type : 'post',
 	    		data : data,
 	    		success : function(msg) {
+	    		    console.log(msg);
 	    			if (msg.status == 1) {
 	    				_this.creatApp(msg.data);
 	    				addBtn.parent().prev().find('span').text(msg.data.appCount);
 	    				addBtn.text('已添加').addClass('disabled');
+	    			} else if (msg.status == 2) {
+	    			    parent.window.login.open();
 	    			}
 	    		}
 	    	});
