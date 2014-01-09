@@ -38,6 +38,7 @@ define(function(require, exports, module) {
 		    var nowDialog = dialogList[this.o.id];
 		    if (!nowDialog.opened) {
                 nowDialog.show();
+                nowDialog.__task.setActive();
 		    }
 		    nowDialog.zIndexUp();
 			return;

@@ -3,40 +3,46 @@
 class IndexAction extends CommonAction {
 	
     public function index() {
-    	
-		//$this -> getApp();
-		
     	//session(null);
     	//dump($_SESSION);
     	$this -> display();
     }
-	
+
+	/**
+	 * Ajax获取App
+	 */
 	public function getApp() {
 		
 		$App = M('App');
-		$User = M('User');
+		$Userapp = M('Userapp');
 		
 		if ( !isset ( $_SESSION['userid'] ) ) {
 			$userid = 1;
 		} else {
 			$userid = $_SESSION['userid'];
 		}
+
+		$allApp = $Userapp -> where(array('userid' => $userid)) -> order('id asc') -> select();
 		
-		$deskData = $User -> getField('id,desk1,desk2,desk3,desk4,desk5');
 		$appData = array();
 		
 		for ($i=1; $i<=5; $i++) {
-			array_push($appData, array());	
-			$appIdList = explode(',', $deskData[$userid]['desk'.$i]);
-			foreach ($appIdList as $v) {
-				$v = explode('_', $v);
-				$app = $App -> where(array('id' => $v[1])) -> find();
-				array_push($appData[$i-1], $app);
+			array_push($appData, array());
+			foreach ($allApp as $key => $value) {
+				if ($value['desk'] == $i) {
+					
+					// App类型 type => 1
+					if ($value['type'] == 1) {
+						$app = $App -> where(array('id' => $value['appid'], 'state' => 1)) -> field('id,title,url,icon,width,height,isMax') -> find();
+						$app['type'] = 'app';
+						array_push($appData[$i-1], $app);
+					}
+					
+				}
 			}
 		}
-
-		$this -> ajaxReturn($appData, '成功', 1);
 		
+		$this -> ajaxReturn($appData, '成功', 1);
 	}
 	
 }

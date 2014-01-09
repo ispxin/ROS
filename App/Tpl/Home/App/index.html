@@ -5,6 +5,10 @@
 		<title>{$Think.config.CFG_WEBNAME}</title>
 		<link href="__CSS__/ros.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="__JS__/seajs/sea.js"></script>
+		<script type="text/javascript">
+			var CONFIG = {};
+			CONFIG.WEBURL = '{$Think.config.CFG_WEBURL}';
+		</script>
 	</head>
 
 	<body>
@@ -31,7 +35,7 @@
 					</ul>
 				</div>
 				<div class="appCenter-centent-list" id="appList">
-					
+
 					<volist name="app_list" id="data">
 					<div class="app-item">
 						<div class="app-icon">
@@ -41,6 +45,7 @@
 							<h2 class="app-title"><a href="#">{$data.title}</a></h2>
 							<div class="app-description">{$data.description}</div>
 						</div>
+						<div class="app-count">已有<span>{$data.appCount}</span>人添加</div>
 						<div class="app-add">
 							<if condition="$data['isAddApp'] eq 0">
 							<span class="btn-addApp" data-id="{$data.id}">添加</span>

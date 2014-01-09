@@ -192,7 +192,7 @@ define(function(require, exports, module) {
 			    }
 			});
 			
-			$('#mScreenMove a').not('.disabled').off('click').on('click', function() {
+			$('#mScreenMove').off('click').on('click', 'a:not(.disabled)', function() {
 			    var deskId = $(this).data('desk');
                 desk.appMoveDesk(app, deskId);
 			});

@@ -12,6 +12,7 @@ return array(
 
 	// 全局变量
 	'CFG_WEBNAME' => 'ROS桌面应用系统 v1.0',
+	'CFG_WEBURL' => 'http://127.0.0.1/ros/',
 
 	// 项目分组设定
 	'APP_GROUP_LIST' => 'Home,Admin',

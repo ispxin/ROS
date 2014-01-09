@@ -75,7 +75,7 @@ define(function(require, exports, module) {
     	    var _this = this;
             
             $.ajax({
-                url : './index.php/Index/getApp',
+                url : CONFIG.WEBURL + 'index.php/Index/getApp',
                 type : 'get',
                 async : false
             }).done(function(appData) {
@@ -403,24 +403,56 @@ define(function(require, exports, module) {
         },
         
         // 删除应用
-        appDel : function(obj) {
-            
-            obj.remove();
-            
-            this.setAppSort($.cookie('ROS_sortType'));
-            
+        appDel : function(app) {
+        	
+        	var _this = this;
+        	
+        	var data = {
+	    		appid : app.data('id'),
+	    		type : 1
+	    	}
+	    	
+	    	$.ajax({
+	    		url : CONFIG.WEBURL + 'index.php/App/delApp',
+	    		type : 'post',
+	    		data : data,
+	    		success : function(msg) {
+	    			if (msg.status == 1) {
+						app.remove();
+            			_this.setAppSort($.cookie('ROS_sortType'));
+	    			}
+	    		}
+	    	});
+
         },
         
         // 移动应用
         appMoveDesk : function(app, deskId) {
-            
-            // 获取到添加应用对象
-            var oAddApp = this.oDeskContent.children().eq(deskId).children().eq(-1);
-            // 将app插入到添加应用前一位
-            $(oAddApp).before(app);
-            // 重新排序
-            this.setAppSort($.cookie('ROS_sortType'));
-            
+        	
+        	var _this = this;
+        	
+        	var data = {
+	    		appid : app.data('id'),
+	    		desk : deskId+1,
+	    		type : 1
+	    	}
+	    	
+	    	$.ajax({
+	    		url : CONFIG.WEBURL + 'index.php/App/moveDeskApp',
+	    		type : 'post',
+	    		data : data,
+	    		success : function(msg) {
+	    			if (msg.status == 1) {
+						// 获取到添加应用对象
+			            var oAddApp = _this.oDeskContent.children().eq(deskId).children().eq(-1);
+			            // 将app插入到添加应用前一位
+			            $(oAddApp).before(app);
+			            // 重新排序
+			            _this.setAppSort($.cookie('ROS_sortType'));
+	    			}
+	    		}
+	    	});
+
         },
         
         // 添加应用
@@ -520,7 +552,7 @@ define(function(require, exports, module) {
             var _this = this;
 
             $.ajax({
-                url : './index.php/User/signin',
+                url : CONFIG.WEBURL + 'index.php/User/signin',
                 type : 'post',
                 data : data,
                 success : function(msg) {

@@ -176,17 +176,13 @@ define(function(require, exports, module) {
 			
 			// 验证后端
 	        $.ajax({
-	    		url : './index.php/User/signin',
+	    		url : CONFIG.WEBURL + 'index.php/User/signin',
 	    		data : data,
 	    		type : 'post',
 	    		success : function(msg) {
 	    			
 	    			if (msg.status == 1) {
-	    				
-	    				// console.log(msg);
-	    				// _this.close();
-	    				location.reload();
-	    				
+	    				location.reload();	
 	    			} else if (msg.status == 0) {
 	    				
 	    				if (msg.data == 0) {
@@ -330,7 +326,7 @@ define(function(require, exports, module) {
 	    	
 	    	// 注册请求
 	    	$.ajax({
-	    		url : './index.php/User/register',
+	    		url : CONFIG.WEBURL + 'index.php/User/register',
 	    		data : data,
 	    		type : 'post',
 	    		success : function(msg) {

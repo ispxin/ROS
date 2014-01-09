@@ -256,6 +256,8 @@ background:-moz-linear-gradient(0% 0% 270deg, #fff, #fff, #f0f0f0 100%);
 .appCenter-centent-list .app-item .app-intro{ float:left; width:230px; margin-left:10px; padding:5px 0;}
 .appCenter-centent-list .app-item .app-intro .app-title{ width:230px; height:20px; line-height:20px; overflow:hidden; font-weight:bold;}
 .appCenter-centent-list .app-item .app-intro .app-description{ width:230px; height:20px; line-height:20px; overflow:hidden; color:#999;}
+.appCenter-centent-list .app-item .app-count{ float:left; width:100px; margin-left:20px; line-height:50px; color:#999;}
+.appCenter-centent-list .app-item .app-count span{ color:#669900;}
 .appCenter-centent-list .app-item .app-add{ float:right; width:50px; height:20px; margin-top:15px;}
 .appCenter-centent-list .app-item .app-add .btn-addApp{ display:block; width:50px; height:20px; line-height:20px; background:#80b600; color:#fff; text-align:center; cursor:pointer; border-radius:3px;}
 .appCenter-centent-list .app-item .app-add .btn-addApp:hover{ background:#75a700;}

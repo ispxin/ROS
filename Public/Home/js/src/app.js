@@ -25,7 +25,7 @@ define(function(require) {
     		var iLeft = addBtn.css('left');
     		var iTop = addBtn.css('top');
 
-    		var html = '<li title="'+ data.title +'" class="app-item" data-id="'+ data.id +'" data-type="'+ data.type +'" data-title="'+ data.title +'" data-icon="'+ data.icon +'" data-url="'+ data.url +'" data-width="'+ data.width +'" data-height="'+ data.height +'" data-ismax="'+ data.isMax +'" style="left:'+ iLeft +'; top:'+ iTop +';">' +
+    		var html = '<li title="'+ data.title +'" class="app-item" data-id="'+ data.id +'" data-type="app" data-title="'+ data.title +'" data-icon="'+ data.icon +'" data-url="'+ data.url +'" data-width="'+ data.width +'" data-height="'+ data.height +'" data-ismax="'+ data.isMax +'" style="left:'+ iLeft +'; top:'+ iTop +';">' +
 	                    '<div class="app-icon">' +
 	                        '<img src="'+ data.icon +'">' +
 	                    '</div>' +
@@ -67,17 +67,19 @@ define(function(require) {
     		var _this = this;
     		
     		var data = {
-	    		id : appid,
-	    		desk : $.cookie('ROS_desk')
+	    		appid : appid,
+	    		desk : $.cookie('ROS_desk'),
+	    		type : 1
 	    	}
 	    	
 	    	$.ajax({
-	    		url : './App/addApp',
+	    		url : CONFIG.WEBURL + 'index.php/App/addApp',
 	    		type : 'post',
 	    		data : data,
 	    		success : function(msg) {
 	    			if (msg.status == 1) {
 	    				_this.creatApp(msg.data);
+	    				addBtn.parent().prev().find('span').text(msg.data.appCount);
 	    				addBtn.text('已添加').addClass('disabled');
 	    			}
 	    		}
