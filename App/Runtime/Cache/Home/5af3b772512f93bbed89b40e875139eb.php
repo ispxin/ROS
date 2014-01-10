@@ -84,9 +84,6 @@
 			alias : {
 				"jquery" : "__JS__/lib/jquery/1.8.3/jquery"
 			},
-			// map: [
-			    // [ /^(.*\/ros\/Public\/Home\/js\/src\/.*\.(?:css|js))(?:.*)$/i, '$1?201312270958' ]
-			// ],
 			preload : ["jquery"],
 			debug: true
 		});
