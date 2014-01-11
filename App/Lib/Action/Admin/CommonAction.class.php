@@ -4,13 +4,13 @@ class CommonAction extends Action {
 	
 	public function _initialize(){
 		$this -> checkLogin();
-		$this -> assign('user', session('user'));
+		$this -> assign('username', session('username'));
 	}
 	
 	// 检测登录状态 <内部方法>
 	protected function checkLogin() {
 		// 检查认证识别号
-		if (!isset($_SESSION[C('ADMIN_AUTH_KEY')])) {
+		if (!isset($_SESSION[C('USER_AUTH_KEY')]) || $_SESSION['role'] != 1) {
 			// 跳转到认证网关
 			$this -> redirect(C('USER_AUTH_GATEWAY'));
 		}

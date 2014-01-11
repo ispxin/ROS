@@ -90,7 +90,6 @@ a:hover { color:#000;}
 .task-btn-prev:hover{ background-position:-19px -8px;}
 .task-btn-next:hover{ background-position:-73px -8px;}
 
-
 /* navbar
 -----------------------------------------------*/
 .navbar{ display:none; position:absolute; left:0; top:0; z-index:1; padding-top:8px;}
@@ -147,7 +146,7 @@ background:-moz-linear-gradient(0% 0% 270deg, #fff, #fff, #f0f0f0 100%);
 .dialog-close:hover{ background-position:-67px -31px;}
 .dialog-restore{ background-position:-97px -61px;}
 .dialog-restore:hover{ background-position:-97px -32px;}
-.dialog-content{ position:relative; width:100%; height:100%;}
+.dialog-content{ position:relative; width:100%; height:100%; background:#fff url(../images/desktop/loading.gif) center no-repeat;}
 .dialog-content iframe{ border:0;}
 .iframeMask{ position:absolute; left:0; top:0; background:none; width:100%; height:100%; filter:alpha(opacity=0); opacity:0;}
 .dialog-foot{}

@@ -223,12 +223,7 @@ class AppAction extends CommonAction {
 	 * 获取App添加总数
 	 */
 	protected function getAppCount($appid) {
-		$result = M('Userapp') -> where(array('type' => 1, 'appid' => $appid)) -> field('id') -> select();
-		if ($result) {
-			return count($result);
-		} else {
-			return 0;
-		}
+		return  M('Userapp') -> where(array('type' => 1, 'appid' => $appid)) -> field('id') -> count();
 	}
 	
 }

@@ -4,7 +4,7 @@ class CommonAction extends Action {
 	
 	// 检查是否登录
 	protected function checkLogin() {
-		if (isset($_SESSION['userid'])) {
+		if (isset($_SESSION[C('USER_AUTH_KEY')])) {
 			return true;
 		} else {
 			return false;

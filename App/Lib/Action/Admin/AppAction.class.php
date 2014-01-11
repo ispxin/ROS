@@ -2,7 +2,7 @@
 
 class AppAction extends CommonAction {
 	
-	// 所有应用 <视图>
+	// 应用管理 <视图>
     public function index() {
 
     	$App = M('App');

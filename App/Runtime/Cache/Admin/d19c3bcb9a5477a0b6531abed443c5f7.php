@@ -22,7 +22,7 @@
 		
 		<ul class="nav navbar-nav navbar-right">
 			<li>
-				<a href="__GROUP__"><span class="glyphicon glyphicon-user"></span> 欢迎您，<?php echo ($user); ?></a>
+				<a href="__GROUP__"><span class="glyphicon glyphicon-user"></span> 欢迎您，<?php echo ($username); ?></a>
 			</li>
 			<li>
 				<a href="__ROOT__/" target="_blank"><span class="glyphicon glyphicon-home"></span> 主页</a>
@@ -58,7 +58,7 @@
 			<div class="r-subnav-icon"><span class="glyphicon glyphicon-chevron-up j-subnav-icon"></span></div>
 		</h2>
 		<ul>
-			<li><a href="__GROUP__/" target="main">所有评论</a></li>
+			<li><a href="__GROUP__/" target="main">评论管理</a></li>
 		</ul>
 	</div>
 	
@@ -68,7 +68,7 @@
 			<div class="r-subnav-icon"><span class="glyphicon glyphicon-chevron-up j-subnav-icon"></span></div>
 		</h2>
 		<ul>
-			<li><a href="__GROUP__/" target="main">所有会员</a></li>
+			<li><a href="__GROUP__/User" target="main">会员管理</a></li>
 		</ul>
 	</div>
 	

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{$Think.config.CFG_WEBNAME}</title>
+		<include file="Common:import" />
+	</head>
+	<body class="iframeBody">
+
+		<!-- page header s -->
+		<div class="page-header"><a href="__GROUP__/Index/main" class="glyphicon glyphicon-circle-arrow-left" title="返回"></a> 会员管理</div>
+		<!-- page header e -->
+		
+		<!-- tabs s -->
+		<div class="row">
+			<div class="col-md-9">
+				<ul class="nav nav-pills mb20">
+					<li <eq name="user_state" value="1">class="active"</eq>>
+				    	<a href="__URL__/index/state/1"><span class="badge pull-right">{$user_count.normal}</span>正常</a>
+					</li>
+					<li <eq name="user_state" value="0">class="active"</eq>>
+				    	<a href="__URL__/index/state/0"><span class="badge pull-right">{$user_count.lock}</span>锁定</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-3">
+				<div class="input-group">
+			        <input type="text" class="form-control">
+			        <span class="input-group-btn">
+			        	<button class="btn btn-default" type="button">搜索</button>
+			        </span>
+			    </div>
+			</div>
+		</div>
+		<!-- tabs e -->
+
+		<!-- panel s -->
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>会员名称</th>
+					<th width="150" class="text-center">应用数</th>
+					<th width="200" class="text-center">注册时间</th>
+					<th width="200" class="text-center">最后登陆</th>
+					<th width="150" class="text-center">登陆IP</th>
+					<th width="150" class="text-center">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="user_list" id="data">
+				<tr>
+					<td>{$data.user}</td>
+					<td class="text-center"><span class="label label-danger">{$data.appCount}</span></td>
+					<td class="text-center">{$data.regtime|date="Y-m-d H:i:s",###}</td>
+					<td class="text-center">{$data.lastlogintime|date="Y-m-d H:i:s",###}</td>
+					<td class="text-center">{$data.ip}</td>
+					<td class="text-center">
+						<if condition="$user_state eq 1">
+						<a href="__URL__/change/id/{$data.id}/state/0" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-lock"></span> 锁定</a>
+						<else />
+						<a href="__URL__/change/id/{$data.id}/state/1" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt"></span> 解锁</a>
+						<a href="__URL__/delete/id/{$data.id}" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span> 永久删除</a>
+						</if>
+					</td>
+				</tr>
+				</volist>
+			</tbody>
+		</table>
+		<!-- panel e -->
+
+		<!-- pager s -->
+		<ul class="pagination pull-right">
+			{$page}
+		</ul>
+		<!-- pager e -->
+
+	</body>
+</html>

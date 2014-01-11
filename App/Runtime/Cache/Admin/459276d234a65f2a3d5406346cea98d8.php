@@ -29,16 +29,16 @@
 									<tr>
 										<th width="10%">排序</th>
 										<th width="50%">名称</th>
-										<th width="20%">应用数</th>
-										<th width="20%">操作</th>
+										<th width="20%" class="text-center">应用数</th>
+										<th width="20%" class="text-center">操作</th>
 									</tr>
 								</thead>
 								<tbody>
 									<?php if(is_array($category_list)): $i = 0; $__LIST__ = $category_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><tr>
 										<td><input type="text" class="form-control" name="<?php echo ($data["id"]); ?>" value="<?php echo ($data["sort"]); ?>" /></td>
 										<td><?php echo ($data["html"]); ?> <?php echo ($data["name"]); ?></td>
-										<td><span class="label label-danger"><?php echo ($data["app_count"]); ?></span></td>
-										<td>
+										<td class="text-center"><span class="label label-danger"><?php echo ($data["app_count"]); ?></span></td>
+										<td class="text-center">
 											<a href="__URL__/edit/id/<?php echo ($data["id"]); ?>" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit"></span> 编辑</a> 
 											<a href="__URL__/delete/id/<?php echo ($data["id"]); ?>" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-trash"></span> 删除</a>
 										</td>

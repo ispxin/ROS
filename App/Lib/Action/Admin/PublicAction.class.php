@@ -10,11 +10,13 @@ class PublicAction extends Action {
 	 * 登录页面
 	 */
 	public function login() {
-		if (!isset($_SESSION[C('ADMIN_AUTH_KEY')])) {
-			$this -> display();
-		} else {
+
+		if (isset($_SESSION[C('USER_AUTH_KEY')]) && $_SESSION['role'] == 1) {
 			$this -> redirect('Index/index');
+		} else {
+			$this -> display();
 		}
+
 	}
 
 	/**
@@ -22,15 +24,15 @@ class PublicAction extends Action {
 	 */
 	public function checkLogin() {
 
-		$user = $this -> _post('user');
+		$username = $this -> _post('user');
 		$password = $this -> _post('password');
 		$verify = $this -> _post('verify');
 
-		$Admin = D('Admin');
-		$data = $Admin -> create();
+		$User = D('User');
+		$data = $User -> create();
 
 		if (!$data) {
-			exit($this -> error($Admin -> getError()));
+			exit($this -> error($User -> getError()));
 		}
 
 		if (session('verify') != md5($verify)) {
@@ -38,7 +40,7 @@ class PublicAction extends Action {
 		}
 
 		$map = array();
-		$map['user'] = $user;
+		$map['user'] = $username;
 
 		import('ORG.Util.RBAC');
 		$authInfo = RBAC::authenticate($map);
@@ -50,12 +52,21 @@ class PublicAction extends Action {
 			if ($authInfo['password'] != md5($password)) {
 				$this -> error('密码错误!');
 			} else {
-
-				// 记录认证标记
-				session(C('ADMIN_AUTH_KEY'), $authInfo['id']);
-				session('user', $authInfo['user']);
-
-				$this -> success('登录成功!');
+				
+				// 角色校验
+				// 管理员：role => 1
+				if ($authInfo['role'] == 1) {
+					// 登陆成功记录认证标记
+					session(C('USER_AUTH_KEY'), $authInfo['id']);
+					session('username', $authInfo['user']);
+					session('role', 1);
+					cookie('ROS_username', $authInfo['user']);
+					cookie('ROS_status', 1);
+					$this -> success('登录成功!');
+				} else {
+					// 伪提示
+					$this -> error('账号不存在!');
+				}
 
 			}
 		}
@@ -66,13 +77,14 @@ class PublicAction extends Action {
 	 * 退出登录
 	 */
 	public function logout() {
-		if (isset($_SESSION[C('ADMIN_AUTH_KEY')])) {
+		if (isset($_SESSION[C('USER_AUTH_KEY')])) {
 			session('[destroy]');
+			cookie('ROS_status', null);
+			cookie('ROS_username', null);
 			$this -> success('成功退出！', __URL__ . '/login/');
 		} else {
 			$this -> error('无需重复退出！');
 		}
-
 	}
 
 	/**

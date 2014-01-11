@@ -632,6 +632,11 @@ define(function(require, exports, module) {
 			
 			// App右键菜单
 			this.oDeskContent.on('contextmenu', 'li[data-type="app"]', function(ev) {
+			    
+			    // 未登陆状态禁止右键菜单
+			    if (!user.checkLogin()) {
+                    return false;
+                }
 				
 	        	var appmenu = popupmenu.appmenu(_this, $(this));
 	        	

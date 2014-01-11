@@ -7,9 +7,7 @@ define(function(require) {
     window.$ = require('jquery');
     
     // 加载cookie插件
-    require('./cookie');
-    
-    var login = require('./login');
+    require('./cookie')($);
 
     var app = {
     	
@@ -79,7 +77,6 @@ define(function(require) {
 	    		type : 'post',
 	    		data : data,
 	    		success : function(msg) {
-	    		    console.log(msg);
 	    			if (msg.status == 1) {
 	    				_this.creatApp(msg.data);
 	    				addBtn.parent().prev().find('span').text(msg.data.appCount);
@@ -97,9 +94,15 @@ define(function(require) {
     		
     		var _this = this;
     		
+    		// 添加App
     		$('#appList').on('click', '.btn-addApp:not(.disabled)', function() {
     			var appid = $(this).data('id');
 				_this.addApp($(this), appid);
+			});
+			
+			// 阻止默认右键
+			$(document).on('contextmenu', function() {
+			   return false;
 			});
     		
     	}
